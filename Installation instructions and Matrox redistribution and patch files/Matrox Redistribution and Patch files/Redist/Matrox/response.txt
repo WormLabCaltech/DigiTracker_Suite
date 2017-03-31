@@ -1,0 +1,82 @@
+This document is an example of a Response file for MIL and ActiveMIL silent 
+redistribution setup (subject to change in future releases). 
+
+
+// Response file for MIL and ActiveMIL silent redistribution setup.
+//
+// You can comment out (that is, disable) an option by putting // at the 
+// beginning of the line. 
+// Please note that putting // anywhere on the line will also disable the 
+// option.
+//
+// This example installs a Matrox Meteor-II driver with 4Mbytes of non-paged 
+// memory in c:\Program Files\Matrox Imaging
+// If the MGA driver is not installed or a previous version is found, the MGA 
+// driver will be installed.
+// The SuperPro driver is not installed. This driver is needed to communicate 
+// with the MIL run-time hardware key.
+
+// Silent installation, no dialog box
+//
+
+SILENTMODE = 1
+
+
+// Installation directory.
+//
+
+INSTALLATION_DIRECTORY = c:\Program Files\Matrox Imaging
+
+
+// Driver information.
+// To install a driver, remove the comment sign [//] placed at the beginning of 
+// the line.
+// You can install more than one driver.
+// Once again, note that in this particular example, the Matrox Meteor-II driver 
+// is installed.
+
+//DRIVER1 = CORONA_II
+//DRIVER2 = CRONOSPLUS 
+DRIVER3 = METEOR_II
+//DRIVER4 = METEOR_II_1394
+//DRIVER5 = ORION
+//DRIVER6 = VGA 
+  
+
+// Non-paged memory size for Windows (in Mbytes)
+// Minimum of 1 Mbytes, except for VGA and METEOR_II_1394 drivers,
+// which now can have a minimum of 0 Mbytes.
+
+DMA_MEMORY_SIZE = 4
+
+
+// Non-paged memory size for Windows 98/Me (in Mbytes) (one for each installed 
+// board except for Meteor-II/1394 driver). 
+// Note that Matrox Meteor-II/1394 is not supported under Windows 98.
+
+//DMA_CORONA_II = 4
+DMA_METEOR_II = 4
+//DMA_ORION = 4
+//DMA_VGA = 0
+
+// Action if MGA driver is not installed or a previous version is found.
+// INSTALL will install MGA driver in silent mode.
+// IGNORE will not install MGA driver.
+//
+
+MGA_DRIVER = INSTALL
+//MGA_DRIVER = IGNORE
+
+
+// Action for SuperPro driver. 
+// This driver is needed to communicate with the MIL run-time hardware key.
+// INSTALLx will install SuperPro driver to the appropriate port in silent mode.
+// Available options: INSTALLPARALLEL, INSTALLUSB and INSTALLBOTH.
+// Note that USB port is not supported under Windows NT.
+// IGNORE will not install SuperPro driver.
+//
+
+//SUPERPRO = INSTALLPARALLEL
+//SUPERPRO = INSTALLUSB
+//SUPERPRO = INSTALLBOTH
+SUPERPRO = IGNORE

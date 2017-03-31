@@ -1,0 +1,97 @@
+[Norsk]
+PDREADME.TXT                MATROX GRAPHICS INC.              2001.08.03
+
+                   Matrox PowerDesk for Windows 98/Me
+
+
+Merk: Denne filen inneholder noe informasjon som er så ny at vi 
+ikke har rukket å oversette den til ditt språk. Vi beklager for 
+ubeleiligheten.
+
+
+Innholdsfortegnelse
+===================
+
+- Beskrivelse av denne versjonen
+- Installasjon
+- [English...]New features[...English]
+- Mer informasjon
+- Merknader, problemer og begrensninger
+
+
+Beskrivelse av denne versjonen
+==============================
+
+Matrox PowerDesk-programvaren inkluderer en skjermdriver og 
+skjermverktøy. Med denne programvaren får du best utbytte av 
+Matrox-maskinvaren, og du kan få tilgang til flere Matrox-
+funksjoner enn du ellers ville få.
+
+
+Installasjon
+============
+
+Når du skal installere Matrox PowerDesk, starter du
+"installeringsprogrammet" som fulgte med, og følger alle
+instruksjonene på skjermen.
+
+Installeringsprogrammet vil bare installere programvaren hvis det 
+er et Matrox-grafikkort som støttes av installeringsprogrammet, 
+installert på datamaskinen.
+
+
+[English...]
+
+New features
+============
+
+This software includes new features, especially for Matrox 
+hardware with DualHead support. These include:
+
+- The use of different DualHead features (Multi-Display, DVDMax, 
+  Zoom, and Clone) *without* restarting Windows
+
+- Easier-to-use interface for DualHead controls
+
+- Controls for dividing graphics resources (memory and bandwidth) 
+  between your main and secondary displays
+
+- More features accessible through user-defined hot keys 
+  (keyboard shortcuts)
+
+[...English]
+
+
+Mer informasjon
+===============
+
+Hvis du vil ha mer informasjon om Matrox PowerDesk, kan du lese 
+hjelpefilen som fulgte med. Hvis du vil ha informasjon som bare 
+gjelder Matrox-grafikkortet, kan du lese håndboken for Matrox 
+eller datamaskinen.
+
+
+Merknader, problemer og begrensninger
+=====================================
+
+- Installasjon av forskjellige språkversjoner av Windows
+
+  Hvis du installerer programvare med et annet språk enn 
+  operativsystemets (for eksempel norsk programvare på et japansk 
+  system), kan du få problemer med at deler av tekst og 
+  dialogbokskontroller avkortes. Dette skyldes forskjeller i 
+  systemskrifter.
+
+- OpenGL (3D) -støtte
+
+  Hvis du har et nyere Matrox-produkt, eller hvis Matrox-
+  programvaren ble levert av produsenten av datamaskinen din, 
+  kan full OpenGL-støtte være deaktivert i Matrox-skjerm- 
+  driveren. Hvis du vil ha en Matrox-skjermdriver med full 
+  OpenGL-støtte aktivert, se Matrox' Web-område 
+  (www.matrox.com/mga). (Hvis Matrox-produktet ble levert av 
+  produsenten av datamaskinen du bruker, se på Web-området for 
+  den aktuelle produsenten om du kan skaffe deg en skjermdriver 
+  der. En skjermdriver som leveres av produsenten av 
+  datamaskinen du bruker, vil med større sannsynlighet være 
+  testet med den aktuelle datamaskinmodellen.)

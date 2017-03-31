@@ -1,0 +1,315 @@
+[Italiano]
+README.TXT              MATROX GRAPHICS INC.              2001.07.23
+
+                Matrox PowerDesk per Windows NT 4.0
+
+Nota: Questo file può contenere alcune informazioni aggiornate non 
+tradotte nella lingua dell'utente. Ci scusiamo per l'inconveniente.
+
+
+Sommario
+========
+
+- Descrizione della release
+- Installazione
+- Utilizzo di Matrox PowerDesk
+- Accelerazione 3D mediante hardware
+- Note, problemi e limitazioni
+- Uscita TV Matrox
+
+
+Descrizione della release
+=========================
+
+Questo è il driver dello schermo Matrox per Windows NT. Supporta Microsoft 
+Windows NT per CPU x86, versione 4.0 (Build 1381 e versioni 
+successive).
+
+Il prodotto include:
+
+- Driver dello schermo
+- Matrox PowerDesk per Windows NT 4.0
+
+
+Installazione
+=============
+
+Per installare Matrox PowerDesk, avviare il programma di 
+installazione incluso, quindi seguire le istruzioni che appaiono 
+sullo schermo.
+
+Tale programma installerà il software solo se nel computer è 
+presente un modello supportato di scheda grafica Matrox.
+
+Se si installa questo prodotto software su molti sistemi, sono 
+disponibili alcune opzioni di configurazione che consentono di 
+automatizzare parzialmente la procedura. Per ulteriori 
+informazioni, vedere il file "setup_un.doc" fornito con questo 
+prodotto software.
+
+
+Utilizzo di Matrox PowerDesk
+============================
+
+La modifica della risoluzione, la selezione di un monitor e 
+l'utilizzo di Matrox PowerDesk sono trattati nel file "online.doc". 
+Tale file può essere visualizzato con WordPad.
+
+
+Accelerazione 3D mediante hardware
+==================================
+
+Per l'accelerazione hardware 3D, il driver dello schermo Matrox per 
+Windows NT 4.0 supporta l'interfaccia OpenGL con 2 tipi di driver: 
+MCD ("Mini Client Driver") e ICD ("Installable Client Driver"). Le 
+schede Matrox Millennium, Millennium II, Mystique, Mystique 220 e 
+le schede grafiche basate su G100 dispongono del supporto per MCD. 
+Le schede grafiche basate su Matrox G200, G400 e successivi, 
+dispongono del supporto per ICD. (Un ICD ha un potenziale di 
+ottimizzazione maggiore di un MCD.)
+
+L'accelerazione hardware 3D ha le seguenti restrizioni:
+
+- Correntemente non è disponibile nessuna accelerazione quando 
+  vengono utilizzate schede multiple.
+
+- MCD/ICD non supporta le modalità 8 bpp (256 colori) e 24 bpp 
+  (16777216 colori). Le modalità a 16 bpp (64 K colori) e 32 bpp 
+  ("True Color") sono quelle per i quali si può ottenere 
+  l'accelerazione mediante hardware.
+
+- Bisogna aspettarsi limitazioni nelle risoluzioni disponibili. 
+  Tutte le modalità 3D richiedono memoria supplementare per gestire 
+  il double-buffering o i buffer Z o entrambi e tale memoria non è 
+  più disponibile per la visualizzazione.
+
+
+Note, problemi e limitazioni
+============================
+
+- Computer con più di un bus PCI
+
+  È possibile che quando si passa ad un Prompt dei comandi a tutto 
+  schermo o si effettua un qualunque cambiamento di modalità, si 
+  verifichino un'interruzione delle funzioni di Windows NT e la 
+  comparsa di uno schermo blu se una scheda è installata su un bus 
+  PCI diverso da quello 0. Si sta esaminando questo problema.
+  Una possibile soluzione è spostare la scheda in un diverso 
+  alloggiamento PCI.
+
+  Vi sono sistemi nei quali Windows NT riporta i conflitti fra gli 
+  adattatori installati al di là del bridge PCI. In tal caso, il 
+  driver miniport Matrox Millennium non può accedere alla propria 
+  scheda. Se il sistema non sembra essere in grado di trovare la 
+  scheda Millennium, provare a spostarla in un diverso 
+  alloggiamento PCI.
+
+  Installando il Microsoft Service Pack 3 (e versioni successive) 
+  per Windows NT 4.0 dovrebbero correggersi molti problemi.
+
+- DirectDraw con desktop virtuali
+
+  Alcuni programmi DirectDraw non funzionano bene con i desktop 
+  virtuali. Si raccomanda di eseguire i programmi DirectDraw con un 
+  desktop normale.
+
+- Screen saver 3D-Maze
+
+  Possono verificarsi problemi di visualizzazione durante 
+  l'utilizzo dello screen saver "3D-Maze". Questi possono 
+  verificarsi dopo l'installazione di Microsoft Service Pack 2 per 
+  Windows NT 4.0. Questi problemi di visualizzazione vengono 
+  apparentemente corretti dal Service Pack 3 (e versioni 
+  successive).
+
+- Esecuzione di Winstone 97
+
+  La funzione CenterPOPUP deve essere disabilitata (impostazione 
+  predefinita) quando si lavora con Winstone 97. Alcuni test 
+  possono riportare un errore di time-out se viene utilizzato 
+  CenterPOPUP.
+
+- Limiti con schede grafiche multiple
+
+  Windows NT 4.0 supporta un massimo di circa 280 modi di 
+  visualizzazione diversi (combinazioni di risoluzione, tavolozza 
+  dei colori e impostazioni della frequenza di aggiornamento).
+  È possibile riscontrare questo limite se si ha più di una 
+  scheda grafica Matrox installata sul computer.
+
+  Se il pulsante dell'opzione "impostazioni VESA" Matrox è 
+  selezionato quando vi sono schede Matrox multiple nel computer, 
+  è più probabile riscontrare il limite di Windows NT 4.0 sul 
+  numero di modalità di visualizzazione. Questo accade in quanto 
+  l'opzione "impostazione VESA" supporta diverse frequenze di 
+  aggiornamento per ogni risoluzione video ed impostazioni della 
+  tavolozza dei colori.
+
+  Se nel computer è presente più di un adattatore Matrox, si 
+  raccomanda di non utilizzare l'opzione "Impostazioni VESA". È da 
+  notare che il cambiamento della frequenza di aggiornamento 
+  tramite la finestra di dialogo della "Proprietà-Schermo" attiva 
+  l'opzione "Impostazioni VESA".
+
+- 3D Studio MAX 1.2
+
+  Se si verificano problemi durante l'esecuzione di 3D Studio MAX 
+  1.2 usando il driver Matrox HEIDI, tentare a disabilitare la 
+  casella di spunta "Utilizza bus master" in "Impostazioni 
+  generali". Per accedere a questa casella di spunta, fare clic su 
+  "Avvio" > "Impostazioni" > "Panello di controllo" > "Proprietà - 
+  Schermo Matrox" (fare doppio clic) > "Prestazioni".
+
+- 3D Studio MAX 2.0
+
+  Passando dall'emulazione del software HEIDI e l'accelerazione 
+  OpenGL mentre 3D Studio MAX 2.0 è in esecuzione, è possibile che 
+  le finestre di visualizzazione lampeggino mentre vengono 
+  riprodotte delle animazioni. Questo problema può accadere anche 
+  se le impostazioni video (risoluzione o tavolozza di colori) sono 
+  state modificate mentre 3D Studio MAX è in esecuzione. Se si 
+  riscontrano tali problemi, provare a chiudere 3D Studio MAX, 
+  modificando le impostazioni del video (risoluzione o tavolozza di 
+  colori) e quindi riavviando 3D Studio MAX.
+
+- Supporto della tavolozza dei colori a 15 bit
+
+  La tavolozza dei colori a 15 bit non è più supportata.
+
+- Supporto OpenGL
+
+  Si notino le seguenti limitazioni correlate al driver OpenGL (3D) 
+  incluso nel driver dello schermo Matrox:
+
+    - Se si dispone di un prodotto Matrox più recente o se il 
+      software Matrox è stato fornito dal produttore del computer, 
+      è possibile che con il driver dello schermo Matrox il 
+      supporto completo OpenGL sia disattivato. Per un driver dello 
+      schermo Matrox con il supporto completo OpenGL attivato, 
+      vedere il sito Web Matrox (www.matrox.com/mga). (Se il 
+      prodotto Matrox di cui si dispone è stato fornito dal 
+      produttore del computer, visitare il sito Web di tale 
+      produttore per ottenere il driver dello schermo. In tal modo, 
+      si ottiene un driver molto probabilmente testato con il 
+      modello di computer di cui si dispone.)
+
+    - Nella modalità a schermo multiplo in Windows NT 4.0, 
+      l'accelerazione OpenGL è disponibile solo se l'hardware 
+      grafico DualHead è l'unico hardware grafico in uso. 
+      (L'accelerazione OpenGL a schermo multiplo non è supportata 
+      con i prodotti MMS Matrox o se è presente più di una scheda 
+      grafica nel computer.)
+
+    - In 3D Studio MAX 2.0, è possibile che si verifichino dei 
+      problemi con una finestra erroneamente ridisegnata. Se ciò si 
+      verifica, fare semplicemente clic in una finestra per 
+      aggiornare correttamente lo schermo. Questo problema non si 
+      verifica con la versione 2.5 (o versioni successive) di 3D 
+      Studio MAX.
+
+- Requisiti di memoria del sistema
+
+  A causa di una limitazione in Windows NT 4.0, è possibile che si 
+  verifichino dei problemi se il computer possiede una quantità di 
+  memoria inferiore alla quantità di memoria grafica utilizzata nel 
+  computer. Per determinare la quantità di memoria grafica 
+  utilizzata, aggiungere la quantità totale di memoria grafica su 
+  ciascun prodotto grafico Matrox installato nel computer.
+
+  Di seguito sono indicate le quantità di memoria del sistema 
+  necessarie in Windows NT 4.0. Questo valore dipende dalla 
+  quantità totale di memoria grafica.
+
+    |  Memoria grafica   | Memoria del sistema |
+    |      (totale)      |   (consigliata)     |
+    +--------------------+---------------------+
+    |       32 MB        |     64 MB o più     |
+    |       64 MB        |    128 MB o più     |
+    |      128 MB        |    192 MB o più     |
+    |      160 MB        |    256 MB o più     |
+
+[English...]
+
+- Full-screen DOS support with multiple graphics chip
+
+[...English]
+
+  Se il sistema dispone di oltre 10 chip grafici, ad esempio 3 
+  schede MMS-Quad Matrox, è possibile che il sistema non sia 
+  più in grado di rispondere quando si esegue un programma DOS 
+  in modalità a tutto schermo. Se il programma DOS lo consente, 
+  eseguirlo in una finestra DOS.
+
+
+Uscita TV Matrox
+================
+
+La scheda Matrox Marvel supporta l'uscita TV. Grazie a questo tipo 
+di supporto, è possibile visualizzare o registrare lo schermo del 
+computer mediante una TV o un videoregistratore collegati alla 
+scheda grafica.
+
+Suggerimento
+------------
+- Quando si gioca utilizzando l'uscita TV, si consiglia di 
+  utilizzare una risoluzione dello schermo a 640 x 480. Questo 
+  perché le capacità di risoluzione delle TV sono inferiori 
+  rispetto alla maggior parte dei monitor di computer. Se si 
+  utilizza una risoluzione di schermo superiore (800 x 600 o 
+  1024 x 768), la visualizzazione sulla TV potrebbe non risultare 
+  nitida come quella del monitor del computer ed alcuni dei 
+  particolari potrebbero risultare più difficilmente visibili sulla 
+  TV.
+
+- (per la scheda Matrox G100/G200)
+  Le impostazioni predefinite avanzate dell'uscita TV di Matrox 
+  sono valide per visualizzare la maggior parte della grafica 
+  computerizzata, ad esempio giochi o il desktop di Windows, sulla 
+  maggior parte degli apparecchi TV. Basate sugli standard di 
+  telediffusione, vi sono impostazioni di uscita TV avanzate che 
+  risultano maggiormente appropriate per la visualizzazione di
+  video a tutto schermo, ad esempio la visualizzazione di un file 
+  video. Tali impostazioni sono:
+
+  NTSC
+     - Luminosità: 180
+     - Contrasto: 234
+     - Saturazion: 137
+     - Tinta: 0
+
+  PAL
+     - Luminosità: 167
+     - Contrasto: 255
+     - Saturazion: 138
+     - Tinta: 0
+
+  Nota: Per ottenere impostazioni ideali, potrebbe essere 
+  necessario regolare anche le impostazioni dell'apparecchio TV in 
+  uso. Le impostazioni predefinite di luminosità, contrasto, 
+  saturazione e tinta sulla maggior parte delle periferiche video 
+  disponibili commercialmente sono superiori agli standard di 
+  telediffusione. Tali impostazioni sono in genere appropriate per 
+  la visualizzazione dei video ma potrebbero non esserlo per la 
+  grafica computerizzata. Questo è il motivo per cui le 
+  impostazioni predefinite dell'uscita TV di Matrox sono inferiore 
+  a quelle ideali per i video. Per ulteriori informazioni su come 
+  regolare le impostazioni dell'apparecchio TV in uso, consultare 
+  il relativo manuale.
+
+Ulteriori informazioni
+----------------------
+Per ulteriori informazioni sulle impostazioni dello schermo, fare 
+riferimento al manuale Matrox e alla documentazione in linea. Per 
+informazioni su come modificare la risoluzione dello schermo del 
+gioco che si sta utilizzando, fare riferimento alla relativa 
+documentazione.
+
+Nota: Le funzioni di zoom e di desktop virtuale Matrox non vengono 
+supportate in modalità di uscita TV. Inoltre, la modalità di uscita 
+TV non è supportata se nel computer è installata più di una scheda 
+grafica Matrox.
+
+Nota: Se l'hardware grafico Matrox supporta l'uscita TV con le 
+modalità dello schermo DOS a schermo intero, solo le modalità testo 
+dello schermo (modalità 02h e 03h) saranno supportate in Windows 
+NT 4.0.

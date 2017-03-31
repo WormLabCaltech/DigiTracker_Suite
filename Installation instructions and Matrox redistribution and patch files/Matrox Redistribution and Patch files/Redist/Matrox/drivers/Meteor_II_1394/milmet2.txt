@@ -1,0 +1,354 @@
+--------------------------------------------------------------------------------
+              Matrox Imaging Library (7.5) Milmet2.txt Readme File
+                                February 19th, 2003
+     Copyright (c) 2003 by Matrox Electronic Systems Ltd. All rights reserved.
+--------------------------------------------------------------------------------
+
+
+This document explains the current limitations and particularities when using
+MIL with the Matrox Meteor-II series:
+- Matrox Meteor-II/Standard
+- Matrox Meteor-II/Multi-Channel
+- Matrox Meteor-II/Digital
+- Matrox Meteor-II/1394
+- Matrox Meteor-II/Camera Link
+
+It also presents last minute board-specific information that did not make it 
+into the MIL/MIL-Lite Board-Specific manual or the on-line help. The 
+information found in this file overrides your formally documented material.
+
+
+Contents
+
+1. Matrox Meteor-II with MIL/MIL_Lite.
+   1.0 What's new on Matrox Meteor-II with MIL 7.5.
+   1.1 What's new on Matrox Meteor-II with MIL 7.0.
+   1.2 Last minute information.
+   1.3 Bug fixes.
+   1.4 Known bugs.
+2. Installation notice.
+3. List of cameras supported by MIL with Matrox Meteor-II/1394.
+4. Matrox Meteor-II with ActiveMIL.
+5. Important display notice. 
+6. Simultaneously displaying both a windowed display and an auxiliary display
+   (M_NTSC or M_PAL encoded video format ONLY).
+
+1. Matrox Meteor-II with MIL/MIL-Lite.
+
+1.0 What's new on Matrox Meteor-II with MIL 7.5.
+MdigControl()/MdigInquire(): M_GRAB_MODE
+         M_ASYNCHRONOUS_QUEUED is now supported.
+
+1.1 What's new on Matrox Meteor-II with MIL 7.0.
+
+   - MdigAlloc():
+     a) Matrox Meteor-II/Multi-Channel supports a fast DCF switching 
+     technique for switching channels between multiple cameras that require
+     different DCFs. Refer to "Grabbing from multiple cameras with different
+     DCFs" in the MIL/MIL-Lite Board-Specific manual.
+
+   - MdigControl() and MdigInquire():
+     a) IMPORTANT: The default control value for M_GRAB_START_MODE on 
+        Matrox Meteor-II/Multi-Channel has changed. It is now M_FIELD_START_ODD
+        so that it is compatible with the default of standard cameras. The
+        default on Matrox Meteor-II/Standard remains the same.
+     b) On Matrox Meteor-II/Multi-Channel, M_GRAB_EXPOSURE_BYPASS is only 
+        supported in the manual exposure model (M_ENABLE).
+     c) On Matrox Meteor-II/Multi-Channel, there is a new digitizer control
+        to set the clock source that drives the exposure signal. Refer to
+        M_GRAB_EXPOSURE_CLOCK_SOURCE
+        in the MdigControl() section and M_GRAB_EXPOSURE_CLOCK_FREQUENCY in the
+        MdigInquire() section of the MIL/MIL-Lite Board-Specific manual.
+     d) Matrox Meteor-II/Standard, Matrox Meteor-II/Multi-Channel,
+        Matrox Meteor-II/Digital, and Matrox Meteor-II/Camera Link now support 
+        M_GRAB_TIMEOUT and M_GRAB_ABORT.
+     e) There are now new controls to increase the speed and reliability of
+        channel switching on Matrox Meteor-II/Standard and Matrox 
+        Meteor-II/Multi-Channel.
+        Refer to M_CAMERA_LOCK, M_CAMERA_LOCKED, M_CAMERA_LOCK_SENSITIVITY, and 
+        M_CAMERA_PRESENT, described later in this file.
+     f) All of the following MdigInquire() inquire types are now obsolete:
+          M_GRAB_FIELD_END_ODD_THREAD_HANDLE /_ID   
+          M_GRAB_FIELD_END_EVEN_THREAD_HANDLE /_ID
+          M_GRAB_THREAD_HANDLE /_ID
+          M_GRAB_START_THREAD_HANDLE /_ID
+          M_GRAB_END_THREAD_HANDLE /_ID
+          M_GRAB_FIELD_START_THREAD_HANDLE /_ID
+          M_GRAB_FIELD_END_THREAD_HANDLE /_ID    
+          M_GRAB_FRAME_END_THREAD_HANDLE /_ID   
+          M_GRAB_FRAME_START_THREAD_HANDLE /_ID
+        If you need to inquire about the thread's handle or identifier, use the
+        following Win32 functions: GetCurrentThread() or GetCurrentThreadId().
+        Please refer to Microsoft documentation for further details.
+     g) The MdigControl()/MdigInquire() M_THREAD_PRIORITY control type is now
+        obsolete. Use the Win32 function SetThreadPriority(...). Please refer
+        to Microsoft documentation for further details.
+
+
+1.2 Last minute information.
+
+- MdigControl()/MdigInquire() M_CAMERA_LOCK control type:
+   - Controls the camera lock mechanism. This is useful during channel-switching
+     when the digitizer might not be synchronized with the source.
+     Valid control values are:
+     M_ENABLE:  MdigGrab() will wait for the digitizer to be line-locked 
+                with the video source before starting the grab. If you are
+                using a composite color DCF, MdigGrab() will also wait for a
+                color lock. This color lock can be disabled. Refer to
+                M_CAMERA_COLOR_LOCK. 
+     M_DISABLE: MdigGrab() will not check that the digitizer is locked with the
+                video source. If the digitizer is not locked, a
+                synchronization-lost error can occur.
+     M_DEFAULT: Same as M_DISABLE.
+     This control is only available on Matrox Meteor-II/Standard and 
+     Matrox Meteor-II/Multi-Channel.
+
+- MdigControl()/MdigInquire() M_CAMERA_COLOR_LOCK control type: 
+   - Controls whether a color-lock is performed when M_CAMERA_LOCK is enabled or
+     when using MdigInquire(M_CAMERA_LOCKED). This only applies when using a
+     composite color DCF.
+     Valid control values are:
+     M_ENABLE:  A color-lock check will be done before starting the grab.
+     M_DISABLE: A color-lock check will not be done.
+     M_DEFAULT: Same as M_ENABLE when using a composite color DCF; otherwise
+                M_DISABLE.
+     This control is only available on Matrox Meteor-II/Standard.
+
+- MdigControl()/MdigInquire() M_CAMERA_LOCK_SENSITIVITY control type: 
+   - Controls the line- and color-lock sensitivity when M_CAMERA_LOCK is
+     enabled. This can be used to balance the lock-speed with the
+     lock-reliability. 
+     Valid control values are:
+     Any value from 0 to 255: 0  -> fastest lock speed, lowest lock reliability.
+                              255-> slowest lock speed, highest lock
+                                    reliability.
+     M_DEFAULT: 30.
+     This control is only available on Matrox Meteor-II/Multi-Channel.
+
+- MdigControl() M_USER_BIT+(0, 1) control type:
+   - The state of these user bits cannot be set directly on
+     Matrox Meteor-II/Camera Link because they are not physically associated
+     to an output bit on the auxiliary sync and control connector. However,
+     it is possible to set their state by manually associating them to a 
+     specific output bit CCX on the auxiliary sync and control connector. This
+     association is achieved by calling MdigControl(M_CAMERALINK_CCX_SOURCE).
+
+- MdigControl():
+  - For the Matrox Meteor-II/1394 when using Format 7, you should change the size of 
+    the image before you change the offset.
+
+- MdigInquire() obsolete inquire types:
+   - The M_INPUT_SIGNAL_PRESENT and M_INPUT_SIGNAL_COLOR_LOCK inquires types
+     are now obsolete. They are replaced with M_CAMERA_PRESENT and
+     M_CAMERA_LOCKED, respectively.
+
+- MdigInquire() M_CAMERA_PRESENT inquire type:
+   - Video input signal present: M_YES or M_NO.
+     Returns M_YES when a line-lock is achieved. It will also wait for a 
+     color-lock if using a composite color DCF. If you use a monochrome camera
+     with a composite-color DCF, a color-lock will never be achieved and this
+     function will always return M_NO.
+     This control is only available on Matrox Meteor-II/Standard.
+
+- MdigInquire() M_CAMERA_LOCKED inquire type: 
+   - Returns M_YES when a line-lock is achieved, otherwise it returns M_NO.
+     If you are using a composite color DCF, a color-lock must also be achieved.
+     This color-lock can be disabled. Refer to M_CAMERA_COLOR_LOCK for more 
+     information.
+     The lock speed/reliability can be controlled using
+     M_CAMERA_LOCK_SENSITIVITY.
+     This control is only available on Matrox Meteor-II/Standard.
+
+- MdigGrab():
+  a) On Matrox Meteor-II/Multi-Channel, when grabbing using a dual-tap 
+     camera, only the field configuration is implemented. That is, when data 
+     from tap 0 is written to the even field, data from tap 1 is 
+     simultaneously written to the odd field. 
+  b) On Matrox Meteor-II/Digital and Matrox Meteor-II/Camera Link, only 
+     vertical subsampling values that are a multiple of 2 are supported while
+     grabbing in a Host buffer; that is, M_GRAB_SCALE_Y with 1/2,1/4,...,1/16.
+  c) On Matrox Meteor-II/Digital and Matrox Meteor-II/Camera Link, it is 
+     impossible to grab into a multi-band buffer with a monochrome camera.
+  d) On Matrox Meteor-II/Digital and Matrox Meteor-II/Camera Link, it is
+     impossible to grab less than 15 lines while grabbing live in a Host buffer.
+
+- MdigHookFunction():
+  - On Matrox Meteor-II/Digital and Matrox Meteor-II/Camera Link,
+    M_GRAB_FRAME_START and M_GRAB_FIELD_END/_ODD/_EVEN are not supported.
+
+- MdispAlloc():
+  - DispFormat parameter: since Matrox Meteor-II boards do not have a display
+    section, refer to the VGA chapter in the MIL/MIL-Lite Board Specific manual.
+
+
+1.3 Bug fixes.
+
+    - A2276, Matrox Meteor-II/Digital: It is no longer possible to allocate two
+      systems with the same device number. 
+
+    - A2656, Matrox Meteor-II/Standard: There are no longer any problems with
+      the last video line when performing a vertical grab in a reversed 
+      direction. (MdigControl(...,M_GRAB_DIRECTION_Y,M_REVERSE)).
+
+    - A3004, Matrox Meteor-II/Digital: Fixed a possible bug when allocating an
+      M_RGB24+M_PACKED buffer.
+
+    - A2977, Matrox Meteor-II/Digital: The MdigControl() M_GRAB_TIMEOUT control
+      type had no effect. This is now fixed.
+
+    - A3030, Matrox Meteor-II/Digital: the default buffer's location has been 
+      changed from non-paged to paged memory. This means that unless M_GRAB or 
+      M_NON_PAGED is specified, a buffer will be allocated in the Host's paged 
+      memory. Note that this could slow the bus master copies from Matrox
+      Meteor-II/Digital to the Host if the Host buffer was not allocated with
+      the M_NON_PAGED attribute.
+
+
+1.4 Known bugs.
+
+   - On Matrox Meteor-II/1394, the Sony V-500 camera has a hardware bug 
+     that prevents the driver from doing a complete reset when the camera is 
+     allocated or reallocated; therefore, this camera will sometimes stop 
+     responding to commands. When this happens, the driver will log a MIL 
+     error stating that the camera is no longer responding.
+
+   - On Matrox Meteor-II/1394, the Sony V-500 camera also has a problem with the
+     white balance adjustment. The settings might be lost when the camera is 
+     disconnected for a while. The white balance settings will be reset to 
+     U=128 and Y=128. This gives a greenish image that can be fixed using 
+     MIL MdigControl() with the control types M_WHITE_BALANCE_U and
+     M_WHITE_BALANCE_V.
+
+   - On Matrox Meteor-II/Digital, the MdigControl() M_GRAB_ABORT control type
+     has a problem when aborting a grab that is done in a Host buffer: the
+     command-thread might hang. When grabbing in an on-board buffer, this
+     control works perfectly.
+
+   - When using a hardware compression module on Matrox Meteor-II/Standard or 
+     Matrox Meteor-II/Multi-Channel, it is possible to receive one more M_GRAB_START
+     hook event during compression in a lossy-interlaced format. It is also possible
+     to receive M_GRAB_START and M_GRAB_END hook events when compressing using
+     the MbufCopy() function.
+
+   - When grabbing with a high bandwidth camera with the Meteor-II/1394 and
+     displaying with a PCI VGA card, the grab might be corrupted 
+     and appear to shake. In this particular configuration, the Meteor-II/1394
+     can drop data packets due to the internal FIFO overflow, caused by 
+     excessive PCI traffic.
+
+   - On a Meteor-II/Camera Link, Serial communication via the Camera Link 
+     DLL does not work on the second channel. With certain cameras, serial 
+     communication does not work on the first channel either.
+
+   - On a Meteor-II/Camera Link and on a Meteor-II/Digital, the MdispOvr example 
+     (or any application that uses an overlay) does not display correctly when in 
+     Auxiliary Mode.
+
+   -  A4209 there are problems displaying some high-resolution cameras on an 
+      auxiliary screen when using any Genesis family frame grabber (Genesis, 
+      Genesis-LC, Meteor-II/Digital, and Meteor-II/Camera Link).
+
+   - The Matrox Meteor-II/1394 trigger mode using a Sony DFW-SX900 camera is not working
+     properly under all operating systems. The board will still grab continuously, even 
+     if you stop the external trigger. This problem can occur in both MIL and ActiveMIL. 
+     Matrox Intellicam, however, does not have this problem.
+     To avoid this problem, add a small delay between the two MdigControl commands (i.e.
+     M_GRAB_TRIGGER_SOURCE and M_GRAB_TRIGGER) used to activate the external trigger mode.
+
+   - Non-Matrox 1394 boards are not recognized by the installation program under Windows ME 
+     and, hence, are not supported. 
+
+
+2. Installation notice.
+
+   - In the Matrox Meteor-II/Standard Installation and Hardware Reference, some
+     input voltage values (on page 72) for the user input signals are incorrect.
+     The values listed are the following:
+       Max of low: 1.0 V 
+       Min of high: 2.3 V
+       Max of high: 3.8 V
+     The correct values are:
+       Max of low: 1.5 V
+       Min of high: 3.5 V
+       Max of high: 5.5 V
+
+   - Note the following in the Matrox Meteor-II/Camera Link Installation and
+     Hardware Reference:
+       - On pages 29 and 42, the sampling rate should be 50 MHz.
+       - On page 46, The table describing the pinout of the DB9 connector is
+         incorrect: the signal for Pin 3 should be "LVDS TRIG-", whereas the
+         signal for Pin 9 should be "N/C".
+
+   - In the Matrox Meteor-II/Multi-Channel Installation and Hardware Reference,
+     the descriptions for pin 17 and pin 18 are incorrect (p 64). The correct
+     descriptions are as follows:
+       - Pin17 : USER(2)_OUT,  Auxiliary User Output #2
+       - Pin18 : USER(1)_OUT,  Auxiliary User Output #1
+
+
+3. List of cameras supported by MIL with Matrox Meteor-II/1394.
+
+   All 1394 cameras compliant with version 1.20 of the "1394-based
+   Digital Camera Specification" of the 1394 Trade Association should work with
+   MIL 7.0.
+
+   The following cameras have been successfully tested with MIL 7.0: 
+   
+   Sony
+      DS-250
+      DFW-V300
+      DFW-V500
+      DFW-VL500
+      DFW-X700
+      DFW-SX900
+      XCD-X700      
+      XCD-SX900
+
+   Basler:
+      A101f
+      A302f
+      A302fs
+      
+   TI
+      MC680-DCC
+
+   Tokyo Electronic Industry Co
+      CCD Camera CS3720F
+
+   Point Grey Research
+      FireFly 
+      DragonFly (except for any of the 16-bit modes, which are not supported)
+                    
+
+   
+4. Matrox Meteor-II with ActiveMIL.
+
+   - For the Display control:
+     - The FrameStart event is not supported.
+
+
+5. Important display notice: 
+ 
+    Typically, if you want to display one or many color images in a window on the 
+    Windows desktop screen (e.g. using the M_WINDOWED display type), the display 
+    update of these image buffers can be much faster if they are allocated in 
+    M_RGB24+M_PLANAR format. Note that this depends on your VGA(s) configuration, 
+    operating system, and the display options that you are using 
+    (e.g. such as non-destructive overlay).
+
+6. Simultaneously displaying both a windowed display and an auxiliary display
+   (M_NTSC or M_PAL encoded video format ONLY).
+ 
+    The standard way to simultaneously display a buffer in both a windowed and 
+    auxiliary display is to allocate two displays: one using M_WINDOWED as the 
+    InitFlag, and one using M_AUXILIARY as the InitFlag. Then, select this buffer 
+    to both displays by calling MdispSelect() twice.
+
+    However, in a basic auxiliary display set-up (i.e. one Windows desktop screen 
+    and one auxiliary screen), it might be possible to reduce the CPU usage by 
+    allocating only one display, using M_AUXILIARY+M_WINDOWED as the InitFlag. 
+    Then, when you select the buffer to the display (i.e. by calling MdispSelect()
+    once), MIL automatically displays the image in both a windowed and an auxiliary 
+    display. Note that this is only for auxiliary displays with encoded video 
+    formats (e.g. M_NTSC or M_PAL).
+

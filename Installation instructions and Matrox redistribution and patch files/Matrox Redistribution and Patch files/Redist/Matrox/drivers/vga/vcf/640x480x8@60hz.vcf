@@ -1,0 +1,27 @@
+/---------------------------------------------------------------------------
+/
+/   Copyright (c) 2001  Matrox Electronic System
+/
+/   filename:   640x480x8@60hz.vcf
+/
+/   Synopsis:   VCF for (640 X 480)  8 bits at 60 Hz
+/               
+/
+/   Revision history: 1.0 
+/---------------------------------------------------------------------------
+
+
+Pixel_clk           25175       ; kilo pixels/sec
+H_Disp              640         ; pixels
+H_Front_Porch       8           ; pixels
+H_Sync              96          ; pixels
+H_Back_Porch        40          ; pixels
+H_Sync_Pol          0           ; negative
+V_Disp              480         ; lines
+V_Front_Porch       2           ; lines
+V_Sync              2           ; lines
+V_Back_Porch        25          ; lines
+V_Sync_Pol          0           ; negative
+Interlace_Enable    0           ; non-interlaced
+BPP                 8           ; Bits per Plane
+

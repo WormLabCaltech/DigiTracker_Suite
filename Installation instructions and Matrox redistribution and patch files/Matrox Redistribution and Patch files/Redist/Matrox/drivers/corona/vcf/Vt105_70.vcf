@@ -1,0 +1,94 @@
+/---------------------------------------------------------------------------
+/                                                                           
+/   Copyright (c) 1995  Matrox Electronic System                            
+/                                                                           
+/   filename:   VT105_70.VCF                                                
+/                                                                           
+/   Synopsis:   VCF for (1024 x 768) 3 bands 32 bits at 70 Hz 
+/                                                                           
+/   Revision history: 0.0 Alpha release                                     
+/---------------------------------------------------------------------------
+[CONFIG_FILE]
+CORONA
+Fri Sep 12 11:03:06 1997
+Millenium II revision
+[INFO_FILE_REV]
+0000.0000.0000
+CORONA
+/
+[REG_DIGIT]
+INFO_XSIZE                   0x0400
+INFO_YSIZE                   0x0300
+INFO_MODE                    0x0001
+INFO_DEPTH                   0x0020
+INFO_BAND                    0x0003
+MISTRAL_SEQ0                 0x03
+MISTRAL_SEQ1                 0x01
+MISTRAL_SEQ2                 0x03
+MISTRAL_SEQ3                 0x00
+MISTRAL_SEQ4                 0x02
+MISTRAL_MISC                 0xe9
+MISTRAL_CRTC0                0xa1
+MISTRAL_CRTC1                0x7f
+MISTRAL_CRTC2                0x7f
+MISTRAL_CRTC3                0x85
+MISTRAL_CRTC4                0x82
+MISTRAL_CRTC5                0x93
+MISTRAL_CRTC6                0x24
+MISTRAL_CRTC7                0xe5
+MISTRAL_CRTC8                0x00
+MISTRAL_CRTC9                0x20
+MISTRAL_CRTCA                0x20
+MISTRAL_CRTCB                0x00
+MISTRAL_CRTCC                0x00
+MISTRAL_CRTCD                0x00
+MISTRAL_CRTCE                0x00
+MISTRAL_CRTCF                0x00
+MISTRAL_CRTC10               0x02
+MISTRAL_CRTC11               0x28
+MISTRAL_CRTC12               0xff
+MISTRAL_CRTC13               0x00
+MISTRAL_CRTC14               0x00
+MISTRAL_CRTC15               0xff
+MISTRAL_CRTC16               0x25
+MISTRAL_CRTC17               0xc3
+MISTRAL_CRTC18               0x00
+MISTRAL_CRTC22               0x00
+MISTRAL_CRTC23               0x00
+MISTRAL_CRTC24               0x00
+MISTRAL_CRTC25               0x00
+MISTRAL_CRTC26               0x14
+MISTRAL_GCTL0                0x00
+MISTRAL_GCTL1                0x00
+MISTRAL_GCTL2                0x00
+MISTRAL_GCTL3                0x00
+MISTRAL_GCTL4                0x00
+MISTRAL_GCTL5                0x10
+MISTRAL_GCTL6                0x0e
+MISTRAL_GCTL7                0x00
+MISTRAL_GCTL8                0xff
+MISTRAL_CRTCEXT0             0x10
+MISTRAL_CRTCEXT1             0x88
+MISTRAL_CRTCEXT2             0x00
+MISTRAL_CRTCEXT3             0x83
+MISTRAL_CRTCEXT4             0x00
+MISTRAL_CRTCEXT5             0x00
+TVP3033_PLLPCLK_NVALUE       0x0d
+TVP3033_PLLPCLK_MVALUE       0x88
+TVP3033_PLLPCLK_PVALUE       0xd9
+TVP3033_PLLMCLK_NVALUE       0x02
+TVP3033_PLLMCLK_MVALUE       0x1c
+TVP3033_PLLMCLK_PVALUE       0xca
+TVP3033_PLLSNCA_NVALUE       0x04
+TVP3033_PLLSNCA_MVALUE       0x02
+TVP3033_PLLSNCA_PVALUE       0xda
+TVP3033_PLLSNCB_PVALUE       0x03
+TVP3033_SYSCNFG              0x45
+TVP3033_PPACTL1              0x0d
+TVP3033_PPACTL2              0x22
+TVP3033_CLKCNTL              0x22
+TVP3033_GENCTL1              0x08
+TVP3033_PPBCTL1              0x0d
+TVP3033_PPBCTL2              0x22
+MISTRAL_OPTION               0x44299000
+[EOF]

@@ -1,0 +1,35 @@
+--------------------------------------------------------------------------------
+              Matrox Imaging Library (7.5) MilCronosPlus.txt Readme File
+                                  October 2nd, 2002
+     Copyright © 2002 by Matrox Electronic Systems Ltd. All rights reserved.
+--------------------------------------------------------------------------------
+
+This document explains the current limitations and particularities when using
+MIL with Matrox CronosPlus.
+
+It also presents last minute information that did not make it into the manual
+or on-line help. Note that this text file serves to complement your manual. The 
+information found in this file overrides your formally documented material.
+
+Contents
+
+1. Matrox CronosPlus with MIL.
+   1.1 Limitations, particularities, and last minute information for Matrox
+       CronosPlus.
+2. Matrox CronosPlus with ActiveMIL.
+
+
+1. Matrox CronosPlus with MIL.
+
+1.1 Limitations, particularities, and last minute information for Matrox
+    CronosPlus.
+
+- MsysControl()/MsysInquire():
+   - M_USER_BIT_INTERRUPT_MODE and M_USER_BIT_INTERRUPT_STATE are currently not 
+     supported.
+
+2. Matrox CronosPlus with ActiveMIL.
+
+   - All bug fixes and known bugs discussed in this file apply to Matrox
+     CronosPlus with ActiveMIL as well.
+

@@ -1,0 +1,231 @@
+--------------------------------------------------------------------------------
+              Matrox Imaging Library (7.0) Milpul.txt Readme File
+                                 December 11, 2001
+     Copyright © 2001 by Matrox Electronic Systems Ltd. All rights reserved.
+--------------------------------------------------------------------------------
+
+
+This document explains the current limitations and particularities when using 
+MIL with Matrox Pulsar (subject to change in future releases). 
+
+
+Contents
+
+1. Matrox Pulsar with MIL/ActiveMIL.
+2. Matrox Pulsar with MIL.
+3. Matrox Pulsar with ActiveMIL.
+   3.1 System control.
+   3.2 Digitizer control.
+4. Important display notice.
+
+
+1. Matrox Pulsar with MIL/ActiveMIL.
+ 
+   - Automatic detection of Overlap:
+
+     During a continuous grab operation (MIL: MdigGrabContinuous, ActiveMIL: 
+     Digitizer.GrabContinuous), Matrox Pulsar grabs directly into the VGA memory 
+     when the selected display resolution matches the one of the buffer being 
+     displayed (see note). However, when the grab display window is being 
+     overlapped by another window (a situation that can only happen under 
+     Windows), Matrox Pulsar switches to a different mode of continuous grab 
+     operation called 'Pseudo Live Grab'. In this mode, each frame is grabbed 
+     into memory, then sent back to the display. However, since this whole 
+     transfer is handled by DirectDraw, you might not even notice that a 
+     different mechanism is being used to perform the task of continuous grab on 
+     the display. That is, you could still obtain a full grab rate. However, in 
+     this mode, significant CPU use is necessary to perform the display update, 
+     which can slow any concurrent processing task. When the grab display window 
+     ceases to be overlapped by another window, Matrox Pulsar then switches back 
+     to grabbing directly into the VGA.
+
+     Note: If DirectDraw has been disabled, then the 'Pseudo Live Grab' 
+     operation will be slower, and there is no automatic detection of the 
+     overlap. To disable DirectDraw:
+
+        MIL       : MsysAlloc() : M_NO_DDRAW
+        ActiveMIL : System.InitializationFlag = ... | mNoDirectDraw
+        
+     Also note that, since there is no automatic detection of the overlap, 
+     Matrox Pulsar only switches to 'Pseudo Live Grab' when the grab display 
+     window looses the focus. 
+      
+   - Grabbing problems on some PCs:
+
+     1) The grab operations make use of one of the interrupt lines assigned to 
+        the PCI bus. Therefore, the grab operation will freeze, or will not 
+        behave properly, if there is a conflict with interrupt lines, or if 
+        there is no interrupt line enabled on the PCI bus. To prevent this, make 
+        sure that your BIOS configuration has assigned such a line to the PCI 
+        bus, and that this line is not shared by another bus (that is, the ISA 
+        bus.) Note that for the PCI bus, the interrupt lines can be shared, 
+        which is not the case for the ISA bus. Therefore, make sure that your 
+        ISA bus is not using the same interrupt line as your PCI bus. To disable 
+        the use of interrupts for grab operations, refer to the description of 
+        MsysAlloc() in the MIL documentation, or System Control 
+        (InitializationFlag Property for Matrox Pulsar) in the ActveMIL 
+        documentation.
+
+     2) In some PCs, the bridge between the PCI bus and the PC memory is not 
+        fast enough for the fast PCI transfers of the Matrox Pulsar. If this is 
+        the case, you may be unable to grab properly with the Matrox Pulsar on 
+        that PC.
+
+   - Dual-Screen problems under Windows 98 (using the Matrox Millennium VGA 
+     board):
+
+     Symptom: Windows starts normally, but the standard VGA portion of the boot 
+     sequence is displayed on the main screen (Millennium), and the enhanced VGA 
+     mode portion switches to the Matrox Pulsar screen.
+             
+     Cause: The problem originates from the PCI BIOS scan order.
+
+     Solution: You must add the switch MGASelect=1 to the [MGA.DRV] section of 
+     the System.ini file, located in your Windows directory. This forces the MGA 
+     driver to choose the second MGA graphics controller found in the system as 
+     the main screen.
+             
+             
+2. Matrox Pulsar with MIL.
+
+   - MsysAlloc(): The Matrox Pulsar performs grab operations either into its own 
+     frame buffer or directly into the Host system memory via the PCI bus. In 
+     order to grab in the Host system memory via the PCI bus, the buffers must 
+     be allocated in a physically linear memory array. 
+
+   - Note that, in general, the installation program will automatically set 
+     everything for you. Use the application mildrv.exe to set the necessary 
+     values in the registry database.
+  
+   - To disable the use of interrupts for grab operations, a special init flag, 
+     M_NO_INTERRUPT, must be passed to MsysAlloc() when allocating the Matrox 
+     Pulsar system. 
+       
+   - When supported by the operating system (that is, Windows 98 and Windows 
+     NT4), the MIL driver will make use of DirectDraw (DDraw). DirectDraw is a 
+     DirectX SDK component that allows direct manipulation of display memory, 
+     hardware blitters, hardware overlays, and page flipping. DirectDraw 
+     provides this functionality while maintaining compatibility with existing 
+     Microsoft® Windows® applications and device drivers. However, some 
+     limitations are associated with its use. In this case, a special 
+     initialization flag exists to prevent the MIL driver from using DDraw: 
+     M_NO_DDRAW. Conversely, to force MIL to use DDraw (if it does not already 
+     make use of it), the following init flag must be specified: M_DDRAW.
+
+     Under Microsoft® Windows®, if problems related to the tracking of a 
+     window are experienced, that is, if a live grab operation is taking place 
+     at a bad position in the desktop, or if the content of the display window 
+     is erratic, then specify the following init flag to disable the use of 
+     DDraw: M_NO_DDRAW. This flag will disable both the enhanced window tracking 
+     and the fast display update of buffers. However, it is also possible to 
+     disable only one of these options by the use of a display control:
+       MdispControl() : M_WINDOW_USE_SYSTEMHOOK_TRACKING, or
+       MsysControl() :  M_DIB_ONLY 
+     Note that, in order to be effective, these control parameters must be 
+     used prior to any MdispSelect() and MbufAlloc...() operation.
+
+   - MsysControl(): Under Microsoft® Windows®, there is a method to enable/ 
+     disable the use of DDraw buffers (fast display update):
+       M_DIB_ONLY (M_ENABLE, M_DISABLE)
+       Default=M_DISABLE.
+  
+   - When Matrox Pulsar is used with a computer system that has an IntelTriton 
+     PCI chipset 430FX, some problems can occur while accessing the board's 
+     overlay or underlay frame buffer in non-double word multiples. When such 
+     accesses are performed, a possible resulting effect is a series of random 
+     black columns appearing on the screen. We have identified only one 
+     situation where the problem occurs: under Windows 98, when the DirectDraw 
+     is being used by any application. To prevent this from occurring while 
+     using MIL, the use of DirectDRAW has been disabled under Windows 98 when an 
+     Intel Triton PCI chipset 430FX is detected. However, if your application 
+     requires the use of DirectDraw, and you recognize the problem, there is a 
+     way to correct it: use the following control with the value M_DISABLE: 
+     M_PCI_BRIDGE_HOST_WRITE_POSTING. Note that this will reduce the Matrox 
+     Pulsar overlay and underlay frame buffer access performances. For other 
+     applications, when making use of DirectDraw as a default (such as with 
+     Matrox Intellicam), the best way to ensure that the problem does not occur 
+     is to rename DDRAW.DLL, which is located in your WIN98\SYSTEM directory.
+       
+   - MdigControl(): The M_FILL_DISPLAY control is only available under
+     M_WINDOWED (M_DEFAULT) mode.
+
+
+3. Matrox Pulsar with ActiveMIL.
+
+   3.1 System control.
+    
+       - Matrox Pulsar performs grab operations either into its own frame 
+         buffer, or directly into the Host system memory via the PCI bus. In 
+         order to grab in the Host system memory via the PCI bus, the buffers 
+         must be allocated in a physically linear memory array. 
+
+       - Note that in general the installation program will automatically set 
+         everything for you. Use the application mildrv.exe to set the necessary 
+         values in the registry database.
+  
+       - To disable the use of interrupts for grab operations, a special init 
+         flag can be used: System.InitializationFlag = mNoInterrupts.
+
+       - When supported by the operating system (that is, Windows 98 and Windows 
+         NT4), the ActiveMIL driver will make use of DirectDraw (DDraw). 
+         DirectDraw is a DirectX SDK component that allows direct manipulation 
+         of display memory, hardware blitters, hardware overlays, and page 
+         flipping. DirectDraw provides this functionality while maintaining 
+         compatibility with existing Microsoft® Windows® applications and device 
+         drivers. However, some limitations are associated with its use. In this 
+         case, a special initialization flag exists to prevent the ActiveMIL 
+         driver from using DDraw: System.InitializationFlag = mNoDirectDraw. 
+         Conversely, to force ActiveMIL to use DDraw, the following init flag 
+         must be specified: System.InitializationFlag = mDirectDraw.
+       
+         If problems related to the tracking of a window are experienced, that 
+         is, if the live grab operation is taking place at a bad position in the 
+         desktop, or if the content of the display window is erratic, then 
+         specify the following init flag to disable the use of DDraw:
+         System.InitializationFlag = mNoDirectDraw. This flag will disable both 
+         the enhanced window tracking and the fast display update of buffers. 
+         However, it is also possible to disable only one of these: 
+
+         1) To disable enhanced window tracking, use 
+               Display.Control(mWindowUseSystemHookTracking, mDisable) 
+            before associating the Display control to a buffer. 
+
+         2) To disable a fast display update of buffers, either:
+               a) Set your buffer with a DIB format attribute at design time.
+               b) Use System.Control(mDIBOnly, mEnable) before the allocation of 
+                  your non-AutomaticAllocation buffers.
+
+       - When Matrox Pulsar is used with a computer system that has an Intel
+         Triton PCI chipset 430FX, some problems can occur when accessing the 
+         board's overlay or underlay frame buffer in non double word multiples. 
+         When such accesses are performed, the possible resulting effect is a 
+         series of random black columns appearing on the screen. We have 
+         identified only one situation where the problem occurs: under Windows 
+         98, when the DirectDraw is being used by any application. To prevent 
+         this from occurring while using ActiveMIL, the use of DirectDRAW has 
+         been disabled under Windows 98 when an Intel Triton PCI chipset 430FX 
+         is detected. However, if your application requires the use of 
+         DirectDraw, and you recognize the problem, there is a way to fix it: 
+         System.Control(M_PCI_BRIDGE_HOST_WRITE_POSTING, M_DISABLE). Note that 
+         this will reduce the Matrox Pulsar overlay and underlay frame buffer 
+         access performance. For other applications making use of DirectDraw 
+         as a default (such as Matrox Intellicam), the best way to ensure that 
+         the problem does not occur is to rename DDRAW.DLL, which is located in 
+         your WIN98\SYSTEM directory.
+       
+   3.2 Digitizer control.
+  
+       - Digitizer.ScaleX = mFillDisplay and 
+         Digitizer.ScaleY = mFillDisplay
+         are only available when Digitizer.DisplayType represents a windowed
+         display type: mDefaultWindow, mUserWindow or mExternalWindow.
+
+4. Important display notice: 
+ 
+    Typically, if you want to display one or many color images in a window on the 
+    Windows desktop screen (e.g. using the M_WINDOWED display type), the display 
+    update of these image buffers can be much faster if they are allocated in 
+    M_RGB24+M_PLANAR format. Note that this depends on your VGA(s) configuration, 
+    operating system, and the display options that you are using 
+    (e.g. such as non-destructive overlay).
+

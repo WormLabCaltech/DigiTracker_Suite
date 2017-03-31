@@ -1,0 +1,459 @@
+;
+;    Filename:  Image_MTX.INF
+;    Owner   :  Jlavergn
+;    Rev     :  $Revision:   2.5  $
+;    Content :  This file contains installation information for digital camera  
+;               supported in Windows 2000 and WinMe
+;    Date    :  2001/04/12
+;
+;
+;    COPYRIGHT (c) 2000  Matrox Electronic Systems Ltd.
+;    All Rights Reserved
+;
+
+; =================== Version Sections ===========================
+
+[Version]
+signature="$CHICAGO$"
+LayoutFile=layout.inf
+Class=Image
+ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092F}
+Provider=%Mtx%
+DriverVer=10/04/2002,7.50.00
+
+; =================== Table of content =========================
+
+[Manufacturer]
+%SonyMfg%=SONY
+%JVCMfg%=JVC
+%IPSMfg%=IPS
+%BaslerMfg%=BASLER
+%PGRMfg%=PGR
+%VIDEREMfg%=VIDERE
+%TIMfg%=TI
+%COHUMfg%=COHU
+%OTHERMFG%=OTHERS
+
+[DestinationDirs]
+DefaultDestDir=11               ; LDID_SYS
+
+; Delete old Win95 and "Detroit" update drivers
+COMMON.1394DCam.CopyDrivers=10,system32\drivers
+
+
+; =================== Flags ========================
+
+[ControlFlags]
+; All PnP devices should be excluded from manual AddDevice Applet list
+ExcludeFromSelect=*
+
+
+;---------------------------------------------------------------
+;                SONY . 
+;
+;                      mtx1394
+;---------------------------------------------------------------
+
+[SONY]
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&_xga-80__v0.70__
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&SXGA-145_v0.70__
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&1134-098q/0.27__
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&1135-098q/0.27__
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&DFW-V_500_v1.00_
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&DFW-V300_v1.09
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&DFW-VL500_v1.00_
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&DFW-X700__v1.0aa
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&DFW-SX900_v1.0aa
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&XCD-X700__1.03
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&XCD-X700__1.04
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&XCD-SX900_1.03
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&CCM-DS250_1.08
+%1394\SONY.DeviceDesc%=SONY.1394DCam,1394\SONY&CCM-DS250_1.07
+
+[SONY.1394DCam]
+AddReg=     COMMON.1394DCam.AddReg
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+SubClass=     StillImage
+DeviceType=   3
+DeviceSubType=0x1
+Capabilities= 0x00000031
+DeviceData=   COMMON.1394DCam.DeviceData
+
+
+[SONY.1394DCam.NT]
+AddReg=     COMMON.1394DCam.AddReg.NT
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+
+[SONY.1394DCam.NT.Services]
+AddService = mtx1394,0x00000002,SONY.1394DCam.ServiceInstall
+
+[SONY.1394DCam.ServiceInstall]
+DisplayName   = %1394\SONY.DeviceDesc%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\mtx1394.sys
+
+;---------------------------------------------------------------
+;                JVC . 
+;
+;                      mtx1394
+;---------------------------------------------------------------
+
+[JVC]
+%1394\JVC.DeviceDesc%=JVC.1394DCam,1394\JVC&KY-F1030U
+%1394\JVC.DeviceDesc%=JVC.1394DCam,1394\JVC&KY-F75U
+
+[JVC.1394DCam]
+AddReg=     COMMON.1394DCam.AddReg
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+SubClass=     StillImage
+DeviceType=   3
+DeviceSubType=0x1
+Capabilities= 0x00000031
+DeviceData=   COMMON.1394DCam.DeviceData
+
+
+[JVC.1394DCam.NT]
+AddReg=     COMMON.1394DCam.AddReg.NT
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+
+[JVC.1394DCam.NT.Services]
+AddService = mtx1394,0x00000002,JVC.1394DCam.ServiceInstall
+
+[JVC.1394DCam.ServiceInstall]
+DisplayName   = %1394\JVC.DeviceDesc%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\mtx1394.sys
+
+;---------------------------------------------------------------
+;                IPS . 
+;
+;                      mtx1394
+;---------------------------------------------------------------
+
+[IPS]
+%1394\IPS.DeviceDesc%=IPS.1394DCam,1394\IMAGE_PROCESSING_SYSTEMS&151035__CAMERA_1394_FIXCCD_COLOR_(SQ)
+%1394\IPS.DeviceDesc%=IPS.1394DCam,1394\IMAGE_PROCESSING_SYSTEMS&151034__CAMERA_1394_FIXCCD_MONO_(SQ)
+%1394\IPS.DeviceDesc%=IPS.1394DCam,1394\IPS_Automation&ASC6200M-f
+
+[IPS.1394DCam]
+AddReg=     COMMON.1394DCam.AddReg
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+SubClass=     StillImage
+DeviceType=   3
+DeviceSubType=0x1
+Capabilities= 0x00000031
+DeviceData=   COMMON.1394DCam.DeviceData
+
+[IPS.1394DCam.NT]
+AddReg=     COMMON.1394DCam.AddReg.NT
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+
+[IPS.1394DCam.NT.Services]
+AddService = mtx1394,0x00000002,IPS.1394DCam.ServiceInstall
+
+[IPS.1394DCam.ServiceInstall]
+DisplayName   = %1394\IPS.DeviceDesc%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\mtx1394.sys
+
+;---------------------------------------------------------------
+;                BASLER . 
+;
+;                      mtx1394
+;---------------------------------------------------------------
+
+[BASLER]
+
+%1394\BASLER.DeviceDesc%=BASLER.1394DCam,1394\Basler_AG_______&A101f___________012201140214
+%1394\BASLER.DeviceDesc%=BASLER.1394DCam,1394\Basler_AG_______&A101f___________020202100216
+%1394\BASLER.DeviceDesc%=BASLER.1394DCam,1394\Basler_AG_______&A101fc__________
+%1394\BASLER.DeviceDesc%=BASLER.1394DCam,1394\Basler_AG_______&A302f___________011601140105
+%1394\BASLER.DeviceDesc%=BASLER.1394DCam,1394\Basler_AG_______&A302F___________012201140106
+%1394\BASLER.DeviceDesc%=BASLER.1394DCam,1394\Basler_AG_______&A302fs__________020202100108
+%1394\BASLER.DeviceDesc%=BASLER.1394DCam,1394\Basler_AG_______&A302fc__________
+%1394\BASLER.DeviceDesc%=BASLER.1394DCam,1394\Basler_AG_______&A301f___________
+%1394\BASLER.DeviceDesc%=BASLER.1394DCam,1394\Basler&A602f
+
+[BASLER.1394DCam]
+AddReg=     COMMON.1394DCam.AddReg
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+SubClass=     StillImage
+DeviceType=   3
+DeviceSubType=0x1
+Capabilities= 0x00000031
+DeviceData=   COMMON.1394DCam.DeviceData
+
+[BASLER.1394DCam.NT]
+AddReg=     COMMON.1394DCam.AddReg.NT
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+
+[BASLER.1394DCam.NT.Services]
+AddService = mtx1394,0x00000002,BASLER.1394DCam.ServiceInstall
+
+[BASLER.1394DCam.ServiceInstall]
+DisplayName   = %1394\BASLER.DeviceDesc%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\mtx1394.sys
+
+;---------------------------------------------------------------
+;                PGR. 
+;
+;                      mtx1394
+;---------------------------------------------------------------
+
+[PGR]
+%1394\PGR.DeviceDesc%=PGR.1394DCam,1394\PGR&Firefly
+%1394\PGR.DeviceDesc%=PGR.1394DCam,1394\Point_Grey_Research&Dragonfly
+
+[PGR.1394DCam]
+AddReg=     COMMON.1394DCam.AddReg
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+SubClass=     StillImage
+DeviceType=   3
+DeviceSubType=0x1
+Capabilities= 0x00000031
+DeviceData=   COMMON.1394DCam.DeviceData
+
+[PGR.1394DCam.NT]
+AddReg=     COMMON.1394DCam.AddReg.NT
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+
+[PGR.1394DCam.NT.Services]
+AddService = mtx1394,0x00000002,PGR.1394DCam.ServiceInstall
+
+[PGR.1394DCam.ServiceInstall]
+DisplayName   = %1394\PGR.DeviceDesc%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\mtx1394.sys
+;---------------------------------------------------------------
+;                VIDERE. 
+;
+;                      mtx1394
+;---------------------------------------------------------------
+
+[VIDERE]
+%1394\VIDERE.DeviceDesc%=VIDERE.1394DCam,1394\VIDERE_DESIGN&DCAM
+
+[VIDERE.1394DCam]
+AddReg=     COMMON.1394DCam.AddReg
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+SubClass=     StillImage
+DeviceType=   3
+DeviceSubType=0x1
+Capabilities= 0x00000031
+DeviceData=   COMMON.1394DCam.DeviceData
+
+[VIDERE.1394DCam.NT]
+AddReg=     COMMON.1394DCam.AddReg.NT
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+
+[VIDERE.1394DCam.NT.Services]
+AddService = mtx1394,0x00000002,VIDERE.1394DCam.ServiceInstall
+
+[VIDERE.1394DCam.ServiceInstall]
+DisplayName   = %1394\VIDERE.DeviceDesc%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\mtx1394.sys
+
+;---------------------------------------------------------------
+;                TI. 
+;
+;                      mtx1394
+;---------------------------------------------------------------
+
+[TI]
+%1394\TI.DeviceDesc%=TI.1394DCam,1394\TI&MC680-DCC_V0.9
+
+[TI.1394DCam]
+AddReg=     COMMON.1394DCam.AddReg
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+SubClass=     StillImage
+DeviceType=   3
+DeviceSubType=0x1
+Capabilities= 0x00000031
+DeviceData=   COMMON.1394DCam.DeviceData
+
+[TI.1394DCam.NT]
+AddReg=     COMMON.1394DCam.AddReg.NT
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+
+[TI.1394DCam.NT.Services]
+AddService = mtx1394,0x00000002,TI.1394DCam.ServiceInstall
+
+[TI.1394DCam.ServiceInstall]
+DisplayName   = %1394\TI.DeviceDesc%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\mtx1394.sys
+
+;---------------------------------------------------------------
+;                COHU. 
+;
+;                      mtx1394
+;---------------------------------------------------------------
+
+[COHU]
+%1394\COHU.DeviceDesc%=COHU.1394DCam,1394\COHU&camera_7700
+
+[COHU.1394DCam]
+AddReg=     COMMON.1394DCam.AddReg
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+SubClass=     StillImage
+DeviceType=   3
+DeviceSubType=0x1
+Capabilities= 0x00000031
+DeviceData=   COMMON.1394DCam.DeviceData
+
+[COHU.1394DCam.NT]
+AddReg=     COMMON.1394DCam.AddReg.NT
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+
+[COHU.1394DCam.NT.Services]
+AddService = mtx1394,0x00000002,COHU.1394DCam.ServiceInstall
+
+[COHU.1394DCam.ServiceInstall]
+DisplayName   = %1394\COHU.DeviceDesc%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\mtx1394.sys
+
+;---------------------------------------------------------------
+;                OTHERS . 
+;
+;                      mtx1394
+;---------------------------------------------------------------
+
+[OTHERS]
+%1394\OTHERS.DeviceDesc%=OTHERS.1394DCam,1394\A02D&100,1394\A02D&101,1394\A02D&10100,1394\A02D&102,1394\A02D&103
+
+[OTHERS.1394DCam]
+AddReg=     COMMON.1394DCam.AddReg
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+SubClass=     StillImage
+DeviceType=   3
+DeviceSubType=0x1
+Capabilities= 0x00000031
+DeviceData=   COMMON.1394DCam.DeviceData
+
+[OTHERS.1394DCam.NT]
+AddReg=     COMMON.1394DCam.AddReg.NT
+CopyFiles=  COMMON.1394DCam.CopyDrivers
+
+[OTHERS.1394DCam.NT.Services]
+AddService = mtx1394,0x00000002,OTHERS.1394DCam.ServiceInstall
+
+[OTHERS.1394DCam.ServiceInstall]
+DisplayName   = %1394\OTHERS.DeviceDesc%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\mtx1394.sys
+
+; =================== COMMON section ==================================
+
+[COMMON.1394DCam.AddReg.NT]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,mtx1394.sys
+HKR,Settings,Brightness,0x00010001,120
+HKR,Settings,Hue,0x00010001,0xffffffff
+HKR,Settings,Saturation,0x00010001,0xffffffff
+HKR,Settings,Sharpness,0x00010001,2
+HKR,Settings,WhiteBalance,0x00010001,112
+HKR,Settings,Zoom,0x00010001,0xffffffff
+HKR,Settings,Focus,0x00010001,80
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II_1394",Description,0,"Matrox Meteor_II_1394 board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II_1394",Library,0,"mil1394.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II_1394",BoardName,0,"M_SYSTEM_METEOR_II_1394"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II_1394",InitFlag, 0x00010001 , 269025281
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II_1394",RealDevice, 0x00010001, 1
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II_1394",SystemType, 0x00010001, 22
+
+[COMMON.1394DCam.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,mtx1394.sys
+HKR,Settings,Brightness,0x00010001,120
+HKR,Settings,Hue,0x00010001,0xffffffff
+HKR,Settings,Saturation,0x00010001,0xffffffff
+HKR,Settings,Sharpness,0x00010001,2
+HKR,Settings,WhiteBalance,0x00010001,112
+HKR,Settings,Zoom,0x00010001,0xffffffff
+HKR,Settings,Focus,0x00010001,80
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II_1394",Description,0,"Matrox Meteor_II_1394 board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II_1394",BoardName,0,"M_SYSTEM_METEOR_II_1394"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II_1394",Library,0,"mil1394.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II_1394",InitFlag, 0x00010001 , 269025281
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II_1394",RealDevice, 0x00010001, 1
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II_1394",SystemType, 0x00010001, 22
+HKR,,HardwareConfig,1,1
+HKR,,USDClass,,"{0527d1d0-88c2-11d2-82c7-00c04f8ec183}"
+
+[COMMON.1394DCam.DeviceData]
+Server=local
+UI DLL=sti.dll
+UI Class ID={5d8ef5a3-ac13-11d2-a093-00c04f72dc3c}
+
+[COMMON.1394DCam.CopyDrivers]
+mtx1394.sys
+
+; =================== Source section ==================================
+
+[SourceDisksNames]
+1=%String1%,,,
+
+[SourceDisksFiles]
+mtx1394.sys=,..\system32\drivers
+
+[Strings]
+
+;----------------
+; Non-Localizable
+;----------------
+
+; note: only register value is case sensitive, key is not.
+SERVICE_KERNEL_DRIVER=1
+; PnP should use demand start
+SERVICE_DEMAND_START=3
+SERVICE_ERROR_NORMAL=1
+
+; IHV's extension DLL
+; SONY.ExtensionDLL  = "???.dll"
+
+
+;----------------
+; Localizable
+;----------------
+
+Mtx="Matrox Electronic Systems Ltd."
+SonyMfg="Sony"
+JVCMfg="JVC"
+IPSMfg="Image Processing Systems"
+BaslerMfg="Basler"
+PGRMfg="Point Gray Research"
+VIDEREMfg="VIDERE"
+TIMfg="Texas Instruments"
+COHUMfg="COHU"
+OTHERMFG="1394 Dcam manufacturer"
+String1="MIL CD-ROM"
+1394\SONY.DeviceDesc="Sony 1394 Digital Camera"
+1394\JVC.DeviceDesc="JVC 1394 Digital Camera"
+1394\IPS.DeviceDesc="IPS 1394 Digital Camera"
+1394\BASLER.DeviceDesc="Basler 1394 Digital Camera"
+1394\PGR.DeviceDesc="Point Gray Research 1394 Digital Camera"
+1394\VIDERE.DeviceDesc="VIDERE 1394 Digital Camera"
+1394\TI.DeviceDesc="Texas Instruments 1394 Digital Camera"
+1394\COHU.DeviceDesc="Cohu 1394 Digital Camera"
+1394\OTHERS.DeviceDesc="1394 Digital Camera"

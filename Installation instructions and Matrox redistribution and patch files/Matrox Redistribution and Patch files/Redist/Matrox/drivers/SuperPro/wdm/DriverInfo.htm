@@ -1,0 +1,783 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Sentinel System Driver Installation Guide</TITLE>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+   <META NAME="Generator" CONTENT="Microsoft Word 97">
+   <META NAME="Template" CONTENT="C:\PROGRAM FILES\MICROSOFT OFFICE\OFFICE\html.dot">
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (Win95; U) [Netscape]">
+<link rel="stylesheet" href="Rainbow.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<div align="center">
+  <p>&nbsp;</p>
+  <h1>Sentinel System Driver Installation for Windows 9x/NT/ME/2000</h1>
+</div>
+<p>&nbsp;</p>
+<p>Versions 5.39 and later of the Sentinel System Driver use the Windows Installer 
+  which allows you to install the driver on any Windows 9x/NT/2000 system as if 
+  it were a regular application. This document describes the installation procedure 
+  for the Sentinel System Driver.</p>
+<p>&nbsp;</p>
+<h2>Legacy Installation</h2>
+<p>If you are installing the driver for DOS, Windows 3.x, OS/2, or any non-Intel 
+  Windows NT machine, you must use the old installer. The old installer is located 
+  in the<i> /Legacy</i> directory of the driver media. The old installer has been 
+  kept to allow developers that are not yet ready to migrate to the Windows Installer 
+  to keep their old installation methods. There are some limitations to doing 
+  this, however. The old installer does not support installing only the USB driver; 
+  you must use the new installer to do that. </p>
+<p>Also, the legacy installer does not properly upgrade the USB driver on Windows 
+  2000. If you use the legacy installer to install the driver over a previous 
+  installation on Windows 2000, you will have to manually update the USB driver 
+  through the Device manager.</p>
+<p>&nbsp;</p>
+<h2>Using Merge Modules</h2>
+<p>The following sections assume you will use the provided <i>setup.exe</i> file, 
+  with or without command-line options, to install the driver on your end user's 
+  system. If instead you wish to use the supplied merge modules to seamlessly 
+  add the Sentinel System Driver installation to your own application's installation, 
+  see <a href="mergemodules.htm">Sentinel System Driver Windows Installer Merge 
+  Modules</a> for instructions.</p>
+<p>&nbsp;</p>
+<h2><a name="InstallProc"></a>Installation Procedure</h2>
+<p><b>Upgrade Note: </b>You are not required to upgrade to the latest driver. 
+  If you are currently using the previous version of the Sentinel System Driver, 
+  and everything is working satisfactorily, you do not need to upgrade. However, 
+  if you wish to upgrade to the latest version of the driver, you must first uninstall 
+  the previous driver by using the Windows <b>Add/Remove Programs</b> icon in 
+  the <b>Control Panel</b> before following the instructions below.</p>
+<table border="1" width="90%" cellspacing="5" cellpadding="5">
+  <tr>
+    <td height="72"> 
+      <p><b>WARNING: </b>When you run <i> setup.exe</i> to install the driver, 
+        it will automatically update your version of the Windows Installer if 
+        necessary. It will not provide any prompts before doing this. If you are 
+        not sure you want to update the Windows Installer, do not run this program.</p>
+      </td>
+  </tr>
+</table>
+<p><b>IMPORTANT NOTE: </b>Remove any USB Sentinel SuperPro keys before continuing 
+  the installation. See <a href="#USB">Important Note on Sentinel SuperPro USB 
+  Keys</a> for details.</p>
+<ol>
+  <li> 
+    <p>If you have the driver on CD, place the CD in the computer and, if Autorun 
+      is enabled, the installation program should automatically run. Otherwise, 
+      run <i>setup.exe</i> from the root directory of the driver media. </p>
+  </li>
+  <li> 
+    <p>If you do not have the correct version of the Windows Installer, it will 
+      automatically be installed for you. </p>
+  </li>
+  <li> 
+    <p> If setup detects an older version of the Sentinel System Driver, you will 
+      be prompted to confirm the upgrade. The older version is uninstalled immediately 
+      after you confirm the upgrade. If you exit the installation after this, 
+      the older version will not still be installed. </p>
+  </li>
+  <li> 
+    <p>Select either <b>Complete</b> or a <b>Custom</b> installation. <b>Complete</b> 
+      will install both the parallel and USB driver. </p>
+  </li>
+  <li> 
+    <p>If you select <b>Custom</b> (and if the operating system on which you are 
+      installing supports USB), you can choose whether to install parallel, USB, 
+      or both. </p>
+  </li>
+  <li> 
+    <p>Select <b>Install</b>.</p>
+  </li>
+  <li> 
+    <p> Depending on the operating system you are using and the configuration 
+      of your computer, you may be asked to reboot if you have performed an upgrade. 
+      This is necessary to start the new parallel driver. </p>
+  </li>
+</ol>
+<table border="1" width="90%" cellspacing="5" cellpadding="5">
+  <tr> 
+    <td height="72"> 
+      <p><b>NOTE: </b>If instead of using <i>setup.exe</i>, you are interested 
+        in using the supplied merge modules to seamlessly add the Sentinel System 
+        Driver installation to your own application's installation, see <a href="mergemodules.htm">Sentinel 
+        System Driver Windows Installer Merge Modules</a>.</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2><a name="Modify"></a>Modification/Removal Instructions</h2>
+<ol>
+  <li> 
+    <p>Go to the <b>Control Panel</b> from the <b>Start</b> menu. </p>
+  </li>
+  <li> 
+    <p>Select <b>Add/Remove Programs</b>.</p>
+  </li>
+  <li> 
+    <p>Look for the item that says <b>Sentinel System Driver</b> and select it. 
+    </p>
+  </li>
+  <li> 
+    <p>The installer will allow you to modify, repair, or remove the installation--select 
+      the option you want and follow the instructions.</p>
+  </li>
+  <li> 
+    <p>If you select <b>Modify</b>, you can add or remove the parallel or USB 
+      driver later.</p>
+  </li>
+  <li> 
+    <p>Depending on the operating system you are using and the configuration of 
+      your computer, you may be asked to reboot. </p>
+  </li>
+</ol>
+
+<p>&nbsp;</p>
+<h2><a name="addinstall"></a>How Do I Add the Driver Installation to My Own Installer?</h2>
+<p>There are four basic methods of installing the Sentinel System Driver onto 
+  an end user's computer using the installer on this CD. </p>
+<p>If you are installing your application using a non Windows Installer installation 
+  package, then you must use methods 1 or 2. Developers that use Windows Installer 
+  can use any of the four methods. </p>
+<ol>
+  <li>
+    <p><b>Have the users run the driver install themselves - </b>Since the supplied 
+      installer contains a full step-by-step installation just like any application, 
+      most end users will be able to install the driver themselves. This can easily 
+      be added to autorun menus or automatically run at the end of the application 
+      installation. It can be included on your own application CD with instructions 
+      on how to install. You can also burn your own copies of the Sentinel System 
+      Driver CD and distribute them with your product. If you are trying to run 
+      the installation from a menu or your own installer, you need only call the 
+      Sentinel System Driver's <i>setup.exe</i> file. </p>
+  </li>
+  <li>
+    <p><b>Run the driver installation quietly - </b>Either during your installation, 
+      or after your installer finishes, you can call the Sentinel System Driver 
+      installation in quiet mode. The driver installation is then run without 
+      any required user interaction. <a href="#InstallOptions">Command-line switches</a> 
+      are used to do this. This method is very similar to the first method, except 
+      you call <i>setup.exe</i> yourself with the required switches to run without 
+      outputting messages (quiet mode). </p>
+  </li>
+  <li>
+    <p><b>Your Windows Installer package calls the Rainbow Windows Installer package 
+      -</b> If your installer is written for Windows Installer, you can easily 
+      call the Sentinel System Driver installation directly from its <i>.msi </i>file. 
+      This is a supported custom action built into Windows Installer. The trick 
+      to using this method is allowing the installer to find the files it needs 
+      to install. The Sentinel System Driver, written using InstallShield for 
+      Windows Installer, has all its files placed in the archive <i>data.cab</i>. 
+      It is very possible that if you use InstallShield for Windows Installer 
+      you also have a <i>data.cab</i> file. In this case, the two <i>data.cab</i> 
+      files would have to be merged together (since all the files have to reside 
+      in one directory). If your installer does not require a <i>data.cab</i> 
+      file, just include this file on your CD. You will then place the <i>Sentinel 
+      System Driver.msi</i> file in the same directory as your own <i>.ms</i>i 
+      file. After you add a custom action to call the Sentinel System Driver's 
+      <i>.msi</i> file from your installer, the driver will be installed quietly 
+      right along with your application in a seamless fashion. </p>
+  </li>
+  <li>
+    <p><b>Use the Sentinel System Driver merge modules -</b> In order to do this, 
+      your installation package must use Windows Installer. This method is probably 
+      the most difficult, but allows you the most flexibility with installation 
+      options. With this method, the Sentinel System Driver is not just installed 
+      alongside your own installer; it actually becomes part of your installer. 
+      One of the advantages of this method is that the Sentinel System Driver 
+      cannot be removed unless your application is uninstalled. Thus, even if 
+      other applications try to remove the Sentinel System Driver, Windows Installer 
+      will realize that another application requires this component. The driver 
+      is not removed until ALL applications that require it are removed first. 
+      <a href="MergeModules.htm">Using the merge modules</a> is fully documented 
+      in this installation guide. </p>
+  </li>
+</ol>
+<p>When including the Sentinel System Driver on your own CD, only six files are 
+  required, totaling about 4 MB: </p>
+<ul>
+  <li><i>Sentinel System Driver.msi </i></li>
+  <li><i>Data.cab </i></li>
+  <li><i>Setup.exe </i></li>
+  <li><i>Setup.ini </i></li>
+  <li><i>Instmsia.exe </i></li>
+  <li><i>Instmsiw.exe </i></li>
+</ul>
+<p>If you are using method 3, then you need only two files that total about 800 
+  KB: </p>
+<ul>
+  <li><i>Sentinel System Driver.msi </i></li>
+  <li><i>Data.cab </i></li>
+</ul>
+<p>We recommend, however, that you include the entire contents of the Sentinel 
+  System Driver CD onto your own application CD as long as you have room. This 
+  keeps the distribution complete. Most developers make a subdirectory on their 
+  CD for the driver and place the entire CD contents in that folder. The entire 
+  driver CD takes up less than 10 MB of space. </p>
+<p>Another alternative is to point your end users to the Rainbow Technologies 
+  Web site (<i>http://www.rainbow.com</i>) where they can download the latest 
+  version of the Sentinel System Driver themselves. Assuming your customers are 
+  on the Internet already, this prevents you from having outdated versions of 
+  the driver being shipped with your application. </p>
+<h2><a name="InstallOptions"></a>Installation Options</h2>
+<p>The <i>setup.exe</i> program checks your version of the Windows Installer, 
+  updates it if necessary, and then calls on the Windows Installer to install 
+  the Sentinel System Driver from the <i>.ms</i>i file. You can pass on any command-line 
+  options to the Windows Installer via <i>setup.exe</i> using the /v option. Multiple 
+  options are placed with quotation marks; any option that requires a quotation 
+  mark should be prefaced with a \. As an example: </p>
+<blockquote>
+  <p><font face="Courier New, Courier, mono">Setup.exe /v"/qn INSTALLDIR=\"c:\program 
+    files\driver\"" </font></p>
+</blockquote>
+<p>The above line will install the driver quietly (without prompts) into the <i>c:\program 
+  files\driver</i> directory. For more information on the Windows Installer and 
+  its command-line options, go to Microsoft's MSDN Web site. Some valid Windows 
+  Installer command-line options are as follows (see the MSDN Web site for complete 
+  information on all options): </p>
+<p><b>Note: </b>The column titled &quot;/v Argument&quot; indicates whether the 
+  option must be placed within the /v quotation marks or whether it is used outside 
+  of the /v option.</p>
+<table border="1" width="90%" cellpadding="5" cellspacing=" ">
+  <tr valign="bottom"> 
+    <th width="42%" height="20"><b>Option</b></th>
+    <th width="58%" height="20"><b>Description</b></th>
+    <th width="0%" height="20">
+      <div align="center">/v <br>
+        Argument?</div>
+    </th>
+  </tr>
+  <tr valign="top"> 
+    <td  width="42%"><font face="Courier New, Courier, mono" size="-1">/f [p|o|e|d|c|a|u|m|s|v]</font></td>
+    <td  width="58%"> 
+      <p>Repairs or reinstalls missing or corrupted files. Use this option in 
+        conjunction with the following flags:</p>
+      <ul>
+        <li>p will reinstall a file if it is missing</li>
+        <li>o will reinstall a file if it is missing or if an older version of 
+          the file is present on the user's system</li>
+        <li>e will reinstall a file if it is missing or if an equivalent or older 
+          version of the file is present on the user's system </li>
+        <li>c will reinstall a file if it is missing or if the stored checksum 
+          of the installed file does not match the new file's value</li>
+        <li>a will force a reinstall of all files</li>
+        <li>u or m will rewrite all required user registry entries </li>
+        <li>s will overwrite any existing shortcuts </li>
+        <li>v will run your application from the source and store the local installation 
+          package in cache memory.</li>
+      </ul>
+    </td>
+    <td  width="0%"> 
+      <p>NO</p>
+      </td>
+  </tr>
+  <tr valign="top"> 
+    <td height="46" width="42%"><font face="Courier New, Courier, mono" size="-1">/x 
+      </font></td>
+    <td height="46" width="58%">This uninstalls the Sentinel System Driver.</td>
+    <td height="46" width="0%">NO</td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="42%"><font face="Courier New, Courier, mono" size="-1">/q [n|b|r|f] 
+      </font><font face="Courier New, Courier, mono"> </font></td>
+    <td  width="58%"> 
+      <p>The /q option is used to set the user interface level in conjunction 
+        with the following flags: </p>
+      <ul>
+        <li>q or qn will create no user interface</li>
+        <li>qb will create a basic user interface The user interface settings 
+          below display a modal dialog box at the end of installation:</li>
+        <li>qr will display a reduced user interface </li>
+        <li>qf will display a full user interface </li>
+        <li>qn+ will display no user interface</li>
+        <li>qb+ will display a basic user interface</li>
+      </ul>
+    </td>
+    <td  width="0%"> 
+      <p>YES</p>
+      </td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="42%"><font face="Courier New, Courier, mono" size="-1">/l [i|w|e|a|r|u|c|m|p|v|+]<br>
+      &lt;log file&gt;</font><font face="Courier New, Courier, mono"> </font> 
+    </td>
+    <td  width="58%"> 
+      <p>Building with the /l option will specify the path to the log file; these 
+        flags will indicate which information to record in the log file:</p>
+      <ul>
+        <li>i will log status messages </li>
+        <li>w will log nonfatal warning messages</li>
+        <li>e will log any error messages</li>
+        <li>a will log the commencement of action sequences</li>
+        <li>r will log action-specific records</li>
+        <li>u will log user requests</li>
+        <li>c will log initial user interface parameters </li>
+        <li>m will log out-of-memory messages</li>
+        <li>p will log terminal settings</li>
+        <li>v will log the verbose output setting </li>
+        <li>+ will append to an existing file </li>
+        <li>* is a wildcard character; allows you to log all information (excluding 
+          the verbose output setting) </li>
+      </ul>
+    </td>
+    <td  width="0%"> 
+      <p>YES</p>
+      </td>
+  </tr>
+  <tr valign="top"> 
+    <td width="42%"><font face="Courier New, Courier, mono">PROPERTY = <i>VALUE</i></font></td>
+    <td  width="58%"> 
+      <p>All public properties can be set or modified from the command line. To 
+        set a property from the command line, use the following syntax: </p>
+      <p><font face="Courier New, Courier, mono">PROPERTY = <i>VALUE</i></font></p>
+      <p>So, if you wanted to change the value of COMPANYNAME, you would enter:</p>
+      <p><font face="Courier New, Courier, mono">COMPANYNAME="Rainbow Technologies&quot; 
+        </font></p>
+      <p>(Remember to use \" for quotation marks inside a quotation.) </p>
+    </td>
+    <td  width="0%"> 
+      <p>YES</p>
+      </td>
+  </tr>
+</table>
+<h3>Examples of Frequently Used Command Line Options</h3>
+<p>To assist you in using the Windows installer, this section contains examples 
+  of frequently used installer command line options.</p>
+<p><b>Note: </b>If you use the self-extracting installer replace <i>setup</i> 
+  with <i>RainbowSSD5.39.2</i>. </p>
+<ul>
+  <li> 
+    <p><b>To install the driver without user interaction, but display a progress 
+      bar:</b> <font face="Courier New, Courier, mono">setup /v"/qp" </font></p>
+  </li>
+  <li> 
+    <p><b>To install the driver quietly:</b> <font face="Courier New, Courier, mono">setup 
+      /v"/q" </font></p>
+  </li>
+  <li> 
+    <p><b>To install the driver quietly and automatically upgrade any previous 
+      version found: </b><font face="Courier New, Courier, mono">setup /v"/qb 
+      CONFIRMUPGRADE=TRUE" </font></p>
+  </li>
+  <li> 
+    <p><b>To install just the parallel port driver quietly:</b> <font face="Courier New, Courier, mono">setup 
+      /v"/qb ADDLOCAL=Parallel_Driver" </font></p>
+  </li>
+  <li> 
+    <p><b>To install just the USB SuperPro driver quietly:</b> <font face="Courier New, Courier, mono">setup 
+      /v"/qb ADDLOCAL=USB_Driver" </font></p>
+  </li>
+  <li> 
+    <p><b>To install the driver normally (with user interaction), but log results:</b> 
+      <font face="Courier New, Courier, mono">setup /v"/L* <i>filename.log</i>"</font> 
+      (Note that <i>filename.log</i> should be set to your desired log file name. 
+      The file will be overwritten if it already exists.) </p>
+  </li>
+  <li> 
+    <p><b>To repair a driver installation:</b> <font face="Courier New, Courier, mono">setup 
+      /f </font></p>
+  </li>
+  <li> 
+    <p><b>To uninstall the driver (confirms uninstall with user):</b> <font face="Courier New, Courier, mono">setup 
+      /x </font></p>
+  </li>
+  <li> <b>To uninstall quietly:</b> <font face="Courier New, Courier, mono">setup 
+    /x /v"/q" </font></li>
+</ul>
+<p>&nbsp;</p>
+<h2><a name="Properties"></a>Properties</h2>
+<p>Using properties, you can control the way the Sentinel System Driver package 
+  is installed. The Windows Installer contains many different properties that 
+  are configurable as a command-line option. Some of these properties are discussed 
+  below; for more information, go to Microsoft's MSDN Web site. </p>
+<table border="1" width="80%" cellpadding="5" cellspacing=" ">
+  <tr valign="top" > 
+    <th width="26%"><b>Option</b></th>
+    <th width="74%"><b>Description</b></th>
+  </tr>
+  <tr valign="top"> 
+    <td  width="26%"><font face="Courier New, Courier, mono" size="-1">ADDLOCAL</font></td>
+    <td  width="74%"> 
+      <p>List of features, separated by commas, to be installed to the local hard 
+        drive. This property allows you to control which features will be installed. 
+        The list of features is below this table. Use the default value of "all" 
+        to install everything. Feature names are case sensitive. For example, 
+        to install the USB driver only: </p>
+      <p><font face="Courier New, Courier, mono">ADDLOCAL="ConfigFiles,USB_Driver"</font></p>
+      <p>(You should always install the configuration files feature on any installation.) 
+      </p>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="26%"><font face="Courier New, Courier, mono">REMOVE</font></td>
+    <td  width="74%"> 
+      <p>List of features, separated by commas, to be uninstalled. This property 
+        allows you to control which features will be removed. The list of features 
+        is below this table. Use the default value of "all" to install everything. 
+        Feature names are case sensitive. For example, to remove only the USB 
+        driver:</p>
+      <p><font face="Courier New, Courier, mono">REMOVE="USB_Driver" </font></p>
+      <p>As with the ADDLOCAL and REMOVE properties above, this will reinstall 
+        the selected features.</p>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="26%"><font face="Courier New, Courier, mono">COMPANYNAME</font></td>
+    <td  width="74%">Organization of user performing the installation. </td>
+  </tr>
+  <tr valign="top"> 
+    <td width="26%"><font face="Courier New, Courier, mono">USERNAME</font></td>
+    <td  width="74%">User performing the installation. </td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="26%"><font face="Courier New, Courier, mono">REBOOT</font></td>
+    <td  width="74%"> 
+      <p>Set this value to one of three values:</p>
+      <ul>
+        <li><b>Force</b> - Always prompt for a reboot at the end of the installation. 
+          The UI always prompts the user with an option to reboot at the end. 
+          If there is no user interface the system automatically reboots at the 
+          end of the installation.</li>
+        <li><b>Suppress</b> - Suppress prompts for a reboot at the end of the 
+          installation. The installer still prompts the user with an option to 
+          reboot during the installation whenever it encounters a reboot action 
+          in the middle of the installation. If there is no user interface, the 
+          system automatically reboots at each forced reboot. Reboots at the end 
+          of the installation, for example caused by an attempt to install a file 
+          in use, are suppressed.</li>
+        <li><b>ReallySuppress</b> - Suppress all prompts for reboots during the 
+          installation initiated by forced reboot and all prompts at end of the 
+          installation. </li>
+      </ul>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="26%"><font face="Courier New, Courier, mono">REBOOTPROMPT</font></td>
+    <td  width="74%">If the REBOOTPROMPT property is set to Suppress (or just 
+      S) any reboot performed by the Windows Installer happens automatically without 
+      interaction from the user. Setting this property does not initiate a reboot 
+      if one is not needed; it only suppresses the display of any prompts for 
+      reboots to the user. </td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="26%"><font face="Courier New, Courier, mono">ARPHELPLINK</font></td>
+    <td  width="74%">The Internet address for technical support. This value shows 
+      up in the Windows 2000 application information. This allows users to be 
+      directed straight to your Web site for problems. </td>
+  </tr>
+  <tr valign="top"> 
+    <td width="26%"><font face="Courier New, Courier, mono">ARPHELPTELEPHONE</font></td>
+    <td  width="74%">The telephone number for technical support. This value shows 
+      up in the Windows 2000 application information. This allows users to be 
+      directed to your technical support number for assistance. </td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="26%"><font face="Courier New, Courier, mono">NOVDDINSTALL</font></td>
+    <td  width="74%">Do not install the virtual device driver (VDD) on Window 
+      NT or 2000. Older DOS and Win16 applications use the VDD. Set this property 
+      to any value to prevent the VDD installation. This property has no effect 
+      on Windows 9x. </td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="26%"><font face="Courier New, Courier, mono">CONFIRMUPDATE</font></td>
+    <td  width="74%"> 
+      <p>Use this property to confirm that you would like the installer to upgrade 
+        a previous Sentinel System Driver version. Set this property to any value 
+        to confirm you would like upgrades to take place. There is no effect if 
+        you set this on a system that does not require an upgrade. Setting this 
+        property is only necessary if you are not using the GUI.</p>
+      <p><b>IMPORTANT NOTE:</b> If you are running the installation from the command 
+        line without the full GUI and do not set this property, if the installer 
+        detects a driver is currently installed, it will exit without updating 
+        the driver.</p>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="26%" height="93"><font face="Courier New, Courier, mono">SSDREBOOTREQUIRED</font> 
+    </td>
+    <td  width="74%" height="93"> 
+      <p>When this property is set, it tells the installer to ask for a reboot 
+        at the end of the installation. Various custom actions in the installer 
+        will set this property when they decide a reboot is required to complete 
+        the installation. </p>
+      <p>If you are creating your own installer using the merge modules, it is 
+        important to flag a reboot at the end of the installation if this property 
+        is ever set. </p>
+      </td>
+  </tr>
+  <tr valign="top">
+    <td  width="26%"><font face="Courier New, Courier, mono">USBFULLUNINSTALL</font></td>
+    <td  width="74%">
+      <p>This property fully uninstalls the USB SuperPro driver when set. (It 
+        only works during uninstallation of the entire package.)</p>
+      <p>The USB SuperPro driver is a Plug 'n' Play (PnP) driver that is WHQL 
+        (Windows Hardware Quality Labs) certified on Windows 2000. According to 
+        Microsoft specifications, a PnP driver should never be uninstalled from 
+        a system even if the hardware is removed. This is because PnP only loads 
+        in the drivers for components actually plugged into the computer. When 
+        the device is removed, the driver is never loaded. Uninstalling it risks 
+        inadvertently causing a problem with the entire operating system. </p>
+      <p>For this reason, the USB driver is never fully uninstalled by default 
+        by the installer. Some developers desire the ability to completely remove 
+        all traces of the USB driver from a computer. This action is intended 
+        for this, but should be used at your own risk. If this property is set, 
+        all traces of the USB driver are removed from the system. In general, 
+        the computer should be rebooted if this occurs, although the installer 
+        will not specifically prompt to do so. It is possible for there to be 
+        multiple installations of the Sentinel System Driver on a computer. This 
+        action does not check to see if there are other installations on the computer. 
+        Running it may require a re-install or repair to make the USB driver operational 
+        again for another application. </p>
+      <p>This property only affects Windows 2000 systems. Other operating systems 
+        fully uninstall the driver. </p>
+    </td>
+  </tr>
+</table>
+<p> There are three features that can be set using the above ADDLOCAL, REMOVE, 
+  or REINSTALL properties on the Sentinel System Driver: </p>
+<ul>
+  <li>
+    <p><b>ConfigFiles</b> - This contains the necessary configuration and help 
+      files for the Sentinel System Driver. This option should always be installed. 
+    </p>
+  </li>
+  <li>
+    <p><b>Parallel_Driver </b>- This feature installs the parallel port driver 
+      for any Rainbow Technologies hardware security keys. </p>
+  </li>
+  <li>
+    <p><b>USB_Driver </b>- This feature installs the USB SuperPro driver. It is 
+      only available on Windows 98, Windows 2000, and certain versions of Windows 
+      95. Selecting this feature on unsupported operating systems has no effect. 
+    </p>
+  </li>
+</ul>
+<p>All properties and the values they are set to are case-sensitive. </p>
+
+<p>&nbsp;</p>
+<h2><a name="USB"></a>Note on USB Sentinel SuperPro Keys</h2>
+<p>All USB Sentinel SuperPro keys need to be removed before installing or removing 
+  the Sentinel System Driver. Otherwise, the USB portion of the installation might 
+  fail. For this reason, we recommend providing some sort of warning to the user 
+  to remove any USB SuperPro keys from the computer before performing the installation. 
+  In the case of the supplied installer, it warns the user on the Install Confirmation 
+  dialog just before any real installation takes place. If a user fails to heed 
+  this warning then you should have the user uninstall and re-install the Sentinel 
+  System Driver without the USB key plugged in. This should repair the system 
+  and make the USB key operational. </p>
+<p>&nbsp;</p>
+<h2><a name="DriverConfig"></a>Driver Configuration Program</h2>
+<p>This version of the driver contains a new driver configuration program. It 
+  is located in the <i>C:\Program Files\Rainbow Technologies\Sentinel System Driver</i> 
+  directory unless you change the install directory. It is called <i>SetupSysDrvr.exe 
+  </i> and it can be run by double-clicking it. When you run it, a window will 
+  come up. It will give you a few configuration choices as well as tell you what 
+  version of the driver it detects. If you only have the USB driver installed 
+  and you do not have any USB keys plugged in, it will not detect the driver. 
+  This is because the USB driver is loaded by Plug-n-Play whenever a key is plugged 
+  in. If there is no USB key plugged in, the driver is not loaded yet. The parallel 
+  driver is always loaded, so if you install it, the configuration program should 
+  always detect its presence. </p>
+<h3>Add/Repair/Remove Installation</h3>
+<p>If you select this option, the installer will run the Windows Installer for 
+  the Sentinel System Driver and allow you to modify components, repair the installation, 
+  or remove the installation. This option is the same as going to the <b>Control</b> 
+  <b>Panel</b>, <b>Add/Remove Programs</b> and selecting the <b>Sentinel System 
+  Driver</b>. If the driver configuration program does not detect the installed 
+  driver, you can point it to the <i>Sentinel System Driver.msi</i> file that 
+  was used to install the driver originally. This should be located with the driver 
+  media you received when you installed the driver. Browse to the file, click 
+  <b>OK</b> and it will run the installer for you. </p>
+<h3>Configure Driver</h3>
+<p>This option allows you to manually configure the parallel ports used by the 
+  Sentinel System Driver. In general, the driver is able to automatically detect 
+  your parallel ports and does not need to be set up manually. In some cases, 
+  manual modifications are necessary and this option allows you to do this. Any 
+  changes to the ports could potentially cause the driver to fail. For more information 
+  on changing the ports and what the various options mean, select this option 
+  and then select help. </p>
+<h3>Start/Stop NT Parallel Driver</h3>
+<p>This option allows you to stop and start the NT parallel driver. This also 
+  works in Windows 2000 (sometimes referred to as Windows NT 5.0). Use this option 
+  to manually cycle the driver. This option has no effect on the USB driver, which 
+  is automatically stopped and started whenever a key is removed or inserted. 
+</p>
+
+<p>&nbsp;</p><h2><a name="TechSupport"></a>Technical Support Contact Information</h2>
+<table border="0" width="80%" cellpadding="5" cellspacing=" ">
+  <tr valign="top" > 
+    <th width="87%"> 
+      <p><b>North and South America</b></p>
+    </th>
+  </tr>
+  <tr valign="top"> 
+    <td  width="87%">Rainbow Technologies North America </td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="87%"> 
+      <table border="0" width="100%" cellspacing="2">
+        <tr> 
+          <td width="12%" height="24">E-mail:</td>
+          <td width="88%" height="24">techsupport@rainbow.com </td>
+        </tr>
+        <tr> 
+          <td width="12%">Tel: </td>
+          <td width="88%">(800) 959-9954 (6 a.m. - 6 p.m., PST)</td>
+        </tr>
+        <tr> 
+          <td width="12%">Fax: </td>
+          <td width="88%">(949) 450-7450 </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <th  width="87%"><b>Australia</b></th>
+  </tr>
+  <tr valign="top"> 
+    <td  width="87%">Rainbow Technologies (Australia) Pty Ltd.</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="87%"> 
+      <table border="0" width="100%" cellspacing="2">
+        <tr> 
+          <td width="12%" height="24">E-mail:</td>
+          <td width="88%" height="24">techsupport@au.rainbow.com </td>
+        </tr>
+        <tr> 
+          <td width="12%">Tel: </td>
+          <td width="88%">(61) 3 9820 8900</td>
+        </tr>
+        <tr> 
+          <td width="12%">Fax: </td>
+          <td width="88%">(61) 3 9820 8711 </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr valign="top" > 
+    <th width="87%"><b>China</b></th>
+  </tr>
+  <tr valign="top"> 
+    <td  width="87%">Rainbow Information Technologies (China) Co</td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="87%"> 
+      <table border="0" width="100%" cellspacing="2">
+        <tr> 
+          <td width="12%" height="24">E-mail:</td>
+          <td width="88%" height="24">Sentinel@isecurity.com.cn</td>
+        </tr>
+        <tr> 
+          <td width="12%">Tel: </td>
+          <td width="88%">(86) 10 8266 3936</td>
+        </tr>
+        <tr> 
+          <td width="12%">Fax: </td>
+          <td width="88%">(86) 10 8266 3948</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr valign="top" > 
+    <th  width="87%"><b>France, Spain, Portugal, Italy, Greece, Turkey, Israel, 
+      Middle East, North &amp; Central Africa</b></th>
+  </tr>
+  <tr valign="top"> 
+    <td width="87%">Rainbow Technologies France</td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="87%"> 
+      <table border="0" width="100%" cellspacing="2">
+        <tr> 
+          <td width="12%" >E-mail:</td>
+          <td width="88%" >techsupport@fr.rainbow.com</td>
+        </tr>
+        <tr> 
+          <td width="12%">Tel: </td>
+          <td width="88%">(33) 1 41 43 29 02</td>
+        </tr>
+        <tr> 
+          <td width="12%">Fax: </td>
+          <td width="88%"> (33) 1 46 24 76 91</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr valign="top" > 
+    <th width="87%"><b>Germany, Austria, Switzerland, Poland, Czech Republic, 
+      Slovakia, Hungary, Romania, Croatia, Russia and former Russian States</b></th>
+  </tr>
+  <tr valign="top"> 
+    <td  width="87%">Rainbow Technologies Germany</td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="87%"> 
+      <table border="0" width="100%" cellspacing="2">
+        <tr> 
+          <td width="12%" >E-mail:</td>
+          <td width="88%" >techsupport@de.rainbow.com </td>
+        </tr>
+        <tr> 
+          <td width="12%">Tel: </td>
+          <td width="88%">(49) 89 32 17 98 0 </td>
+        </tr>
+        <tr> 
+          <td width="12%">Fax: </td>
+          <td width="88%">(49) 89 32 17 98 50</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr valign="top" > 
+    <th  width="87%"><b>Taiwan and Southeast Asia</b></th>
+  </tr>
+  <tr valign="top"> 
+    <td width="87%">Rainbow Technologies (Taiwan) Co</td>
+  </tr>
+  <tr valign="top"> 
+    <td  width="87%"> 
+      <table border="0" width="100%" cellspacing="2">
+        <tr> 
+          <td width="12%" >E-mail:</td>
+          <td width="88%" >techsupport@tw.rainbow.com</td>
+        </tr>
+        <tr> 
+          <td width="12%">Tel: </td>
+          <td width="88%">(886) 2 2570-5522</td>
+        </tr>
+        <tr> 
+          <td width="12%">Fax: </td>
+          <td width="88%">(886) 2 2570-1988</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr valign="top" > 
+    <th  width="87%"><b>United Kingdom, Ireland, Sweden, Norway, Denmark, Finland, 
+      Netherlands, Belgium, Luxembourg, South Africa</b></th>
+  </tr>
+  <tr valign="top"> 
+    <td  width="87%">Rainbow Technologies UK</td>
+  </tr>
+  <tr valign="top">
+    <td  width="87%">
+      <table border="0" width="100%" cellspacing="2">
+        <tr> 
+          <td width="12%" >E-mail:</td>
+          <td width="88%" >techsupport@uk.rainbow.com</td>
+        </tr>
+        <tr> 
+          <td width="12%">Tel: </td>
+          <td width="88%">(44) 1932 579200</td>
+        </tr>
+        <tr> 
+          <td width="12%">Fax: </td>
+          <td width="88%">(44) 1932 570743 </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</BODY>
+</HTML>

@@ -1,0 +1,309 @@
+[Deutsch]
+README.TXT              MATROX GRAPHICS INC.              2001.07.23
+
+                 Matrox PowerDesk für Windows NT 4.0
+
+Hinweis: Diese Datei enthält eventuell neue Informationen, die bei 
+der Drucklegung der Dokumentation noch nicht in Ihre Sprache 
+übersetzt waren. Wir bitten hierfür um Ihr Verständnis.
+
+
+Inhalt
+======
+
+- Beschreibung dieser Release
+- Installation
+- Verwendung von Matrox PowerDesk
+- Hardware-beschleunigtes 3D
+- Anmerkungen, Probleme und Einschränkungen
+- Matrox TV-Ausgabe
+
+
+Beschreibung dieser Release
+===========================
+
+Bei dieser Release handelt es sich um den Bildschirmtreiber für 
+Windows NT der Matrox-Grafikkarte. Er unterstützt Microsoft 
+Windows NT für x86 CPUs, Version 4.0 (Build 1381 oder höher).
+
+Dieses Produkt umfaßt:
+
+- Bildschirmtreiber
+- Matrox PowerDesk für Windows NT 4.0
+
+
+Installation
+============
+
+Starten Sie zur Installation von Matrox PowerDesk das mitgelieferte 
+Programm "Setup", und befolgen Sie anschließend die Anweisungen auf 
+dem Bildschirm.
+
+Das Setup-Programm installiert die Software nur, wenn in Ihrem 
+Computer eine Matrox Grafikkarte installiert ist, die das Setup-
+Programm unterstützt.
+
+Wenn Sie diese Software auf vielen Systemen installieren, gibt es 
+Optionen, um diesen Vorgang teilweise zu automatisieren. Weitere 
+Informationen finden Sie in der mitgelieferten Datei setup_un.doc.
+
+
+Verwendung von Matrox PowerDesk
+===============================
+
+Informationen zum Ändern der Auflösung, Auswählen eines Monitors 
+und Verwenden von Matrox PowerDesk finden Sie in der Datei 
+"online.doc". Sie können diese Datei mit WordPad aufrufen.
+
+
+Hardware-beschleunigtes 3D
+==========================
+
+Zur 3D-Hardwarebeschleunigung unterstützt der Windows NT 4.0 
+Bildschirmtreiber von Matrox die OpenGL-Schnittstelle mit zwei 
+Treibertypen -- MCD ("Mini Client Driver") und ICD ("Installable 
+Client Driver"). Die Grafikkarten Matrox Millennium, Millennium II, 
+Mystique, Mystique 220 sowie die G100-basierten Grafikkarten 
+unterstützen MCD. Unterstützung für ICD bieten die G200-basierten, 
+G400-basierten sowie die neueren Grafifkkarten von Matrox. (ICD-
+Treiber eignen sich besser zur Optimierung als MCD-Treiber.)
+
+Für die 3D-Hardwarebeschleunigung gelten folgende Einschränkungen:
+
+- Die Beschleunigung ist gegenwärtig nicht verfügbar, wenn mehrere 
+  Karten benutzt werden.
+
+- Der MCD/ICD unterstützt keine 8-bpp- (256 Farben) und 24-bpp-Modi 
+  (16777216 Farben). Die Hardware-Beschleunigung ist möglich bei 
+  den Modi 16 bpp (64 K Farben) und 32 bpp ("True Color").
+
+- Einbußen bei den verfügbaren Auflösungen sind zu erwarten. Alle 
+  3D-Modi erfordern zusätzlichen Speicher für die Doppel- und/oder 
+  Z-Pufferung, und dieser Speicher steht dann nicht mehr für die 
+  Anzeige zur Verfügung.
+
+
+Anmerkungen, Probleme und Einschränkungen
+=========================================
+
+- Computer mit mehreren PCI-Bussen
+
+  Es kann vorkommen, daß das Umschalten zu einer Vollbild-
+  Befehlsaufforderung oder eine andere Modusänderung zu einem 
+  Absturz mit blauem Bildschirm führt, falls eine Karte nicht im 
+  PCI-Bus 0 installiert ist. Das Problem wird im Moment noch 
+  analysiert. In der Zwischenzeit können Sie das Problem umgehen, 
+  indem Sie die Karte an einen anderen PCI-Steckplatz anschließen.
+
+  Bei manchen Systemen meldet Windows NT Konflikte zwischen Karten, 
+  die jenseits der PCI-Brücke installiert wurden. In diesem Fall 
+  kann der Matrox Millennium-Miniport-Treiber nicht auf die eigene 
+  Karte zugreifen. Falls Ihr System die Millennium-Karte nicht 
+  finden kann, schließen Sie versuchsweise an einen anderen 
+  PCI-Steckplatz an.
+
+  Durch die Installation des Microsoft Service-Pack 3 (oder höher) 
+  für Windows NT 4.0 sollten zahlreiche dieser Probleme behoben 
+  werden.
+
+- DirectDraw mit virtuellen Desktops
+
+  Manche DirectDraw-Programme funktionieren mit virtuellen Desktops 
+  nicht richtig. Wir empfehlen das Ausführen von DirectDraw-
+  Programmen mit einem normalen Desktop.
+
+- 3D-Maze-Bildschirmschoner
+
+  Bei Verwendung des "3D-Maze"-Bildschirmschoners kann es zu 
+  Anzeigeproblemen kommen. Diese Probleme treten auf, nachdem der 
+  Microsoft Service-Pack 2 für Windows NT 4.0 installiert ist. 
+  Momentan wird versucht, durch den Service-Pack 3 (oder höher) 
+  diese Anzeigeprobleme zu beheben.
+
+- Ausführen von Winstone 97
+
+  Die Standardeinstellung CenterPOPUP sollte deaktiviert werden, 
+  wenn der Winstone 97-Benchmark-Test ausgeführt wird. Manche Tests 
+  melden u.U. einen Zeitüberschreitungsfehler, wenn CenterPOPUP 
+  verwendet wird.
+
+- Einschränkung bei mehreren Grafikkarten
+
+  Windows NT 4.0 unterstützt höchstens 280 verschiedene 
+  Anzeigemodus-Einstellungen (d.h. eine Kombination aus Auflösung, 
+  Farbpalette und Bildwiederholrate) Wenn in IhremComputer mehr als 
+  eine Matrox-Grafikkarte installiert ist, kann dies unter 
+  Umständen ein Problem werden.
+
+  Wenn der Matrox-Optionsschalter "VESA-Einstellungen" gewählt 
+  wird, wenn sich in Ihrem Computer mehrere Matrox-Karten befinden, 
+  ist die Wahrscheinlichkeit des Auftretens der Windows NT 4.0-
+  Beschränkung in der Anzahl der Anzeigemodi sogar noch höher. Dies 
+  liegt daran, daß die Option "VESA-Einstellungen" für jede 
+  Anzeigeauflösungs- und Farbpaletteneinstellung mehrere 
+  unterschiedliche Bildwiederholraten unterstützt.
+
+  Sind in Ihrem Computer mehrere Matrox-Grafikkarten installiert, 
+  sollten Sie die Option "VESA-Einstellungen" nach Möglichkeit 
+  nicht verwenden. Beachten Sie, daß durch ein Ändern der 
+  Bildwiederholrate mit Hilfe des Microsoft-Dialogfelds 
+  "Bildschirmeigenschaften" die Option "VESA-Einstellungen" 
+  aktiviert wird.
+
+- 3D Studio MAX 1.2
+
+  Wenn Sie beim Ausführen von 3D Studio MAX 1.2 mit dem Matrox
+  HEIDI-Treiber Probleme haben, deaktivieren Sie bei den 
+  "Allgemeine Einstellungen" das Kontrollkästchen "Bus-Mastering 
+  verwenden". Sie greifen auf dieses Kontrollkästchen zu, klicken 
+  Sie auf "Starten" > "Einstellungen" > "Systemsteuerung" > "Matrox-
+  Bildschirmeigenschaften" (Doppelklicken) > "Leistung".
+
+- 3D Studio MAX 2.0
+
+  Das Umschalten zwischen der HEIDI-Software-Emulation und der 
+  OpenGL-Beschleunigung, während 3D Studio MAX 2.0 aktiv ist, kann 
+  bei den Anzeigeanschlüssen Flimmern verursachen, wenn Animationen 
+  wiedergegeben werden. Dieses Problem tritt u.U. auch auf, wenn 
+  Anzeigeeinstellungen (Auflösung oder Farbpalette) geändert 
+  werden, wenn 3D Studio MAX ausgeführt wird. Wenn Sie auf diese 
+  Probleme stoßen, schließen Sie 3D Studio MAX, ändern die 
+  Anzeigeeinstellungen (Auflösung oder Farbpalette), und starten 
+  dann 3D Studio MAX neu.
+
+- Unterstützung der 15-Bit-Farbpalette
+
+  Die 15-Bit-Farbpalette wird nicht mehr unterstützt.
+
+- OpenGL-Unterstützung
+
+  Beachten Sie bitte die folgenden Einschränkungen in bezug auf den 
+  OpenGL (3D)-Treiber, der in Ihrem Matrox-Bildschirmtreiber 
+  enthalten ist:
+
+    - Wenn Sie ein neueres Matrox-Produkt besitzen oder Ihre Matrox-
+      Software vom Hersteller Ihres Computers geliefert wurde, ist 
+      eventuell die vollständige OpenGL-Unterstützung Ihres Matrox-
+      Grafikkartentreibers deaktiviert worden. Einen Matrox-
+      Grafikkartentreiber mit aktivierter vollständiger OpenGL-
+      Unterstützung erhalten Sie über die Matrox-Website 
+      (www.matrox.com/mga). (Wurde Ihr Matrox-Produkt vom 
+      Hersteller Ihres Computers geliefert, können Sie auf der 
+      Website des Herstellers nach einem Grafikkartentreiber 
+      suchen. Bei einem Grafikkartentreiber vom Hersteller Ihres 
+      Computers ist die Wahrscheinlichkeit größer, dass er zusammen 
+      mit Ihrem Computermodell getestet wurde.)
+
+    - Im Modus Mehrfachanzeige unter Windows NT 4.0 ist die OpenGL-
+      Beschleunigung nur verfügbar, wenn die DualHead-Grafik-
+      Hardware die einzige verwendete Hardware ist. (OpenGL-
+      Beschleunigung in Verbindung mit Mehrfachanzeige wird von 
+      Matrox-MMS-Produkten oder bei Vorhandensein von mehr als 
+      einer Grafikkarte in Ihrem Computer nicht unterstützt.)
+
+    - Bei Verwendung von 3D Studio MAX 2.0 können Probleme mit 
+      einem nicht richtig neugezeichneten Viewport auftreten. In 
+      diesem Fall klicken Sie in einen Viewport, um dessen Anzeige 
+      korrekt zu aktualisieren. Dieses Problem tritt bei Version 
+      2.5 (oder höher) von 3D Studio MAX nicht auf.
+
+- Systemspeichervoraussetzungen
+
+  Aufgrund einer Einschränkung in Windows NT 4.0 treten eventuell 
+  Probleme auf, wenn die Systemspeicherkapazität des Computers 
+  geringer als die Grafikspeicherkapazität ist. Um die 
+  Grafikspeicherkapazität in Ihrem Computer zu ermitteln, addieren 
+  Sie die Grafikspeicherkapazität der einzelnen installierten 
+  Matrox-Grafikprodukte in Ihrem Computer.
+
+  In der nachfolgenden Tabelle finden Sie Empfehlungen hinsichtlich 
+  der Systemspeicherkapazität in Abhängigkeit von der Gesamt-
+  Grafikspeicher- kapazität für Windows NT 4.0:
+
+    |   Grafikspeicher   |   Systemspeicher   |
+    |     (insgesamt)    |     (empfohlen)    |
+    +--------------------+--------------------+
+    |        32 MB       |   64 MB oder mehr  |
+    |        64 MB       |  128 MB oder mehr  |
+    |       128 MB       |  192 MB oder mehr  |
+    |       160 MB       |  256 MB oder mehr  |
+
+[English...]
+
+- Full-screen DOS support with multiple graphics chip
+
+[...English]
+
+  Falls sich in Ihrem System mehr als 10 Grafikchips befinden 
+  (z. B. 3 Matrox MMS-Quad-Karten), reagiert Ihr System 
+  möglicherweise nicht mehr, wenn ein DOS-Programm im Vollbildmodus 
+  ausgeführt wird. Falls Ihr DOS-Programm dies unterstützt, führen 
+  Sie es in einem DOS-Fenster aus.
+
+
+Matrox TV-Ausgabe
+=================
+
+Die Matrox Marvel-Karte unterstützt die TV-Ausgabe. Diese 
+Unterstützung ermöglicht die Ausgabe der Anzeigen des Computers auf 
+einem normalen Fernseher und deren Aufzeichnung auf einem 
+Videorecorder, sofern diese Geräte an die Grafikkarte angeschlossen 
+sind.
+
+Empfehlung
+----------
+- Beim Spielen unter Verwendung der TV-Ausgabe empfehlen wir eine 
+  Auflösung von 640 x 480, da die Auflösung von Fernsehern kleiner 
+  als die der meisten Computerbildschirme ist. Wenn Sie eine höhere 
+  Auflösung verwenden (800 x 600 oder 1024 x 768), wirkt die 
+  Anzeige auf dem Fernseher im Vergleich zu der auf dem 
+  Computerbildschirm leicht unscharf -- kleine Details sind auf dem 
+  Fernseher also schwerer zu erkennen.
+
+- (für Matrox G100/G200-Karte)
+  Die TV-Standardausgabeeinstellungen von Matrox sind für die 
+  Darstellung der meisten Computergrafiken (z. B. Computerspiele 
+  oder Windows-Desktop) auf vielen Fernsehern gut geeignet. Es sind 
+  TV-Ausgabeeinstellungen verfügbar, die auf Sendestandards 
+  basieren und besser für die Anzeige von Vollbildvideos geeignet 
+  sind (z. B. aus einer Videodatei). Es gibt folgende Einstellungen:
+
+  NTSC
+     - Helligkeit: 180
+     - Kontrast: 234
+     - Sättigung: 137
+     - Farbton: 0
+
+  PAL
+     - Helligkeit: 167
+     - Kontrast: 255
+     - Sättigung: 138
+     - Farbton: 0
+
+  Hinweis: Um eine optimale Ausgabe zu erreichen, müssen Sie 
+  gegebenenfalls die Einstellungen am Fernseher ändern. Die 
+  Standardeinstellungen vieler Videogeräte sind für Helligkeit, 
+  Kontrast, Sättigung und Farbton höher als die Sendestandards. 
+  Diese Einstellungen sind normalerweise zum Abspielen von Videos, 
+  jedoch nicht für Computergrafiken geeignet. (Aus diesem Grund 
+  liegen die Matrox-Standardeinstellungen unter den für die 
+  Videowiedergabe optimalen Einstellungen.) Weitere Informationen 
+  zum Ändern der Einstellungen am Fernseher finden Sie im 
+  zugehörigen Handbuch.
+
+Weitere Informationen
+---------------------
+Weitere Informationen zu den Anzeigeeinstellungen finden Sie im 
+Matrox-Handbuch und in der Online-Dokumentation. Informationen zum 
+Ändern der Anzeigeauflösung eines Spiels finden Sie in der 
+zugehörigen Dokumentation.
+
+Hinweis: Die Matrox-Funktionen zum Vergrößern und Verkleinern der 
+Anzeige sowie zum virtuellen Desktop werden im TV-Ausgabemodus 
+nicht unterstützt. Darüber hinaus wird der TV-Ausgabemodus nicht 
+unterstützt, wenn mehr als eine Matrox Grafikkarte im Computer 
+installiert ist.
+
+Hinweis: Falls Ihre Matrox-Grafik-Hardware TV-Ausgang mit 
+Vollbildanzeigemodi (DOS) unterstützt, werden unter Windows NT 4.0 
+nur Textanzeigemodi (Modus 02h und 03h) unterstützt.

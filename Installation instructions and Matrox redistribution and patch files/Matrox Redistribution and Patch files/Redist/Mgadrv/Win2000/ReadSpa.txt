@@ -1,0 +1,134 @@
+[Español]
+PDREADME.TXT                MATROX GRAPHICS INC.              2001.10.05
+
+               Matrox PowerDesk para Windows 2000/XP
+
+
+Nota: Es posible que este archivo contenga información de último 
+minuto no traducida a su idioma. Pedimos disculpas por la 
+incomodidad que esto pueda causar.
+
+
+Indice
+======
+
+- Descripción de esta versión
+- Instalación
+- [English...]New features[...English]
+- Más información
+- Notas, problemas y limitaciones
+
+
+Descripción de esta versión
+===========================
+
+El software Matrox PowerDesk incluye un controlador de pantalla y 
+utilidades de pantalla. Con este software, puede sacar el máximo 
+partido al hardware de gráficos Matrox y acceder a las 
+características adicionales de Matrox relacionadas con las 
+pantallas.
+
+
+Instalación
+===========
+
+Para instalar Matrox PowerDesk, inicie el programa "setup" 
+incluido y, a continuación, siga las instrucciones en pantalla.
+
+El programa de instalación instalará el software sólo si el 
+PC cuenta con un modelo de tarjeta de gráficos Matrox admitido por 
+dicho programa.
+
+
+[English...]
+
+New features
+============
+
+This software includes new features, especially for Matrox 
+hardware with DualHead support. These include:
+
+- The use of different DualHead features (Multi-Display, DVDMax, 
+  Zoom, and Clone) *without* restarting Windows
+
+- Easier-to-use interface for DualHead controls
+
+- Controls for dividing graphics resources (memory and bandwidth) 
+  between your main and secondary displays
+
+- More features accessible through user-defined hot keys 
+  (keyboard shortcuts)
+
+[...English]
+
+
+Más información
+===============
+
+Para obtener más información acerca de Matrox PowerDesk, consulte 
+el fichero de ayuda incluido. Para obtener información específica 
+sobre la tarjeta de gráficos Matrox, consulte el manual de Matrox 
+o del sistema.
+
+
+Notas, problemas y limitaciones
+===============================
+
+- Instalación en versiones de distintos idiomas de Windows
+
+  Si instala el software en un idioma distinto al idioma de su 
+  sistema operativo (por ejemplo, software en inglés en un sistema 
+  japonés), es posible que experimente problemas de presentación 
+  imcompleta de texto y controles de cuadros de diálogo. Esto se 
+  debe a la diferencia en las fuentes del sistema.
+
+- Soporte OpenGL (3D)
+
+  Si tiene un producto Matrox nuevo o su software Matrox 
+  le fue suministrado por el fabricante del PC, el controlador 
+  de pantalla Matrox puede no ser totalmente compatible con 
+  OpenGL. Para un controlador de pantalla Matrox con total 
+  compatibilidad con OpenGL, consulte el sitio web de Matrox 
+  (www.matrox.com/mga). (Si el producto Matrox le fue 
+  suministrado por el fabricante del PC, consulte el sitio web 
+  de ese fabricante para localizar el controlador de pantalla. 
+  Un controlador de pantalla proporcionado por el fabricante de 
+  su PC es más fácil de probar en el modelo concreto de PC.)
+
+[English...]
+
+- Video playback with DualHead modes
+
+  If you have a a DualHead supporting graphics card and you're 
+  using DualHead Multi-Display, Clone, or Zoom mode, digital video 
+  may appear as a solid color on your secondary display. This can 
+  happen if video is played using the hardware-overlay feature of 
+  your Matrox graphics card. Video played using the overlay 
+  feature is generally of higher quality but it can be viewed only 
+  on your main display.
+
+  Because only one program at a time can use the overlay feature, 
+  any other program started while the overlay feature is used 
+  won't be able to use the feature. The overlay feature will be 
+  available to the first program to start after the program 
+  currently using the overlay is closed.
+
+  For video that normally uses the hardware-overlay feature, you 
+  may be able to view the digital video on your secondary display 
+  by running another instance of the video player or by using a 
+  video player that dynamically supports both hardware-overlay and 
+  non hardware-overlay video playback (such as Microsoft Media 
+  Player 7).
+
+[...English]
+
+- La paleta colores 15 bitios para Windows 2000/XP
+
+  Por usuarios advanzados: Por defecto, la paleta de colores 15 
+  bitios esta indisponible bajo Windows 2000/XP. Si tiene 
+  necesidad de usar esta paleta de colores, la puede volver a ser 
+  disponible añadando dentro la base de registro la valor 
+  "User.Enable15Bpp" y configurar aquella a "1". Si añade esta 
+  valor, añadirla bajor "HKEY_LOCAL_MACHINE" > "SYSTEM" > 
+  "CurrentControlSet" > "Services" > "mgau" o "g200" o "g400" > 
+  "Device0". El tipo de valor es "REG_DWORD".

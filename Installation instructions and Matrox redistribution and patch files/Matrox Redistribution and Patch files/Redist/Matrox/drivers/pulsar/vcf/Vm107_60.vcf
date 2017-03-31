@@ -1,0 +1,121 @@
+/---------------------------------------------------------------------------
+/                                                                           
+/   Copyright (c) 1995  Matrox Electronic System                            
+/                                                                           
+/   filename:   VM107_60.VCF                                                
+/                                                                           
+/   Synopsis:   VCF for (1280 x 1024) 1 bands 8 bits at 60 Hz 
+/                                                                           
+/   Revision history: 0.0 Alpha release                                     
+/---------------------------------------------------------------------------
+[CONFIG_FILE]
+PULSAR
+Mon Oct 16 16:08:40 1995
+Alpha release
+[INFO_FILE_REV]
+0000.0000.0000
+PULSAR
+/
+[REG_DIGIT]
+INFO_XSIZE                   0x0500
+INFO_YSIZE                   0x0400
+INFO_MODE                    0x0001
+INFO_DEPTH                   0x0008
+INFO_BAND                    0x0001
+/
+COLUMN                       0x00
+ROW                          0x00
+POINTS                       0x00
+VIDSIZE                      0x00
+/
+SEQUENCER_(00)               0x03
+SEQUENCER_(01)               0x01
+SEQUENCER_(02)               0x03
+SEQUENCER_(03)               0x00
+SEQUENCER_(04)               0x02
+/
+MISC                         0xef
+/
+CRTC_(00)                    0xd3
+CRTC_(01)                    0x9f
+CRTC_(02)                    0x9f
+CRTC_(03)                    0x97
+CRTC_(04)                    0xa3
+CRTC_(05)                    0x13
+CRTC_(06)                    0x1e
+CRTC_(07)                    0x5a
+CRTC_(08)                    0x00
+CRTC_(09)                    0x60
+CRTC_(0A)                    0x20
+CRTC_(0B)                    0x00
+CRTC_(0C)                    0x00
+CRTC_(0D)                    0x00
+CRTC_(0E)                    0x00
+CRTC_(0F)                    0x00
+CRTC_(10)                    0x02
+CRTC_(11)                    0x25
+CRTC_(12)                    0xff
+CRTC_(13)                    0xa0
+CRTC_(14)                    0x00
+CRTC_(15)                    0xff
+CRTC_(16)                    0x1f
+CRTC_(17)                    0xc3
+CRTC_(18)                    0xff
+/
+CRTC_(22)                    0xc0
+CRTC_(23)                    0x00
+CRTC_(24)                    0x00
+CRTC_(25)                    0x00
+CRTC_(26)                    0x34
+/
+ATTRIBUTE_(00)               0x00
+ATTRIBUTE_(01)               0x01
+ATTRIBUTE_(02)               0x02
+ATTRIBUTE_(03)               0x03
+ATTRIBUTE_(04)               0x04
+ATTRIBUTE_(05)               0x05
+ATTRIBUTE_(06)               0x06
+ATTRIBUTE_(07)               0x07
+ATTRIBUTE_(08)               0x08
+ATTRIBUTE_(09)               0x09
+ATTRIBUTE_(0A)               0x0a
+ATTRIBUTE_(0B)               0x0b
+ATTRIBUTE_(0C)               0x0c
+ATTRIBUTE_(0D)               0x0d
+ATTRIBUTE_(0E)               0x0e
+ATTRIBUTE_(0F)               0x0f
+ATTRIBUTE_(10)               0x41
+ATTRIBUTE_(11)               0x00
+ATTRIBUTE_(12)               0x0f
+ATTRIBUTE_(13)               0x00
+ATTRIBUTE_(14)               0x00
+/
+GAPHCTL_(00)                 0x00
+GAPHCTL_(01)                 0x00
+GAPHCTL_(02)                 0x00
+GAPHCTL_(03)                 0x00
+GAPHCTL_(04)                 0x00
+GAPHCTL_(05)                 0x50
+GAPHCTL_(06)                 0x0f
+GAPHCTL_(07)                 0x00
+GAPHCTL_(08)                 0xff
+/
+CRTC_EXT_(00)                0x00
+CRTC_EXT_(01)                0x40
+CRTC_EXT_(02)                0xa1
+CRTC_EXT_(03)                0x89
+CRTC_EXT_(04)                0x00
+CRTC_EXT_(05)                0x00
+/
+PCLK_(00)                    0x11
+PCLK_(01)                    0xe8
+PCLK_(02)                    0xb1
+/
+MCLK_(00)                    0x3a
+MCLK_(01)                    0xfd
+MCLK_(02)                    0xb2
+/
+LCLK_(00)                    0x3d
+LCLK_(01)                    0xf1
+LCLK_(02)                    0xf2
+[EOF]

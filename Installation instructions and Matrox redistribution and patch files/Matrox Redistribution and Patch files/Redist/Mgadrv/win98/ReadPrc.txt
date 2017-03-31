@@ -1,0 +1,85 @@
+[Chinese (Simplified)]
+PDREADME.TXT                MATROX GRAPHICS INC.              2001.08.03
+
+                 Matrox PowerDesk -- Windows 98/Me
+
+
+附注: 本文件可能包含一些最新信息未及译成您所用的语言。我们对由此给
+您带来不便表示歉意。
+
+
+目录
+====
+
+- 本版说明
+- 安装
+- [English...]New features[...English]
+- 其他信息
+- 注意事项, 问题及局限性
+
+
+本版说明
+========
+
+Matrox PowerDesk 软件包括一个显示驱动程序和多个显示实用程序。使用本
+软件, 您可以充分利用 Matrox 图形硬件的功能, 并且可以访问 Matrox 其
+它与显示相关的功能。
+
+
+安装
+====
+
+要安装 Matrox PowerDesk, 启动其中所包含的 "安装" 程序, 然后按照屏幕
+上的指导信息进行操作。
+
+如果您的计算机上安装了安装程序所支持的 Matrox 图形卡型号, 则安装
+程序将只安装软件。
+
+
+[English...]
+
+New features
+============
+
+This software includes new features, especially for Matrox 
+hardware with DualHead support. These include:
+
+- The use of different DualHead features (Multi-Display, DVDMax, 
+  Zoom, and Clone) *without* restarting Windows
+
+- Easier-to-use interface for DualHead controls
+
+- Controls for dividing graphics resources (memory and bandwidth) 
+  between your main and secondary displays
+
+- More features accessible through user-defined hot keys 
+  (keyboard shortcuts)
+
+[...English]
+
+
+其他信息
+========
+
+有关 Matrox PowerDesk 的更多信息, 参见其中所包含的帮助文件。有关您
+所使用的 Matrox 图形卡的特定信息, 参见 Matrox 或系统手册。
+
+
+注意事项, 问题及局限性
+======================
+
+- 在不同语言版本的 Windows 中安装
+
+  如您安装的软件使用的语言不同于操作系统使用的语言 (例如, 英语软件
+  安装到日语系统内), 您也许会遇到文字和对话框控制被切断的问题。这是
+  因系统字体不同造成的。
+
+- OpenGL (3D) 支持
+
+  如果您有新版本的 Matrox 产品或您的 Matrox 软件是由计算机制造商
+  提供的, 则您的 Matrox 显示驱动程序将完全禁用 OpenGL 支持。
+  对于启用了完全 OpenGL 支持的 Matrox 显示驱动程序, 请访问
+  Matrox Web 站点 (www.matrox.com/mga)。(如果您的 Matrox 
+  产品是由您的计算机制造商提供的, 请核查制造商的 Web 站点
+  以获得显示驱动程序。计算机制造商提供的显示驱动程序更有可能
+  通过计算机模式的测试。)

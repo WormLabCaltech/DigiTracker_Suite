@@ -1,0 +1,52 @@
+--------------------------------------------------------------------------------
+              Matrox Imaging Library (7.1) milcronos.txt Readme File
+                                  February 25th, 2002
+     Copyright © 2002 by Matrox Electronic Systems Ltd. All rights reserved.
+--------------------------------------------------------------------------------
+
+This document explains the current limitations and particularities when using
+MIL with Matrox Cronos.
+
+It also presents last minute information that did not make it into the manual
+or on-line help. Note that this text file serves to complement your manual. The 
+information found in this file overrides your formally documented material.
+
+Contents
+
+1. Matrox Cronos with MIL.
+   1.1 Limitations, particularities, and last minute information for Matrox
+       Cronos.
+2. Matrox Cronos with ActiveMIL.
+
+
+1. Matrox Cronos with MIL.
+
+1.1 Limitations, particularities, and last minute information for Matrox
+    Cronos.
+
+- MdigChannel()
+    - Fast channel switching is not supported on Matrox Cronos revision 0. It
+      is supported on Matrox Cronos revision 1 and higher.
+
+- MdigHookFunction()
+    - When performing fast channel switching:
+           - It is possible that the field type is not correctly detected for
+             the first grabbed field or frame after a channel switch. For example
+             in frame mode it is possible to receive 2 hooks of M_GRAB_FIELD_END_ODD
+             without receiving the hook of M_GRAB_FIELD_END_EVEN. In field mode it
+             is possible to receive a hook of M_GRAB_FIELD_END_ODD when it should have
+             been an even. The hooks of M_GRAB_START, M_GRAB_END, M_GRAB_FRAME_START,
+             M_GRAB_FRAME_END and M_GRAB_FIELD_END are always correctly generated.
+
+           - For the first grabbed field of frame after a channel switch the hooks of
+             M_FRAME_START, M_FIELD_START, M_FIELD_START_ODD and M_FIELD_START_EVEN are
+             not generated.
+
+- MsysHookFunction() is not yet implemented.
+
+
+2. Matrox Cronos with ActiveMIL.
+
+   - All bug fixes and known bugs discussed in this file apply to Matrox
+     Cronos with ActiveMIL as well.
+

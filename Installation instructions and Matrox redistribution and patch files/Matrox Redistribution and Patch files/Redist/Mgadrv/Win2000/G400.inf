@@ -1,0 +1,811 @@
+[Version]
+;CatalogFile = 
+Signature = $Windows NT$
+Provider = Matrox Graphics Inc.
+ClassGuid = {4d36e968-e325-11ce-bfc1-08002be10318}
+Class = Display
+DriverVer=10/10/2001, 5.80.006.0
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+g400dhm.sys = 1
+g400dhd.dll = 1
+g400icd.dll = 1
+mgabg.sys = 1
+mgabg.exe = 1
+SuppEng.rtf = 1
+PDeskEng.cnt = 1
+PDeskEng.hlp = 1
+PDResEng.dll = 1
+pdmmdEng.hlp = 1
+pdmmdEng.cnt = 1
+ReadEng.txt = 1
+SuppFre.rtf = 1
+PDeskFre.cnt = 1
+PDeskFre.hlp = 1
+PDResFre.dll = 1
+pdmmdFre.hlp = 1
+pdmmdFre.cnt = 1
+ReadFre.txt = 1
+SuppGer.rtf = 1
+PDeskGer.cnt = 1
+PDeskGer.hlp = 1
+PDResGer.dll = 1
+pdmmdGer.hlp = 1
+pdmmdGer.cnt = 1
+ReadGer.txt = 1
+SuppIta.rtf = 1
+PDeskIta.cnt = 1
+PDeskIta.hlp = 1
+PDResIta.dll = 1
+pdmmdIta.hlp = 1
+pdmmdIta.cnt = 1
+ReadIta.txt = 1
+SuppSpa.rtf = 1
+PDeskSpa.cnt = 1
+PDeskSpa.hlp = 1
+PDResSpa.dll = 1
+pdmmdSpa.hlp = 1
+pdmmdSpa.cnt = 1
+ReadSpa.txt = 1
+pdesk.exe = 1
+pdtools.dll = 1
+pdpages.dll = 1
+pdkernel.dll = 1
+pdshell.dll = 1
+pdbkgnd.bmp = 1
+pdmonlst.mpl = 1
+pdeskcmd.exe = 1
+pduninst.exe = 1
+pdmmd.exe = 1
+pdmmd.dll = 1
+pdmmdres.dll = 1
+
+[DestinationDirs]
+DefaultDestDir = 11
+Miniport.G400 = 12
+MGABG.DRV = 12
+Files.PDesk = 11, PDesk
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[Manufacturer]
+%Matrox% = Mfg.Matrox
+
+[Mfg.Matrox]
+;---------------
+;G400 - English
+;---------------
+%Str00%%ENG%=IN00.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_3693102B
+%Str01%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_217D102B
+%Str02%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_2179102B
+%Str02%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_2159102B
+%Str03%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_19F8102B
+%Str03%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_19D8102B
+%Str04%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_04001458
+%Str03%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_0378102B
+%Str03%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_0338102B
+%Str05%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_5A80102B
+%Str06%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_5EB0102B
+%Str07%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_B16F0E11
+%Str08%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_1701102B
+%Str08%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_1700102B
+%Str09%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_5F51102B
+%Str10%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_5F50102B
+%Str09%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_5DD0102B
+%Str10%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_5F52102B
+%Str11%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_41E0102B
+%Str12%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_9010102B
+;---------------
+;G400 - Français
+;---------------
+%Str00%%FRE%=IN00.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_3693102B
+%Str01%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_217D102B
+%Str02%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_2179102B
+%Str02%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_2159102B
+%Str03%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_19F8102B
+%Str03%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_19D8102B
+%Str04%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_04001458
+%Str03%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_0378102B
+%Str03%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_0338102B
+%Str05%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_5A80102B
+%Str06%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_5EB0102B
+%Str07%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_B16F0E11
+%Str08%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_1701102B
+%Str08%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_1700102B
+%Str09%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_5F51102B
+%Str10%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_5F50102B
+%Str09%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_5DD0102B
+%Str10%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_5F52102B
+%Str11%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_41E0102B
+%Str12%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_9010102B
+;---------------
+;G400 - Italiano
+;---------------
+%Str00%%ITA%=IN00.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_3693102B
+%Str01%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_217D102B
+%Str02%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_2179102B
+%Str02%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_2159102B
+%Str03%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_19F8102B
+%Str03%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_19D8102B
+%Str04%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_04001458
+%Str03%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_0378102B
+%Str03%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_0338102B
+%Str05%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_5A80102B
+%Str06%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_5EB0102B
+%Str07%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_B16F0E11
+%Str08%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_1701102B
+%Str08%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_1700102B
+%Str09%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_5F51102B
+%Str10%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_5F50102B
+%Str09%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_5DD0102B
+%Str10%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_5F52102B
+%Str11%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_41E0102B
+%Str12%%ITA%=IN01.ITA,PCI\VEN_102B&DEV_0525&SUBSYS_9010102B
+;---------------
+;G400 - Deutsch
+;---------------
+%Str00%%GER%=IN00.GER,PCI\VEN_102B&DEV_0525&SUBSYS_3693102B
+%Str01%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_217D102B
+%Str02%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_2179102B
+%Str02%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_2159102B
+%Str03%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_19F8102B
+%Str03%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_19D8102B
+%Str04%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_04001458
+%Str03%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_0378102B
+%Str03%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_0338102B
+%Str05%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_5A80102B
+%Str06%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_5EB0102B
+%Str07%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_B16F0E11
+%Str08%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_1701102B
+%Str08%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_1700102B
+%Str09%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_5F51102B
+%Str10%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_5F50102B
+%Str09%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_5DD0102B
+%Str10%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_5F52102B
+%Str11%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_41E0102B
+%Str12%%GER%=IN01.GER,PCI\VEN_102B&DEV_0525&SUBSYS_9010102B
+;---------------
+;G400 - Espanol
+;---------------
+%Str00%%SPA%=IN00.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_3693102B
+%Str01%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_217D102B
+%Str02%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_2179102B
+%Str02%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_2159102B
+%Str03%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_19F8102B
+%Str03%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_19D8102B
+%Str04%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_04001458
+%Str03%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_0378102B
+%Str03%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_0338102B
+%Str05%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_5A80102B
+%Str06%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_5EB0102B
+%Str07%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_B16F0E11
+%Str08%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_1701102B
+%Str08%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_1700102B
+%Str09%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_5F51102B
+%Str10%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_5F50102B
+%Str09%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_5DD0102B
+%Str10%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_5F52102B
+%Str11%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_41E0102B
+%Str12%%SPA%=IN01.SPA,PCI\VEN_102B&DEV_0525&SUBSYS_9010102B
+
+;==============================
+;G400 Section(s) 
+;==============================
+[IN00.ENG]
+AddReg = AddReg.Setup.G400, AddReg.Web, AddReg.Web.ENG
+CopyFiles = Miniport.G400, Driver.G400, Driver.Icd.G400, MGABG.DRV, MGABG.EXE, Files.PDesk
+
+[IN00.ENG.Services]
+AddService = G400DH,0x00000002,Service.G400
+AddService = MGABGEXE,,Service.MGABG
+
+[IN00.ENG.SoftwareSettings]
+AddReg = AddReg.G400, AddReg.Icd.G400, AddReg.PackageVer, AddReg.PDesk, AddReg.Settings.ENG, AddReg.VidParms, AddReg.Modes, AddReg.MGABG, AddReg.DH, AddReg.Languages, AddReg.DefModes
+DelReg = DelReg.DriverSettings, DelReg.Icd.G400, DelReg.PDesk
+
+[IN00.FRE]
+AddReg = AddReg.Setup.G400, AddReg.Web, AddReg.Web.FRE
+CopyFiles = Miniport.G400, Driver.G400, Driver.Icd.G400, MGABG.DRV, MGABG.EXE, Files.PDesk
+
+[IN00.FRE.Services]
+AddService = G400DH,0x00000002,Service.G400
+AddService = MGABGEXE,,Service.MGABG
+
+[IN00.FRE.SoftwareSettings]
+AddReg = AddReg.G400, AddReg.Icd.G400, AddReg.PackageVer, AddReg.PDesk, AddReg.Settings.FRE, AddReg.VidParms, AddReg.Modes, AddReg.MGABG, AddReg.DH, AddReg.Languages, AddReg.DefModes
+DelReg = DelReg.DriverSettings, DelReg.Icd.G400, DelReg.PDesk
+
+[IN00.ITA]
+AddReg = AddReg.Setup.G400, AddReg.Web, AddReg.Web.ITA
+CopyFiles = Miniport.G400, Driver.G400, Driver.Icd.G400, MGABG.DRV, MGABG.EXE, Files.PDesk
+
+[IN00.ITA.Services]
+AddService = G400DH,0x00000002,Service.G400
+AddService = MGABGEXE,,Service.MGABG
+
+[IN00.ITA.SoftwareSettings]
+AddReg = AddReg.G400, AddReg.Icd.G400, AddReg.PackageVer, AddReg.PDesk, AddReg.Settings.ITA, AddReg.VidParms, AddReg.Modes, AddReg.MGABG, AddReg.DH, AddReg.Languages, AddReg.DefModes
+DelReg = DelReg.DriverSettings, DelReg.Icd.G400, DelReg.PDesk
+
+[IN00.GER]
+AddReg = AddReg.Setup.G400, AddReg.Web, AddReg.Web.GER
+CopyFiles = Miniport.G400, Driver.G400, Driver.Icd.G400, MGABG.DRV, MGABG.EXE, Files.PDesk
+
+[IN00.GER.Services]
+AddService = G400DH,0x00000002,Service.G400
+AddService = MGABGEXE,,Service.MGABG
+
+[IN00.GER.SoftwareSettings]
+AddReg = AddReg.G400, AddReg.Icd.G400, AddReg.PackageVer, AddReg.PDesk, AddReg.Settings.GER, AddReg.VidParms, AddReg.Modes, AddReg.MGABG, AddReg.DH, AddReg.Languages, AddReg.DefModes
+DelReg = DelReg.DriverSettings, DelReg.Icd.G400, DelReg.PDesk
+
+[IN00.SPA]
+AddReg = AddReg.Setup.G400, AddReg.Web, AddReg.Web.SPA
+CopyFiles = Miniport.G400, Driver.G400, Driver.Icd.G400, MGABG.DRV, MGABG.EXE, Files.PDesk
+
+[IN00.SPA.Services]
+AddService = G400DH,0x00000002,Service.G400
+AddService = MGABGEXE,,Service.MGABG
+
+[IN00.SPA.SoftwareSettings]
+AddReg = AddReg.G400, AddReg.Icd.G400, AddReg.PackageVer, AddReg.PDesk, AddReg.Settings.SPA, AddReg.VidParms, AddReg.Modes, AddReg.MGABG, AddReg.DH, AddReg.Languages, AddReg.DefModes
+DelReg = DelReg.DriverSettings, DelReg.Icd.G400, DelReg.PDesk
+
+[AddReg.DH]
+HKR,,Default.DualHead.Enable,0x00000001,01,00,00,00
+HKR,,Default.DualHead.VideoTV.Enable,0x00000001,01,00,00,00
+
+[IN01.ENG]
+AddReg = AddReg.Setup.G400, AddReg.Web, AddReg.Web.ENG
+CopyFiles = Miniport.G400, Driver.G400, Driver.Icd.G400, MGABG.DRV, MGABG.EXE, Files.PDesk
+
+[IN01.ENG.Services]
+AddService = G400DH,0x00000002,Service.G400
+AddService = MGABGEXE,,Service.MGABG
+
+[IN01.ENG.SoftwareSettings]
+AddReg = AddReg.G400, AddReg.Icd.G400, AddReg.PackageVer, AddReg.PDesk, AddReg.Settings.ENG, AddReg.VidParms, AddReg.Modes, AddReg.MGABG, AddReg.Languages, AddReg.DefModes
+DelReg = DelReg.DriverSettings, DelReg.Icd.G400, DelReg.PDesk
+
+[IN01.FRE]
+AddReg = AddReg.Setup.G400, AddReg.Web, AddReg.Web.FRE
+CopyFiles = Miniport.G400, Driver.G400, Driver.Icd.G400, MGABG.DRV, MGABG.EXE, Files.PDesk
+
+[IN01.FRE.Services]
+AddService = G400DH,0x00000002,Service.G400
+AddService = MGABGEXE,,Service.MGABG
+
+[IN01.FRE.SoftwareSettings]
+AddReg = AddReg.G400, AddReg.Icd.G400, AddReg.PackageVer, AddReg.PDesk, AddReg.Settings.FRE, AddReg.VidParms, AddReg.Modes, AddReg.MGABG, AddReg.Languages, AddReg.DefModes
+DelReg = DelReg.DriverSettings, DelReg.Icd.G400, DelReg.PDesk
+
+[IN01.ITA]
+AddReg = AddReg.Setup.G400, AddReg.Web, AddReg.Web.ITA
+CopyFiles = Miniport.G400, Driver.G400, Driver.Icd.G400, MGABG.DRV, MGABG.EXE, Files.PDesk
+
+[IN01.ITA.Services]
+AddService = G400DH,0x00000002,Service.G400
+AddService = MGABGEXE,,Service.MGABG
+
+[IN01.ITA.SoftwareSettings]
+AddReg = AddReg.G400, AddReg.Icd.G400, AddReg.PackageVer, AddReg.PDesk, AddReg.Settings.ITA, AddReg.VidParms, AddReg.Modes, AddReg.MGABG, AddReg.Languages, AddReg.DefModes
+DelReg = DelReg.DriverSettings, DelReg.Icd.G400, DelReg.PDesk
+
+[IN01.GER]
+AddReg = AddReg.Setup.G400, AddReg.Web, AddReg.Web.GER
+CopyFiles = Miniport.G400, Driver.G400, Driver.Icd.G400, MGABG.DRV, MGABG.EXE, Files.PDesk
+
+[IN01.GER.Services]
+AddService = G400DH,0x00000002,Service.G400
+AddService = MGABGEXE,,Service.MGABG
+
+[IN01.GER.SoftwareSettings]
+AddReg = AddReg.G400, AddReg.Icd.G400, AddReg.PackageVer, AddReg.PDesk, AddReg.Settings.GER, AddReg.VidParms, AddReg.Modes, AddReg.MGABG, AddReg.Languages, AddReg.DefModes
+DelReg = DelReg.DriverSettings, DelReg.Icd.G400, DelReg.PDesk
+
+[IN01.SPA]
+AddReg = AddReg.Setup.G400, AddReg.Web, AddReg.Web.SPA
+CopyFiles = Miniport.G400, Driver.G400, Driver.Icd.G400, MGABG.DRV, MGABG.EXE, Files.PDesk
+
+[IN01.SPA.Services]
+AddService = G400DH,0x00000002,Service.G400
+AddService = MGABGEXE,,Service.MGABG
+
+[IN01.SPA.SoftwareSettings]
+AddReg = AddReg.G400, AddReg.Icd.G400, AddReg.PackageVer, AddReg.PDesk, AddReg.Settings.SPA, AddReg.VidParms, AddReg.Modes, AddReg.MGABG, AddReg.Languages, AddReg.DefModes
+DelReg = DelReg.DriverSettings, DelReg.Icd.G400, DelReg.PDesk
+
+;---------------
+; G400 shared
+;---------------
+[DelReg.DriverSettings]
+HKR,,User.AGP
+HKR,,CapabilityOverride
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Run,MGABG
+HKR,,User.VPEEnable
+HKR,,User.EnableDualView
+
+[AddReg.Setup.G400]
+HKR,Settings,InstalledDisplayDrivers,0x00010000,G400DHD
+HKR,Settings,VgaCompatible,0x00010001,0
+
+[AddReg.G400]
+HKR,,InstalledDisplayDrivers,0x00010000,G400DHD
+HKR,,VgaCompatible,0x00010001,0
+HKR,,User.EnableDualView,0x00000001,00,00,00,00
+HKR,,User3d.Enable8bppIn32bpp,0x00000001,01,00,00,00
+
+[Service.G400]
+ServiceType = 0x00000001
+StartType = 3
+ErrorControl = 0
+ServiceBinary = %12%\g400dhm.sys
+LoadOrderGroup = Video
+
+[Miniport.G400]
+g400dhm.sys,,,0x00000004
+
+[Driver.G400]
+g400dhd.dll,,,0x00000004
+
+[DelReg.Icd.G400]
+HKLM,Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers,G400ICD
+
+[AddReg.Icd.G400]
+HKLM,Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers,G400ICD,,G400Icd.dll
+
+[Driver.Icd.G400]
+g400icd.dll,,,0x00000004
+
+[AddReg.PackageVer]
+HKR,,PackageVer,,"5.80.006"
+HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,PDeskVer,,"6.80.006"
+
+[AddReg.PDesk]
+HKCR,CLSID\{F8E7DB61-9CA0-11d1-AD83-00A024D24BF3},,,"Matrox Powerdesk Kernel"
+HKCR,CLSID\{F8E7DB61-9CA0-11d1-AD83-00A024D24BF3}\InProcServer32,,,%11%"\PDesk\PDKERNEL.DLL"
+HKCR,CLSID\{F8E7DB61-9CA0-11d1-AD83-00A024D24BF3}\InProcServer32,ThreadingModel,,Apartment
+HKCR,CLSID\{4A741382-48B4-11d2-AD84-00A024D24BF3},,,"Matrox PowerDesk Properties"
+HKCR,CLSID\{4A741382-48B4-11d2-AD84-00A024D24BF3}\InProcServer32,,,%11%"\PDesk\PDPAGES.DLL"
+HKCR,CLSID\{4A741382-48B4-11d2-AD84-00A024D24BF3}\InProcServer32,ThreadingModel,,Apartment
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Device\shellex\PropertySheetHandlers\Matrox PowerDesk Properties,,,{4A741382-48B4-11d2-AD84-00A024D24BF3}
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Run,"Matrox Powerdesk",,%11%\"PDesk\PDesk.exe /Autolaunch"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Matrox Graphics Uninstaller,UninstallString,,%11%\PDesk\PDUninst.exe
+HKLM,Software\Matrox\PowerDesk\Version6\WindowControl\AppWindowPosition\Exclude,VideoRenderer,0x00010001,1
+HKLM,Software\Matrox\PowerDesk\Version6\MultiDesktop\Exclude,SysFader,0x00000001,01
+
+[DelReg.PDesk]
+HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,InstalledLanguages
+
+[AddReg.Settings.ENG]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\Matrox Graphics Uninstaller,DisplayName,,"Matrox Graphics Software (remove only)"
+HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,SelectedLanguage,,"ENG"
+
+[AddReg.VidParms]
+HKR,,Graphic.320.200,0x00000001,\
+55,00,24,00,C5,3E,00,00,20,00,20,00,40,00,03,00,03,00,10,00,00,00,00,00,\
+4a,00,1f,00,0a,32,00,00,08,00,20,00,30,00,03,00,03,00,10,00,00,00,00,00
+HKR,,Graphic.320.240,0x00000001,\
+55,00,2b,00,4d,44,00,00,08,00,20,00,30,00,03,00,03,00,10,00,00,00,00,00,\
+3f,00,20,00,0a,32,00,00,08,00,20,00,30,00,03,00,03,00,10,00,00,00,00,00
+HKR,,Graphic.512.384,0x00000001,\
+55,00,22,00,da,55,00,00,10,00,40,00,30,00,01,00,03,00,10,00,00,00,00,00,\
+4e,00,20,00,c0,4e,00,00,10,00,40,00,30,00,01,00,03,00,10,00,00,00,00,00
+HKR,,Graphic.640.400,0x00000001,\
+55,00,26,00,ee,7a,00,00,20,00,40,00,60,00,01,00,03,00,29,00,00,00,00,00,\
+4b,00,20,00,57,62,00,00,10,00,60,00,30,00,01,00,03,00,10,00,00,00,00,00
+HKR,,Graphic.640.480,0x00000001,\
+3c,00,20,00,57,62,00,00,10,00,60,00,30,00,0a,00,02,00,21,00,00,00,00,00,\
+48,00,25,00,0c,7b,00,00,18,00,28,00,80,00,09,00,03,00,1c,00,00,00,00,00,\
+4b,00,26,00,0c,7b,00,00,10,00,40,00,78,00,01,00,03,00,10,00,00,00,00,00,\
+55,00,2b,00,a0,8c,00,00,38,00,38,00,50,00,01,00,03,00,19,00,00,00,00,00
+HKR,,Graphic.800.600,0x00000001,\
+38,00,23,00,a0,8c,00,00,18,00,48,00,80,00,01,00,02,00,16,00,0c,00,00,00,\
+3c,00,26,00,40,9c,00,00,28,00,80,00,58,00,01,00,04,00,17,00,0c,00,00,00,\
+48,00,30,00,50,c3,00,00,38,00,78,00,40,00,25,00,06,00,17,00,0c,00,00,00,\
+4b,00,2f,00,5c,c1,00,00,10,00,50,00,a0,00,01,00,03,00,15,00,0c,00,00,00,\
+55,00,36,00,ba,db,00,00,20,00,40,00,98,00,01,00,03,00,1b,00,0c,00,00,00
+HKR,,Graphic.848.480,0x00000001,\
+3c,00,1f,00,d6,83,00,00,10,00,70,00,70,00,06,00,08,00,17,00,00,00,00,00
+HKR,,Graphic.856.480,0x00000001,\
+3c,00,1e,00,0c,7b,00,00,20,00,40,00,60,00,04,00,08,00,08,00,00,00,00,00
+HKR,,Graphic.864.480,0x00000001,\
+3c,00,1e,00,f6,7c,00,00,18,00,50,00,68,00,01,00,03,00,0d,00,08,00,00,00
+HKR,,Graphic.1024.768,0x00000001,\
+3c,00,30,00,e8,fd,00,00,18,00,88,00,a0,00,03,00,06,00,1d,00,00,00,00,00,\
+46,00,38,00,f8,24,01,00,18,00,88,00,90,00,03,00,06,00,1d,00,00,00,00,00,\
+4b,00,3c,00,9e,33,01,00,10,00,60,00,b0,00,01,00,03,00,1c,00,0c,00,00,00,\
+55,00,45,00,24,71,01,00,30,00,60,00,d0,00,01,00,03,00,24,00,0c,00,00,00,\
+2b,00,23,00,64,af,00,00,08,00,b0,00,38,00,00,00,04,00,14,00,0d,00,00,00
+HKR,,Graphic.1072.600,0x00000001,\
+3c,00,25,00,b6,c8,00,00,30,00,68,00,98,00,01,00,03,00,12,00,08,00,00,00
+HKR,,Graphic.1152.864,0x00000001,\
+3c,00,36,00,80,38,01,00,20,00,60,00,c0,00,01,00,03,00,20,00,00,00,00,00,\
+46,00,40,00,24,71,01,00,20,00,60,00,c8,00,01,00,03,00,2c,00,00,00,00,00,\
+4b,00,44,00,e0,a5,01,00,40,00,80,00,00,01,01,00,03,00,20,00,0c,00,00,00,\
+55,00,4d,00,9c,da,01,00,40,00,80,00,e0,00,01,00,03,00,2b,00,00,00,00,00
+HKR,,Graphic.1280.720,0x00000001,\
+3c,00,2d,00,d4,2a,01,00,30,00,b0,00,c0,00,04,00,08,00,12,00,00,00,00,00
+HKR,,Graphic.1280.768,0x00000001,\
+38,00,2d,00,76,29,01,00,30,00,70,00,f8,00,01,00,03,00,1e,00,00,00,00,00
+HKR,,Graphic.1280.800,0x00000001,\
+3C,00,32,00,2C,46,01,00,48,00,80,00,C8,00,01,00,03,00,18,00,08,00,00,00,\
+4B,00,3F,00,04,A3,01,00,50,00,88,00,D8,00,01,00,03,00,1F,00,08,00,00,00,\
+55,00,47,00,25,E2,01,00,58,00,88,00,E0,00,01,00,03,00,24,00,08,00,00,00
+HKR,,Graphic.1280.960,0x00000001,\
+3c,00,3c,00,e0,a5,01,00,60,00,70,00,38,01,01,00,03,00,24,00,00,00,00,00,\
+55,00,56,00,10,44,02,00,40,00,a0,00,e0,00,01,00,03,00,2f,00,00,00,00,00
+HKR,,Graphic.1280.1024,0x00000001,\
+3c,00,40,00,e0,a5,01,00,30,00,70,00,f8,00,01,00,03,00,26,00,0c,00,00,00,\
+4b,00,50,00,58,0f,02,00,10,00,90,00,f8,00,01,00,03,00,26,00,0c,00,00,00,\
+55,00,5b,00,3c,67,02,00,40,00,a0,00,e0,00,01,00,03,00,2c,00,0c,00,00,00
+HKR,,Graphic.1360.768,0x00000001,\
+3c,00,30,00,67,20,01,00,3a,00,1a,00,40,00,0a,00,06,00,20,00,00,00,00,00
+HKR,,Graphic.1376.768,0x00000001,\
+3c,00,30,00,f4,50,01,00,48,00,90,00,d8,00,01,00,03,00,17,00,08,00,00,00
+HKR,,Graphic.1600.1024,0x00000001,\
+3c,00,40,00,58,0f,02,00,20,00,a0,00,30,01,03,00,03,00,28,00,00,00,00,00,\
+4c,00,53,00,cf,99,02,00,20,00,a0,00,30,01,03,00,03,00,28,00,00,00,00,00
+HKR,,Graphic.1600.1200,0x00000001,\
+3c,00,4b,00,d0,78,02,00,40,00,c0,00,30,01,01,00,03,00,2e,00,0c,00,00,00,\
+41,00,51,00,8c,ad,02,00,40,00,c0,00,30,01,01,00,03,00,2e,00,0c,00,00,00,\
+46,00,58,00,48,e2,02,00,40,00,c0,00,30,01,01,00,03,00,2e,00,0c,00,00,00,\
+4b,00,5e,00,04,17,03,00,40,00,c0,00,30,01,01,00,03,00,2e,00,0c,00,00,00,\
+55,00,6a,00,7c,80,03,00,40,00,c0,00,30,01,01,00,03,00,2e,00,0c,00,00,00
+HKR,,Graphic.1600.1280,0x00000001,\
+3c,00,4f,00,ad,a3,02,00,78,00,a8,00,20,01,01,00,03,00,29,00,08,00,00,00
+HKR,,Graphic.1792.1344,0x00000001,\
+3c,00,54,00,ce,1f,03,00,80,00,c8,00,48,01,01,00,03,00,2e,00,08,00,00,00,\
+4b,00,6a,00,88,fb,03,00,60,00,d8,00,60,01,01,00,03,00,45,00,08,00,00,00
+HKR,,Graphic.1800.1440,0x00000001,\
+3c,00,59,00,56,3d,03,00,60,00,c0,00,30,01,01,00,03,00,2e,00,00,00,00,00,\
+46,00,69,00,90,d0,03,00,60,00,c0,00,30,01,01,00,03,00,2e,00,00,00,00,00
+HKR,,Graphic.1856.1392,0x00000001,\
+3c,00,56,00,8a,54,03,00,60,00,e0,00,60,01,01,00,03,00,2b,00,08,00,00,00,\
+4b,00,71,00,00,65,04,00,80,00,e0,00,60,01,01,00,03,00,68,00,08,00,00,00
+HKR,,Graphic.1920.1034,0x00000001,\
+1e,00,22,00,0a,22,01,00,2c,00,58,00,94,00,05,00,05,00,23,00,01,00,00,00
+HKR,,Graphic.1920.1080,0x00000001,\
+3c,00,44,00,60,70,02,00,20,00,90,00,10,01,03,00,03,00,27,00,00,00,00,00,\
+48,00,54,00,d7,4b,03,00,30,00,d8,00,78,01,03,00,03,00,56,00,00,00,00,00
+HKR,,Graphic.1920.1200,0x00000001,\
+3c,00,4b,00,08,f5,02,00,40,00,00,01,58,01,03,00,03,00,2c,00,00,00,00,00,\
+41,00,51,00,1e,34,03,00,40,00,00,01,58,01,03,00,03,00,2c,00,00,00,00,00,\
+4c,00,5F,00,e8,be,03,00,40,00,00,01,58,01,03,00,03,00,2c,00,00,00,00,00
+HKR,,Graphic.1920.1440,0x00000001,\
+3c,00,5a,00,10,92,03,00,80,00,d0,00,58,01,01,00,03,00,38,00,08,00,00,00,\
+4b,00,71,00,28,88,04,00,90,00,e0,00,60,01,01,00,03,00,38,00,08,00,00,00
+HKR,,Graphic.2048.1536,0x00000001,\
+3c,00,5f,00,c8,12,04,00,98,00,e0,00,78,01,01,00,03,00,31,00,00,00,00,00
+
+[AddReg.Modes]
+HKR,,Mga.PixelWidths,0x00000001,08,10,18,20
+HKR,,Mga.SingleResolutions,0x00000001,\
+%R__320x_200%,%R__320x_200a%,%R__320x_200b%,%R__320x_200c%,\
+%R__320x_240%,%R__320x_240a%,%R__320x_240b%,%R__320x_240c%,\
+%R__512x_384%,%R__512x_384a%,%R__512x_384b%,%R__512x_384c%,\
+%R__640x_400%,%R__640x_400a%,%R__640x_400b%,%R__640x_400c%,\
+%R__640x_480%,%R__640x_480a%,%R__640x_480b%,%R__640x_480c%,\
+%R__800x_600%,%R__800x_600a%,%R__800x_600b%,%R__800x_600c%,\
+%R__848x_480%,%R__848x_480a%,%R__848x_480b%,%R__848x_480c%,\
+%R__864x_480%,%R__864x_480a%,%R__864x_480b%,%R__864x_480c%,\
+%R__856x_480%,%R__856x_480a%,%R__856x_480b%,%R__856x_480c%,\
+%R__960x2400%,%R__960x2400a%,%R__960x2400b%,%R__960x2400c%,\
+%R_1024x_768%,%R_1024x_768a%,%R_1024x_768b%,%R_1024x_768c%,\
+%R_1024x1536%,%R_1024x1536a%,%R_1024x1536b%,%R_1024x1536c%,\
+%R_1072x_600%,%R_1072x_600a%,%R_1072x_600b%,%R_1072x_600c%,\
+%R_1152x_864%,%R_1152x_864a%,%R_1152x_864b%,%R_1152x_864c%,\
+%R_1280x_720%,%R_1280x_720a%,%R_1280x_720b%,%R_1280x_720c%,\
+%R_1280x_768%,%R_1280x_768a%,%R_1280x_768b%,%R_1280x_768c%,\
+%R_1280x_800%,%R_1280x_800a%,%R_1280x_800b%,%R_1280x_800c%,\
+%R_1280x_960%,%R_1280x_960a%,%R_1280x_960b%,%R_1280x_960c%,\
+%R_1280x1024%,%R_1280x1024a%,%R_1280x1024b%,%R_1280x1024c%,\
+%R_1360x_768%,%R_1360x_768a%,%R_1360x_768b%,%R_1360x_768c%,\
+%R_1376x_768%,%R_1376x_768a%,%R_1376x_768b%,%R_1376x_768c%,\
+%R_1600x1024%,%R_1600x1024a%,%R_1600x1024b%,%R_1600x1024c%,\
+%R_1600x1200%,%R_1600x1200a%,%R_1600x1200b%,%R_1600x1200c%,\
+%R_1600x1280%,%R_1600x1280a%,%R_1600x1280b%,%R_1600x1280c%,\
+%R_1792x1344%,%R_1792x1344a%,%R_1792x1344b%,%R_1792x1344c%,\
+%R_1800x1440%,%R_1800x1440a%,%R_1800x1440b%,%R_1800x1440c%,\
+%R_1856x1392%,%R_1856x1392a%,%R_1856x1392b%,%R_1856x1392c%,\
+%R_1920x1034%,%R_1920x1034a%,%R_1920x1034b%,%R_1920x1034c%,\
+%R_1920x1080%,%R_1920x1080a%,%R_1920x1080b%,%R_1920x1080c%,\
+%R_1920x1200%,%R_1920x1200a%,%R_1920x1200b%,%R_1920x1200c%,\
+%R_1920x1440%,%R_1920x1440a%,%R_1920x1440b%,%R_1920x1440c%,\
+%R_2048x1536%,%R_2048x1536a%,%R_2048x1536b%,%R_2048x1536c%
+;%R__720x_480%,%R__720x_480a%,%R__720x_480b%,%R__720x_480c%,\
+;%R__720x_576%,%R__720x_576a%,%R__720x_576b%,%R__720x_576c%,\
+;%R__768x_576%,%R__768x_576a%,%R__768x_576b%,%R__768x_576c%,\
+;%R__864x_480%,%R__864x_480a%,%R__864x_480b%,%R__864x_480c%,\
+;%R_1360x_766%,%R_1360x_766a%,%R_1360x_766b%,%R_1360x_766c%,\
+;%R_1376x_768%,%R_1376x_768a%,%R_1376x_768b%,%R_1376x_768c%,\
+
+[MGABG.DRV]
+mgabg.sys,,,0x00000004
+
+[MGABG.EXE]
+mgabg.exe,,,0x00000004
+
+[AddReg.MGABG]
+HKR,,PDEnable,0x00000001,01,00,00,00
+
+[Service.MGABG]
+DisplayName = MGABGEXE
+ServiceType = 0x00000010
+StartType = 2
+ErrorControl = 0
+ServiceBinary = %11%\mgabg.exe
+
+[AddReg.Languages]
+HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,InstalledLanguages,,"ENG,FRE,GER,SPA,ITA"
+
+[Files.PDesk]
+SuppEng.rtf,,,0x00000004
+PDeskEng.cnt,,,0x00000004
+PDeskEng.hlp,,,0x00000004
+PDResEng.dll,,,0x00000004
+pdmmdEng.hlp,,,0x00000004
+pdmmdEng.cnt,,,0x00000004
+ReadEng.txt,,,0x00000004
+SuppFre.rtf,,,0x00000004
+PDeskFre.cnt,,,0x00000004
+PDeskFre.hlp,,,0x00000004
+PDResFre.dll,,,0x00000004
+pdmmdFre.hlp,,,0x00000004
+pdmmdFre.cnt,,,0x00000004
+ReadFre.txt,,,0x00000004
+SuppGer.rtf,,,0x00000004
+PDeskGer.cnt,,,0x00000004
+PDeskGer.hlp,,,0x00000004
+PDResGer.dll,,,0x00000004
+pdmmdGer.hlp,,,0x00000004
+pdmmdGer.cnt,,,0x00000004
+ReadGer.txt,,,0x00000004
+SuppIta.rtf,,,0x00000004
+PDeskIta.cnt,,,0x00000004
+PDeskIta.hlp,,,0x00000004
+PDResIta.dll,,,0x00000004
+pdmmdIta.hlp,,,0x00000004
+pdmmdIta.cnt,,,0x00000004
+ReadIta.txt,,,0x00000004
+SuppSpa.rtf,,,0x00000004
+PDeskSpa.cnt,,,0x00000004
+PDeskSpa.hlp,,,0x00000004
+PDResSpa.dll,,,0x00000004
+pdmmdSpa.hlp,,,0x00000004
+pdmmdSpa.cnt,,,0x00000004
+ReadSpa.txt,,,0x00000004
+pdesk.exe,,,0x00000004
+pdtools.dll,,,0x00000004
+pdpages.dll,,,0x00000004
+pdkernel.dll,,,0x00000004
+pdshell.dll,,,0x00000004
+pdbkgnd.bmp,,,0x00000004
+pdmonlst.mpl,,,0x00000004
+pdeskcmd.exe,,,0x00000004
+pduninst.exe,,,0x00000004
+pdmmd.exe,,,0x00000004
+pdmmd.dll,,,0x00000004
+pdmmdres.dll,,,0x00000004
+
+[AddReg.DefModes]
+HKR,,DefaultSettings.BitsPerPel,0x00010001,32
+HKR,,DefaultSettings.XResolution,0x00010001,800
+HKR,,DefaultSettings.YResolution,0x00010001,600
+
+[AddReg.Web]
+HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,WebPath,,"http://www.matrox.com/mga/home.htm"
+HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,ShowSupport,0x00000001,01,00,00,00
+
+[AddReg.Web.ENG]
+HKLM,Software\Matrox\PowerDesk\Version6,RegisterWebPath,,"http://www.matrox.com/mga/registration/home.cfm"
+
+
+[AddReg.Settings.FRE]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\Matrox Graphics Uninstaller,DisplayName,,"Matrox - Logiciel graphique (désinstaller uniquement)"
+HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,SelectedLanguage,,"FRE"
+
+[AddReg.Web.FRE]
+HKLM,Software\Matrox\PowerDesk\Version6,RegisterWebPath,,"http://www.matrox.com/mga/francais/registration/home.cfm"
+
+[AddReg.Settings.ITA]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\Matrox Graphics Uninstaller,DisplayName,,"Matrox - Software scheda grafica (solo rimozione)"
+HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,SelectedLanguage,,"ITA"
+
+[AddReg.Web.ITA]
+HKLM,Software\Matrox\PowerDesk\Version6,RegisterWebPath,,"http://www.matrox.com/mga/italiano/registration/home.cfm"
+
+[AddReg.Settings.GER]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\Matrox Graphics Uninstaller,DisplayName,,"Matrox Grafik Software (nur entfernen)"
+HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,SelectedLanguage,,"GER"
+
+[AddReg.Web.GER]
+HKLM,Software\Matrox\PowerDesk\Version6,RegisterWebPath,,"http://www.matrox.com/mga/deutsch/registration/home.cfm"
+
+[AddReg.Settings.SPA]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\Matrox Graphics Uninstaller,DisplayName,,"Matrox - Software de visualización (sólo eliminar)"
+HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,SelectedLanguage,,"SPA"
+
+[AddReg.Web.SPA]
+HKLM,Software\Matrox\PowerDesk\Version6,RegisterWebPath,,"http://www.matrox.com/mga/spanish/registration/home.cfm"
+
+;---------------
+; Global Shared
+;---------------
+[Strings]
+Disk1 = "Matrox Graphics Installation Disk 1"
+Matrox = "Matrox Graphics Inc."
+ENG = " - English"
+FRE = " - Français"
+ITA = " - Italiano"
+GER = " - Deutsch"
+SPA = " - Espanol"
+Str00 = "Matrox Marvel G400 AGP"
+Str01 = "Matrox Millennium G400 DualHead MAX"
+Str02 = "Matrox Millennium G400 DualHead"
+Str03 = "Matrox Millennium G400"
+Str04 = "GA-G400"
+Str05 = "Matrox Orion AGP"
+Str06 = "Matrox Orion PCI"
+Str07 = "Matrox G400"
+Str08 = "Matrox Dual Condor"
+Str09 = "Matrox 4Sight II "
+Str10 = "Matrox 4Sight II"
+Str11 = "Matrox Corona II"
+Str12 = "Matrox Millennium G400 DualHead "
+R_1024x1280 = 00
+R_1024x1280a = 04
+R_1024x1280b = 00
+R_1024x1280c = 05
+R_1024x1536 = 00
+R_1024x1536a = 04
+R_1024x1536b = 00
+R_1024x1536c = 06
+R_1024x_768 = 00
+R_1024x_768a = 04
+R_1024x_768b = 00
+R_1024x_768c = 03
+R_1072x_600 = 30
+R_1072x_600a = 04
+R_1072x_600b = 58
+R_1072x_600c = 02
+R_1152x_864 = 80
+R_1152x_864a = 04
+R_1152x_864b = 60
+R_1152x_864c = 03
+R_1200x1600 = B0
+R_1200x1600a = 04
+R_1200x1600b = 40
+R_1200x1600c = 06
+R_1280x1024 = 00
+R_1280x1024a = 05
+R_1280x1024b = 00
+R_1280x1024c = 04
+R_1280x_720 = 00
+R_1280x_720a = 05
+R_1280x_720b = D0
+R_1280x_720c = 02
+R_1280x_768 = 00
+R_1280x_768a = 05
+R_1280x_768b = 00
+R_1280x_768c = 03
+R_1280x_800 = 00
+R_1280x_800a = 05
+R_1280x_800b = 20
+R_1280x_800c = 03
+R_1280x_960 = 00
+R_1280x_960a = 05
+R_1280x_960b = C0
+R_1280x_960c = 03
+R_1360x_766 = 50
+R_1360x_766a = 05
+R_1360x_766b = FE
+R_1360x_766c = 02
+R_1360x_768 = 50
+R_1360x_768a = 05
+R_1360x_768b = 00
+R_1360x_768c = 03
+R_1376x_768 = 60
+R_1376x_768a = 05
+R_1376x_768b = 00
+R_1376x_768c = 03
+R_1600x1024 = 40
+R_1600x1024a = 06
+R_1600x1024b = 00
+R_1600x1024c = 04
+R_1600x1200 = 40
+R_1600x1200a = 06
+R_1600x1200b = B0
+R_1600x1200c = 04
+R_1600x1280 = 40
+R_1600x1280a = 06
+R_1600x1280b = 00
+R_1600x1280c = 05
+R_1792x1344 = 00
+R_1792x1344a = 07
+R_1792x1344b = 40
+R_1792x1344c = 05
+R_1800x1440 = 08
+R_1800x1440a = 07
+R_1800x1440b = A0
+R_1800x1440c = 05
+R_1856x1392 = 40
+R_1856x1392a = 07
+R_1856x1392b = 70
+R_1856x1392c = 05
+R_1920x1034 = 80
+R_1920x1034a = 07
+R_1920x1034b = 0A
+R_1920x1034c = 04
+R_1920x1080 = 80
+R_1920x1080a = 07
+R_1920x1080b = 38
+R_1920x1080c = 04
+R_1920x1200 = 80
+R_1920x1200a = 07
+R_1920x1200b = B0
+R_1920x1200c = 04
+R_1920x1440 = 80
+R_1920x1440a = 07
+R_1920x1440b = A0
+R_1920x1440c = 05
+R_2048x1536 = 00
+R_2048x1536a = 08
+R_2048x1536b = 00
+R_2048x1536c = 06
+R__320x_200 = 40
+R__320x_200a = 01
+R__320x_200b = C8
+R__320x_200c = 00
+R__320x_240 = 40
+R__320x_240a = 01
+R__320x_240b = F0
+R__320x_240c = 00
+R__512x_384 = 00
+R__512x_384a = 02
+R__512x_384b = 80
+R__512x_384c = 01
+R__640x_400 = 80
+R__640x_400a = 02
+R__640x_400b = 90
+R__640x_400c = 01
+R__640x_480 = 80
+R__640x_480a = 02
+R__640x_480b = E0
+R__640x_480c = 01
+R__720x_480 = D0
+R__720x_480a = 02
+R__720x_480b = E0
+R__720x_480c = 01
+R__720x_576 = D0
+R__720x_576a = 02
+R__720x_576b = 40
+R__720x_576c = 02
+R__768x_576 = 00
+R__768x_576a = 03
+R__768x_576b = 40
+R__768x_576c = 02
+R__800x_600 = 20
+R__800x_600a = 03
+R__800x_600b = 58
+R__800x_600c = 02
+R__848x_480 = 50
+R__848x_480a = 03
+R__848x_480b = E0
+R__848x_480c = 01
+R__856x_480 = 58
+R__856x_480a = 03
+R__856x_480b = E0
+R__856x_480c = 01
+R__864x_480 = 60
+R__864x_480a = 03
+R__864x_480b = E0
+R__864x_480c = 01
+R__960x2400 = C0
+R__960x2400a = 03
+R__960x2400b = 60
+R__960x2400c = 09

@@ -1,0 +1,247 @@
+;
+;    Filename:  MTXIMAGE.INF
+;    Owner   :  Jlavergn
+;    Rev     :  $Revision:   1.6  $
+;    Content :  This file contains installation file for Imaging products 
+;               line
+;    Date    :  99/01/25
+;
+;
+;    COPYRIGHT (c) 1998  Matrox Electronic Systems Ltd.
+;    All Rights Reserved
+;
+
+[Version]
+Signature=$Windows 95$	
+Class=MatroxImagingProducts
+Provider=%String0%
+
+[ClassInstall]
+CopyFiles=MatroxImagingProductsCopy
+AddReg=MatroxImagingProductsReg
+
+[DestinationDirs]
+Cronos.Copy=10,system32\drivers
+DefaultDestDir=11
+
+[Manufacturer]
+%String1%=SECTION_0
+
+[SECTION_0]
+%String2P%=Pulsar.Install,PCI\VEN_8086&DEV_1223
+%String2C%=Corona.Install,PCI\VEN_102B&DEV_4536
+%String2C2%=Corona_II.Install,PCI\VEN_102B&DEV_4536
+%String2M2%=Meteor2.Install,PCI\VEN_102B&DEV_4536
+%String2O%=Orion.Install,PCI\VEN_102B&DEV_0525&SUBSYS_5A80102B
+%String2O%=Orion.Install,PCI\VEN_102B&DEV_0525&SUBSYS_5EB0102B
+%String2CRONOS%=Cronos.Install,PCI\VEN_14F1&DEV_8800&SUBSYS_4620102B
+%String2MTX%=MTXDMA.Install, 
+
+; *****************************************************************
+; PULSAR specific sections
+; *****************************************************************
+[Pulsar.Install]
+CopyFiles=Pulsar.Copy,DMAPage.Copy
+AddReg=Pulsar.Registry,Millenium.Registry,PowerDesk.Registry,DMAPage.Registry
+Restart
+
+[Pulsar.Copy]
+pulsar.vxd
+
+[Pulsar.Registry]
+HKR,,DevLoader,0,pulsar.vxd
+HKR,,VxDNameForDma,,"Pulsar\Parameters"
+HKLM,System\CurrentControlSet\Services\VxD\Pulsar\Parameters,DmaBufferSize,3,00,00,30,00
+HKLM,"SOFTWARE\Matrox\Imaging Board\Pulsar",Description,,"Matrox Pulsar board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Pulsar",BoardName,0,"M_SYSTEM_PULSAR"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Pulsar",Library,,"milpul.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Pulsar",InitFlag,3,01,00,09,10
+HKLM,"SOFTWARE\Matrox\Imaging Board\Pulsar",RealDevice,3,01,00,00,00
+HKLM,"SOFTWARE\Matrox\Imaging Board\Pulsar",SystemType,3,10,00,00,00
+
+; *****************************************************************
+; CORONA specific sections
+; *****************************************************************
+[Corona.Install]
+CopyFiles=Corona.Copy,DMAPage.Copy
+AddReg=Corona.Registry,Millenium.Registry,PowerDesk.Registry,DMAPage.Registry
+Restart
+
+[Corona.Copy]
+corona.vxd
+
+[Corona.Registry]
+HKR,,DevLoader,0,Corona.vxd
+HKR,,VxDNameForDma,,"Corona\Parameters"
+HKLM,System\CurrentControlSet\Services\VxD\Corona\Parameters,DmaBufferSize,3,00,00,30,00
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona",Description,,"Matrox Corona board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona",BoardName,0,"M_SYSTEM_CORONA"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona",Library,,"milcor.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona",InitFlag,3,01,00,09,10
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona",RealDevice,3,01,00,00,00
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona",SystemType,3,12,00,00,00
+
+; *****************************************************************
+; METEOR_II specific sections
+; *****************************************************************
+[Meteor2.Install]
+CopyFiles=Meteor2.Copy,DMAPage.Copy
+AddReg=Meteor2.Registry,Millenium.Registry,PowerDesk.Registry,DMAPage.Registry
+Restart
+
+[Meteor2.Copy]
+corona.vxd
+
+[Meteor2.Registry]
+HKR,,DevLoader,0,Corona.vxd
+HKR,,VxDNameForDma,,"Corona\Parameters"
+HKLM,System\CurrentControlSet\Services\VxD\Corona\Parameters,DmaBufferSize,3,00,00,30,00
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II",Description,,"Matrox Meteor_II board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II",BoardName,0,"M_SYSTEM_METEOR_II"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II",Library,,"milmet2.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II",InitFlag,3,01,00,09,10
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II",RealDevice,3,01,00,00,00
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II",SystemType,3,14,00,00,00
+
+; *****************************************************************
+; CORONA_II specific sections
+; *****************************************************************
+[Corona_II.Install]
+CopyFiles=Corona_II.Copy,DMAPage.Copy
+AddReg=Corona_II.Registry,Millenium.Registry,PowerDesk.Registry,DMAPage.Registry
+Restart
+
+[Corona_II.Copy]
+corona.vxd
+
+[Corona_II.Registry]
+HKR,,DevLoader,0,Corona.vxd
+HKR,,VxDNameForDma,,"Corona\Parameters"
+HKLM,System\CurrentControlSet\Services\VxD\Corona\Parameters,DmaBufferSize,3,00,00,30,00
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona_II",Description,,"Matrox Corona_II board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona_II",BoardName,0,"M_SYSTEM_CORONA_II"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona_II",Library,,"milcor2.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona_II",InitFlag,3,01,00,09,10
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona_II",RealDevice,3,01,00,00,00
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona_II",SystemType,3,1e,00,00,00
+
+; *****************************************************************
+; ORION specific sections
+; *****************************************************************
+[Orion.Install]
+CopyFiles=Orion.Copy,MTXDMA.Copy
+AddReg=Orion.Registry,MTXDMA.Registry
+Restart
+
+[Orion.Copy]
+Orion.vxd
+
+[Orion.Registry]
+HKLM,"SYSTEM\CurrentControlSet\Services\VxD\Orion", StaticVxD,0,"Orion.vxd"
+HKLM,System\CurrentControlSet\Services\VxD\Orion\Parameters,DmaBufferSize,4,0x00100000
+HKLM,System\CurrentControlSet\Services\VxD\Orion\Parameters,DynamicVxD,4,0x00000001
+HKLM,"SOFTWARE\Matrox\Imaging Board\Orion",Description,,"Matrox Orion board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Orion",BoardName,0,"M_SYSTEM_ORION"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Orion",Library,,"milorion.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Orion",InitFlag,3,01,00,09,10
+HKLM,"SOFTWARE\Matrox\Imaging Board\Orion",RealDevice,3,01,00,00,00
+HKLM,"SOFTWARE\Matrox\Imaging Board\Orion",SystemType,3,19,00,00,00
+
+; *****************************************************************
+; CRONOS specific sections
+; *****************************************************************
+[Cronos.Install]
+CopyFiles=Cronos.Copy,MTXDMA.Copy
+AddReg=Cronos.Registry,MTXDMA.Registry
+Restart
+
+[Cronos.Copy]
+Cronos.sys
+
+[Cronos.Registry]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,Cronos.sys
+HKLM,"SOFTWARE\Matrox\Imaging Board\Cronos",Description,,"Matrox Cronos board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Cronos",BoardName,0,"M_SYSTEM_CRONOS"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Cronos",Library,,"milCronos.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Cronos",InitFlag,3,01,00,09,10
+HKLM,"SOFTWARE\Matrox\Imaging Board\Cronos",RealDevice,3,01,00,00,00
+HKLM,"SOFTWARE\Matrox\Imaging Board\Cronos",SystemType,3,22,00,00,00
+
+
+; *****************************************************************
+; CLASS INSTALLER specific sections
+; *****************************************************************
+[MatroxImagingProductsCopy]
+mtximgci.dll
+
+[MatroxImagingProductsReg]
+HKR,,,,%String4%
+HKR,,Icon,0,-5
+HKR,,Installer,,"mtximgci.dll,ClassInstall"
+HKR,,InstallerPath,,"a:"
+HKR,,InstallerTestFile,,"MTXIMAGE.INF"
+
+; *****************************************************************
+; MTXDMA specific sections
+; *****************************************************************
+[MTXDMA.Install]
+CopyFiles=MTXDMA.Copy
+AddReg=MTXDMA.Registry
+Restart
+
+[MTXDMA.Copy]
+Mtxdma.vxd
+
+[MTXDMA.Registry]
+HKLM,"SYSTEM\CurrentControlSet\Services\VxD\MTXDMA", StaticVxD,0,"mtxdma.vxd"
+HKLM,"SYSTEM\CurrentControlSet\Services\VxD\MTXDMA\Parameters",DefaultPciAccess,4,0x00000000 
+HKLM,"SYSTEM\CurrentControlSet\Services\VxD\MTXDMA\Parameters",DmaBufferSize,4,0x00300000
+HKLM,"SYSTEM\CurrentControlSet\Services\VxD\MTXDMA\Parameters",DeviceNumber,4,0x00000000 
+
+
+; *****************************************************************
+; GENERAL sections
+; *****************************************************************
+[Millenium.Registry]
+HKLM,"SOFTWARE\Matrox\Millennium\Current Settings",Birdie,,"0"
+HKLM,"SOFTWARE\Matrox\Millennium\Current Settings",Eagle,,"0"
+HKLM,"SOFTWARE\Matrox\Millennium\Current Settings",FastBlt,,"0"
+
+[PowerDesk.Registry]
+HKLM,"SOFTWARE\Matrox\PowerDesk\Current Settings",PowerBlt,,"0"
+HKLM,"SOFTWARE\Matrox\PowerDesk\Current Settings",PowerText,,"0"
+HKLM,"SOFTWARE\Matrox\PowerDesk\Current Settings",FastBlt,,"0"
+
+[DMAPage.Copy]
+dmapage.dll
+
+[DMAPage.Registry]
+HKR,,EnumPropPages,,"dmapage.dll,EnumPropPages"
+
+[ControlFlags]
+
+[SourceDisksNames]
+1=%String3%,"MIL",,
+
+[SourceDisksFiles]
+pulsar.vxd=1,Matrox\drivers\pulsar\win98
+corona.vxd=1,Matrox\drivers\corona\win98
+orion.vxd=1,Matrox\drivers\orion\win98
+dmapage.dll=1,Matrox\drivers\win98
+mtximgci.dll=1,Matrox\drivers\win98
+mtxdma.vxd=1,Matrox\drivers\win98
+Cronos.sys=1,Matrox\drivers\Cronos\WDM
+
+[Strings]
+String0="Matrox Electronic Systems Ltd."
+String1="Matrox Electronic Systems Ltd."
+String2P="Pulsar PCI frame grabber"
+String2C="Corona PCI frame grabber"
+String2C2="Corona_II PCI frame grabber"
+String2M2="Meteor_II PCI frame grabber"
+String2O="Orion frame grabber"
+String2CRONOS="Cronos PCI frame grabber"
+String2MTX="Mtxdma driver manager"
+String3="MIL CD-ROM"
+String4="Matrox Imaging adapter"

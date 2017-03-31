@@ -1,0 +1,93 @@
+[Suomi]
+PDREADME.TXT                MATROX GRAPHICS INC.              2001.08.03
+
+                  Matrox PowerDesk for Windows 98/Me
+
+
+Huomautus: Tämä tiedosto voi sisältää viime hetken tietoja, joita 
+ei välttämättä ole käännetty sinun kielellesi. Pahoittelemme asiaa.
+
+
+Sisällysluettelo
+================
+
+- Tämän version kuvaus
+- Asennus
+- [English...]New features[...English]
+- Lisätietoja
+- Huomautuksia, ongelmia ja rajoituksia
+
+
+Tämän version kuvaus
+====================
+
+Matrox PowerDesk -ohjelmistoon kuuluu näytönohjain ja näytön 
+apuohjelmia. Tämän ohjelmiston avulla voit hyödyntää Matrox-
+grafiikkalaitteiden aikkia ominaisuuksia ja käyttää muita Matroxin 
+näyttötoimintoja.
+
+
+Asennus
+=======
+
+Voit asentaa Matrox PowerDesk -ohjelmiston käynnistämällä sen 
+mukana toimitetun asennusohjelman ja seuraamalla näyttöön tulevia 
+ohjeita.
+
+Matrox PowerDesk -ohjelmisto asennetaan vain, jos tietokoneeseen 
+on asennettu sen tukema Matrox-grafiikkakortti.
+
+
+[English...]
+
+New features
+============
+
+This software includes new features, especially for Matrox 
+hardware with DualHead support. These include:
+
+- The use of different DualHead features (Multi-Display, DVDMax, 
+  Zoom, and Clone) *without* restarting Windows
+
+- Easier-to-use interface for DualHead controls
+
+- Controls for dividing graphics resources (memory and bandwidth) 
+  between your main and secondary displays
+
+- More features accessible through user-defined hot keys 
+  (keyboard shortcuts)
+
+[...English]
+
+
+Lisätietoja
+===========
+
+Voit katsoa lisätietoja Matrox PowerDesk-ohjelmistosta siihen 
+kuuluvasta ohjetiedostosta. Matrox-grafiikkakorttia koskevia 
+tietoja löydät grafiikkakortin tai tietokonejärjestelmän mukana 
+toimitetusta oppaasta.
+
+
+Huomautuksia, ongelmia ja rajoituksia
+=====================================
+
+- Asennus Windows:n eri kieliversioissa
+
+  Jos asennat ohjelmiston, jonka kieli ei ole sama kuin 
+  käyttöjärjestelmän kieli (esimerkiksi englanninkielisen 
+  ohjelmiston japaninkieliseen järjestelmään), teksti ja 
+  valintaikkunoiden ohjaimet voivat katketa sanojen keskeltä. Tämä 
+  johtuu järjestelmän fonttien erilaisuudesta.
+
+- OpenGL (3D) -tuki
+
+  Jos sinulla on uudempi Matrox-tuote tai olet saanut Matrox-
+  ohjelmasi tietokoneesi valmistajalta, käytössäsi ei 
+  mahdollisesti ole täydellistä Matrox-näytönohjaimen OpenGL-
+  tukea. Lue Matrox-näytönohjaimen täydellisestä OpenGL-tuesta 
+  Matroxin web-sivuilta (www.matrox.com/mga). (Jos olet saanut 
+  Matrox-tuotteen tietokoneeesi valmistajalta, ota selvää 
+  näytönohjaimesta kyseisen valmistajan web-sivuilta. 
+  Tietokonevalmistaja on todennäköisesti toimittanut 
+  näytönohjaimen testatakseen sitä tietokonemallisi kanssa.)

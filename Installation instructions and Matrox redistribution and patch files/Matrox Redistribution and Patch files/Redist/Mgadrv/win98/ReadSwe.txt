@@ -1,0 +1,96 @@
+[Svenska]
+PDREADME.TXT                MATROX GRAPHICS INC.              2001.08.03
+
+                 Matrox PowerDesk för Windows 98/Me
+
+
+Obs: Denna fil kan innehålla sent utfärdad, ej översatt 
+information. Vi ber om överseende för den olägenhet detta kan 
+orsaka.
+
+
+Innehållsförteckning
+====================
+
+- Beskrivning av denna version
+- Installation
+- [English...]New features[...English]
+- Ytterligare information
+- Anmärkningar, problem och begränsningar
+
+
+Beskrivning av denna version
+============================
+
+Programmet Matrox PowerDesk innehåller en bildskärmsdrivrutin och 
+bildskärmsverktyg. Med det här programmet kan du till fullo 
+utnyttja Matrox grafiska maskinvara och komma åt ytterligare 
+bildskärmsrelaterade Matrox-funktioner.
+
+
+Installation
+============
+
+När du installerar Matrox PowerDesk startar du det medföljande 
+installationsprogrammet, och följer därefter instruktionerna på 
+skärmen.
+
+Installationsprogrammet installerar bara programvara om ett Matrox-
+grafikkort som det finns funktioner för i installationsprogrammet 
+är installerat på datorn.
+
+
+[English...]
+
+New features
+============
+
+This software includes new features, especially for Matrox 
+hardware with DualHead support. These include:
+
+- The use of different DualHead features (Multi-Display, DVDMax, 
+  Zoom, and Clone) *without* restarting Windows
+
+- Easier-to-use interface for DualHead controls
+
+- Controls for dividing graphics resources (memory and bandwidth) 
+  between your main and secondary displays
+
+- More features accessible through user-defined hot keys 
+  (keyboard shortcuts)
+
+[...English]
+
+
+Ytterligare information
+=======================
+
+Du kan få mer information om Matrox PowerDesk om du läser den 
+medföljande hjälpfilen. Du kan få information om det specifika 
+Matrox-grafikkortet om du läser handboken till Matrox eller 
+systemet.
+
+
+Anmärkningar, problem och begränsningar
+=======================================
+
+- Installation med olika Windows-språk
+
+  Om du installerar programvaran på ett språk som skiljer sig från 
+  språket hos operativsystemet (t ex engelsk programvara i ett 
+  japanskt system) kan problem uppstå genom att text- och 
+  dialogrutereglagen kortas av. Detta beror på skillnader i 
+  systemteckensnitten.
+
+- Stöd av OpenGL (3D)
+
+  Om du har en nyare Matrox-produkt eller om Matrox-
+  programvaran levererades av datortillverkaren kan funktionen 
+  för OpenGL vara inaktiverad för Matrox bildskärms drivrutin. 
+  En Matrox bildskärmsdrivrutin som har funktioner för OpenGL 
+  aktiverat hittar du på Matrox webbplats (www.matrox.com/mga). 
+  (Om Matrox-produkten levererades av tillverkaren av datorn 
+  kan du leta på leverantörens webbplats efter en 
+  bildskärmsdrivrutin. En bildskärmsdrivrutin som kommer från 
+  tillverkaren av datorn är förmodligen mer lämplig tillsammans 
+  med din datormodell.)

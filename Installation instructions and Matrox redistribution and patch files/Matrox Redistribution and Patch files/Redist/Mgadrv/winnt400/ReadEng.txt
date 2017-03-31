@@ -1,0 +1,274 @@
+[English]
+README.TXT              MATROX GRAPHICS INC.              2001.07.23
+
+                 Matrox PowerDesk for Windows NT 4.0 
+                            Rev. 4.94.005
+
+
+Contents
+========
+
+- Release description
+- Installation
+- Using Matrox PowerDesk
+- Hardware-accelerated 3D
+- Notes, problems and limitations
+- Matrox TV output
+
+
+Release description
+===================
+
+This is the Matrox Windows NT Display Driver. It supports Microsoft
+Windows NT for x86 CPU's, version 4.0 (Build 1381 -- or later).
+
+This product includes:
+
+- Display Driver
+- Matrox PowerDesk for Windows NT 4.0
+
+
+Installation
+============
+
+To install Matrox PowerDesk, start the "setup" program included 
+with it, then follow the on-screen instructions.
+
+The setup program will only install software if a Matrox graphics 
+card model supported by the setup program is installed in your 
+computer.
+
+If you're installing this software on many systems, there are setup 
+options to partially automate the procedure. For more information, 
+see the "setup_un.doc" file included with this software.
+
+
+Using Matrox PowerDesk
+======================
+
+Changing resolution, selecting a monitor, and using the Matrox 
+PowerDesk is covered in the "online.doc" file. You can view this 
+file with WordPad.
+
+
+Hardware-accelerated 3D
+=======================
+
+For 3D hardware acceleration, the Matrox Windows NT 4.0 display 
+driver supports the OpenGL interface with 2 driver types -- MCD 
+(Mini Client Driver) and ICD (Installable Client Driver). The 
+Matrox Millennium, Millennium II, Mystique, Mystique 220, and G100-
+based graphics cards have MCD support. The Matrox G200-based, G400-
+based and later graphics cards have ICD support. (An ICD has more 
+potential for optimization than an MCD.)
+
+3D hardware acceleration has the following restrictions:
+
+- Currently no acceleration is available when multiple cards are
+  in use.
+
+- The MCD/ICD does not support 8 bpp (256 colors) and 24 bpp 
+  (16777216 colors) modes. 16 bpp (64 K colors) and 32 bpp (True 
+  Color) modes are the ones that can be hardware-accelerated.
+
+- Limitations to the available resolutions are to be expected. All 
+  3D modes require extra memory to handle double buffering and/or 
+  Z-buffering, and this memory is no longer available for display.
+
+
+Notes, problems and limitations
+===============================
+
+- Computers with more than one PCI bus
+
+  It is possible that a switch to a full-screen Command Prompt, or 
+  any change of mode, will result in a blue-screen crash if a card 
+  is installed on a PCI bus other than bus 0. The problem is under 
+  investigation. Moving the card to a different PCI slot is a 
+  possible workaround.
+
+  There are systems where Windows NT reports conflicts between 
+  adapters installed beyond the PCI bridge. In this case, the 
+  Matrox miniport driver cannot access its own card. If your system 
+  appears unable to find the card, try moving it to a different PCI 
+  slot.
+
+  Installing Microsoft Service Pack 3 (or later) for Windows NT 4.0 
+  should fix many of these problems.
+
+- DirectDraw with virtual desktops
+
+  Some DirectDraw programs don't work properly with virtual 
+  desktops. We recommend you run DirectDraw programs with a normal 
+  desktop.
+
+- 3D-Maze screen saver
+
+  Display problems may appear while using the "3D-Maze" screen 
+  saver. These may happen after Microsoft Service Pack 2 for 
+  Windows NT 4.0 is installed. These display problems are 
+  apparently fixed by Service Pack 3 (or later).
+
+- Running Winstone 97
+
+  The CenterPOPUP feature should be disabled (which is the default 
+  setting) when running the Winstone 97 benchmark. Some tests may 
+  report a time-out error if CenterPOPUP is used.
+
+- Limitation with multiple graphics cards
+
+  Windows NT 4.0 supports a maximum of about 280 different display 
+  modes (combinations of resolution, color palette and refresh rate 
+  settings). You may encounter this limit if you have more than one 
+  Matrox graphics card installed in your computer.
+
+  If the Matrox "VESA settings" option button is selected when 
+  there are multiple Matrox cards in your computer, you're even 
+  more likely to encounter the Windows NT 4.0 limit in the number 
+  of display modes. This is because the "VESA settings" option 
+  supports several different refresh rates for each display 
+  resolution and color palette setting.
+
+  If you have more than one Matrox graphics card in your computer, 
+  we recommend you not use the "VESA settings" option. Note that 
+  changing your refresh rate through the Microsoft "Display 
+  Properties" dialog box activates the "VESA settings" option.
+
+- 3D Studio MAX 1.2
+
+  If you have problems running 3D Studio MAX 1.2 using the Matrox 
+  HEIDI driver, try disabling the "Use bus mastering" check box 
+  under "General settings". To access this check box, click 
+  "Start" > "Settings" > "Control Panel" > "Matrox Display Settings 
+  (double-click)" > "Performance".
+
+- 3D Studio MAX 2.0
+
+  Switching between HEIDI software emulation and OpenGL 
+  acceleration while 3D Studio MAX 2.0 is running, may cause the 
+  viewports to flicker while playing animations. This problem 
+  may also happen if display settings (resolution or color palette) 
+  are changed while 3D Studio MAX is running. If you experience 
+  these problems, try closing 3D Studio MAX, changing your display 
+  settings (resolution or color palette), and then restarting 3D 
+  Studio MAX.
+
+- 15-bit color palette support
+
+  A 15-bit color palette is no longer supported.
+
+- OpenGL support
+
+  Note the following limitations related to the OpenGL (3D) driver 
+  included with your Matrox display driver:
+
+    - If you have a newer Matrox product or your Matrox software 
+      was provided by the manufacturer of your computer, full 
+      OpenGL support may be disabled with your Matrox display 
+      driver. For a Matrox display driver with full OpenGL support 
+      enabled, see the Matrox Web site (www.matrox.com/mga). (If 
+      your Matrox product was provided by the manufacturer of your 
+      computer, check the Web site of that manufacturer for a 
+      display driver. A display driver provided by the manufacturer 
+      of your computer is more likely to be tested with your 
+      computer model.)
+
+    - In multi-display mode under Windows NT 4.0, OpenGL 
+      acceleration is only available if DualHead graphics 
+      hardware is the only graphics hardware you're using. (Multi-
+      display OpenGL acceleration isn't supported with Matrox MMS
+      products or with more than one graphics card in your 
+      computer.)
+
+    - Using 3D Studio MAX 2.0, you may experience problems with the 
+      viewports being improperly redrawn. If this happens, simply 
+      click in a viewport to properly update their display. This 
+      problem isn't present with version 2.5 (or later) of 3D 
+      Studio MAX.
+
+- System memory requirements
+
+  Because of a limitation in Windows NT 4.0, you may experience 
+  problems if your computer doesn't have more system memory than 
+  the total amount of graphics memory used in your computer. To 
+  determine the amount of graphics memory used in your computer, 
+  add the total amount of graphics memory on each installed Matrox 
+  graphics product in your computer.
+
+  Depending on your total amount of graphics memory, here are some 
+  recommended amounts of system memory for Windows NT 4.0:
+
+    |  Graphics memory   |    System memory   |
+    |      (total)       |    (recommended)   |
+    +--------------------+--------------------+
+    |      32 MB         |    64 MB or more   |
+    |      64 MB         |   128 MB or more   |
+    |     128 MB         |   192 MB or more   |
+    |     160 MB         |   256 MB or more   |
+
+- Full-screen DOS support with multiple graphics chip
+
+  If you have more than 10 graphics chips in your system (for 
+  example, 3 Matrox MMS-Quad cards), your system may stop 
+  responding when running a DOS program in full-screen mode. If 
+  your DOS program supports it, run it in a DOS window.
+
+
+Matrox TV output
+================
+
+Certain models of Matrox graphics cards support TV output. With TV 
+output support, you can view or record your computer display with a 
+TV or video recorder connected to your graphics card.
+
+Recommendation
+--------------
+- While playing games using TV output, we recommend you use a 
+  640 x 480 display resolution. This is because the resolution 
+  capabilities of TVs are lower than most computer monitors. If you 
+  use a higher display resolution (800 x 600 or 1024 x 768), the 
+  display on your TV may not look as sharp as the display of your 
+  computer monitor -- that is, some of the extra detail may be 
+  harder to see on your TV.
+
+- For Matrox G100/G200 graphics cards with TV ouput support:
+  Matrox default advanced TV output settings are good for viewing 
+  most computer graphics (for example, computer games or your 
+  Windows desktop) on most TVs. Based on broadcast standards, there 
+  are advanced TV output settings that are better suited for 
+  viewing full-screen video (for example, from a video file). These 
+  settings are:
+
+  NTSC
+     - Brightness: 180
+     - Contrast: 234
+     - Saturation: 137
+     - Hue: 0
+
+  PAL
+     - Brightness: 167
+     - Contrast: 255
+     - Saturation: 138
+     - Hue: 0
+
+  Note: For ideal settings, you may also need to adjust the 
+  settings on your TV. The default brightness, contrast, saturation 
+  and hue settings on most consumer video devices are higher than 
+  broadcast standards. These settings are usually OK for viewing 
+  video but may not look okay with computer graphics. (This is why 
+  Matrox default TV output settings are lower than what's ideal for 
+  video.) For more information on how to adjust settings on your 
+  TV, see your TV manual.
+
+More information
+----------------
+For more information on display settings, see your Matrox manual 
+and online documentation. For information on how to change the 
+display resolution of a game you're using, see its documentation.
+
+Note: The Matrox zoom and virtual desktop features aren't supported 
+in TV output mode. Also, TV output mode isn't supported if you have 
+more than one Matrox graphics card in your computer.
+
+Note: For TV output with full-screen DOS display modes under 
+Windows NT 4.0, only text display modes (02h, 03h) are supported.

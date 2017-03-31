@@ -1,0 +1,282 @@
+--------------------------------------------------------------------------------
+               Matrox Imaging Library (7.5) MILCOR_II.TXT Readme File
+                                February 19th, 2003
+     Copyright (c) 2003 by Matrox Electronic Systems Ltd. All rights reserved.
+--------------------------------------------------------------------------------
+
+
+This document explains the current limitations and particularities when using
+MIL with Matrox Corona-II (subject to change in future releases). 
+
+It also presents last minute board-specific information that did not make it
+into the MIL/MIL-Lite Board-Specific manual or the on-line help. The 
+information found in this file overrides your formally documented material.
+
+
+Contents
+
+1. Matrox Corona-II feature list.
+ 1.1 What's new on Matrox Corona-II, compared with Matrox Corona.
+2. Matrox Corona-II with MIL.
+ 2.1 Mdig...() additions/modifications in MIL 7.5.
+ 2.2 Mdig...() additions/modifications in MIL 7.0.
+ 2.3 Mdisp...() additions/modifications in MIL 7.0.
+3. Matrox Corona-II with ActiveMIL.
+ 3.1 Digitizer control additions/modifications.
+ 3.2 Display control additions/modifications.
+4. Installation notice.
+5. Important display notice.
+6. Simultaneously displaying both a windowed display and an auxiliary display
+   (M_NTSC or M_PAL encoded video format ONLY).
+
+1. Matrox Corona-II feature list.
+
+1.1 What's new on Matrox Corona-II, compared with Matrox Corona.
+
+- MbufAlloc2d()/MbufAllocColor():
+   - When grabbing monochrome analog data, Matrox Corona-II can now acquire
+     10-bit monochrome data (in single- and dual-tap configurations). This is
+     achieved by allocating a 16-bit grab buffer.
+   - Matrox Corona-II can now grab into a M_YUV16 buffer.
+
+- MdigAlloc():
+   - Matrox Corona-II supports a fast DCF switching technique for switching
+     channels between multiple cameras with different DCFs. Refer to "Grabbing
+     from multiple cameras with different DCFs" in the MIL/MIL-Lite 
+     Board-Specific manual.
+   - The multi-path grab feature of Matrox Corona is not supported on Matrox 
+     Corona-II. This is due to the fact that the MGA-Rainbow-Runner is not 
+     present on Matrox Corona-II.
+   - The "rs170rgb.dcf" and "ccirrgb.dcf" DCF files are now renamed 
+     "rs170.dcf" and "ccir.dcf", respectively.
+
+- MdigControl()/MdigInquire()
+   - IMPORTANT: The default control value for M_GRAB_START_MODE (refer to 
+     MdigControl()) is M_FIELD_START_ODD on Matrox Corona-II. On Matrox Corona,
+     it was M_FIELD_START_EVEN.
+   - Matrox Corona-II has 4 selectable input filters on each RGB channel.
+     Refer to M_INPUT_FILTER in the MdigControl() section of the 
+     MIL/MIL-Lite Board-Specific manual.
+   - The presence of a video source can now be determined. Refer to 
+     M_CAMERA_PRESENT in the MdigInquire() section described below (point 2.1).
+   - There is now a way to determine if Matrox Corona-II is locked
+     (synchronized) with the video source. Refer to M_CAMERA_LOCKED in the 
+     MdigInquire() section described below (point 2.1).
+   - There is a new digitizer control to set the clock source that drives the
+     exposure signal. Refer to M_GRAB_EXPOSURE_CLOCK_SOURCE in the MdigControl()
+     section and M_GRAB_EXPOSURE_CLOCK_FREQUENCY in the MdigInquire() section
+     of the MIL/MIL-Lite Board-Specific manual.
+   - All of the following MdigInquire() inquire types are now obsolete:
+       M_GRAB_FIELD_END_ODD_THREAD_HANDLE /_ID   
+       M_GRAB_FIELD_END_EVEN_THREAD_HANDLE /_ID
+       M_GRAB_THREAD_HANDLE /_ID
+       M_GRAB_START_THREAD_HANDLE /_ID
+       M_GRAB_END_THREAD_HANDLE /_ID
+       M_GRAB_FIELD_START_THREAD_HANDLE /_ID
+       M_GRAB_FIELD_END_THREAD_HANDLE /_ID    
+       M_GRAB_FRAME_END_THREAD_HANDLE /_ID   
+       M_GRAB_FRAME_START_THREAD_HANDLE /_ID
+     If you need to inquire about the thread's handle or identifier, use
+     the following Win32 functions: GetCurrentThread() or GetCurrentThreadId().
+     Please refer to Microsoft documentation for further details.
+   - The MdigControl()/MdigInquire() M_THREAD_PRIORITY control type is now 
+     obsolete; use the Win32 function SetThreadPriority(). Please refer to  
+     Microsoft documentation for further details.
+
+- MdigChannel():
+   - Matrox Corona-II can switch between 6 monochrome channels or 2 RGB channels.
+     Refer to the MdigChannel() section in the MIL/MIL-Lite Board-Specific 
+     manual.
+
+- MdigGrab():
+   - Matrox Corona-II has an integrated RGB-to-YUV color space converter, which
+     converts 24-bit RGB video data to YUV16. Also, when grabbing from a color
+     source into a monochrome buffer, the video data is converted to YUV16 and
+     the Y (luminance) component is used.
+   - The companion digital-input board can grab from 10-bit dual-tap cameras (for 
+     odd/even-line tap configurations only).
+
+- MdigHookFunction():
+   - There are 4 new digitizer hooks: M_FRAME_START, M_FIELD_START,
+     M_FIELD_START_ODD and M_FIELD_START_EVEN. Refer to the MdigHookFunction()
+     section of the MIL/MIL-Lite Board-Specific manual.
+
+- MdigLut():
+   - On Matrox Corona-II, the input LUT can be configured as a triple 
+     256 x 8-bit or a dual 1024 x 16-bit LUT. Refer to MdigLut() in the
+     MIL/MIL-Lite Board-Specific manual.
+
+- MdispAlloc():
+   - Unlike Matrox Corona, Matrox Corona-II's encoder (TV-out) is independent
+     of the display. The main display can be set to any supported 
+     resolution while the encoder outputs a live-grab with overlay.
+     Note that during a live grab, the encoder output is without tearing
+     artifacts. Refer to MdispAlloc() in the MIL Command Reference and in the
+     MIL/MIL-Lite Board-Specific manuals.
+
+- MdispControl(), MdispInquire():
+   - The encoder controls have been modified for Matrox Corona-II. The
+     controls for Matrox Corona are still supported on Matrox Corona-II.
+     The following modifications have been made:
+     - The M_ENCODER control type for Matrox Corona is now obsolete on  
+       Matrox Corona-II.
+     - The following Matrox Corona control values for M_ENCODER_FILTER have
+       been changed on Matrox Corona-II:
+       M_FILTER_LOW_PASS_TYPE_A  is now M_LOW_PASS_0
+       M_FILTER_LOW_PASS_TYPE_B  is now M_LOW_PASS_1
+       M_FILTER_EXTENDED         is now M_LOW_PASS_2
+       M_FILTER_NOTCH            is now M_NOTCH
+     - The M_ENCODER_RGB_SYNC control type on Matrox Corona has been replaced
+       by M_SYNC_TYPE on Matrox Corona-II. Also, the control value of M_ENABLE
+       on Matrox Corona is now M_GREEN on Matrox Corona-II. All the other
+       control values remain the same.
+     - The M_ENCODER_MODE control type has been replaced by the DispFormat
+       parameter of MdispAlloc(). Refer to MdispAlloc() in the Command
+       Reference and in the MIL/MIL-Lite Board-Specific manual.
+     - The M_ENCODER_SYNC_SOURCE control type on Matrox Corona is obsolete
+       on Matrox Corona-II. Matrox Corona-II always uses an internal
+       synchronization signal.
+
+- MdispAlloc():
+   - The supported display depths are now 8-bit and 32-bit with a maximum
+     resolution of 1280x1024 at 75Hz. Unlike Matrox Corona, 16-bit and 24-bit 
+     display depths are not supported on Matrox Corona-II.
+   - Note that the underlay can only be 1024x1024.
+
+
+2. Matrox Corona-II with MIL.
+  
+2.1 Mdig...() additions/modifications in MIL 7.5.
+ - MdigControl()/MdigInquire(): M_GRAB_MODE
+         M_ASYNCHRONOUS_QUEUED is now supported.
+
+2.2 Mdig...() additions/modifications in MIL 7.0.
+
+- MdigControl()/MdigInquire() M_CAMERA_LOCK control type:
+   - Controls the camera lock mechanism. This is useful during channel-switching
+     when the digitizer might not be synchronized with the source.
+     Valid control values are:
+     M_ENABLE:  MdigGrab() will wait for the digitizer to be line-locked 
+                with the video source before starting the grab. 
+     M_DISABLE: MdigGrab() will not check if the digitizer is locked 
+                with the video source. If the digitizer is not locked,
+                a synchronization-lost error can occur.
+     M_DEFAULT: Same as M_DISABLE.
+
+- MdigControl()/MdigInquire() M_CAMERA_LOCK_SENSITIVITY control type:
+   - Controls the line- and color-lock sensitivity when M_CAMERA_LOCK is 
+     enabled. This can be used to balance the lock-speed with lock-reliability. 
+     Valid control values are:
+       Any value from 0 to 255: 0  -> fastest lock speed, lowest lock 
+                                      reliability.
+                                255-> slowest lock speed, highest lock 
+                                      reliability.
+       M_DEFAULT: 55.
+
+- MdigControl()/MdigInquire() M_CAMERA_UNLOCK_SENSITIVITY control type:
+   - Controls the unlock sensitivity. When performing a channel-switch, the
+     hardware needs to be unlocked from the video source before it can be
+     locked to the new video source. If the hardware does not unlock properly,
+     it can affect the speed and reliability of the next lock.
+     Valid control values are:
+       Any value from 0 to 255: 0  -> fastest unlock speed, lowest unlock
+                                      reliability.
+                                255-> slowest unlock speed, highest unlock
+                                      reliability.
+       M_DEFAULT: 1.
+
+- MdigInquire() obsolete inquire types:
+   - The M_INPUT_SIGNAL_PRESENT and M_INPUT_SIGNAL_COLOR_LOCK inquires types
+     are now obsolete. They are replaced with M_CAMERA_PRESENT and
+     M_CAMERA_LOCKED, respectively.
+
+- MdigInquire() M_CAMERA_PRESENT inquire type:
+   - Video input signal present: M_YES or M_NO.
+     Returns M_YES when a video input signal is detected. Note that this
+     function does not check if the hardware is locked with the video source.
+     This inquire returns the same information as when using the
+     M_INPUT_SIGNAL_PRESENT inquire type.
+
+- MdigInquire() M_CAMERA_LOCKED inquire type: 
+   - Returns M_YES when a line-lock is achieved, M_NO otherwise.
+     The lock speed/reliability can be controlled using MdigControl()
+     M_CAMERA_LOCK_SENSITIVITY control type.
+
+- MdigHookFunction () M_CAMERA_LOCK hook type:
+   - The user function will be called when a change in the lock-state occurs.
+     Use the MdigInquire() M_CAMERA_LOCKED inquire type to inquire about the
+     new state.
+
+- MdigHookFunction() M_CAMERA_PRESENT hook type:
+   - The user function will be called when a change in the 'camera present'
+     state occurs. Use MdigInquire() M_CAMERA_PRESENT inquire type to inquire 
+     about the new state.
+
+- MdigGrab():
+   - The only dual-tap mode that is supported is the odd-even line 
+     configuration. In this configuration, one tap transmits the odd lines
+     while the other tap transmits the even lines.
+                            
+- MdigGrabContinuous():
+   - You cannot grab continuously dual-tap configurations when using an 
+     auxiliary display mode unless you grab to the overlay.
+
+2.3 Mdisp...() additions/modifications in MIL 7.0.
+
+     - MdispHookFunction():
+       - Not supported with auxiliary displays.
+
+     - MdispPan():
+       - Not supported with auxiliary displays.
+
+     - MdispZoom():
+       - Not supported with auxiliary displays.
+
+
+3. Matrox Corona-II with ActiveMIL.
+
+3.1 Digitizer control additions/modifications.
+
+     - The ExposureBypass property is only supported when the manual exposure
+       model is enabled (True).
+
+3.2 Display control additions/modifications.
+
+     - The FrameStart event is not supported with auxiliary displays.
+     - The Pan and Zoom methods are not supported with auxiliary displays.
+
+
+4. Installation notice.
+
+   - On page 79 of the "Matrox Corona-II Installation and Hardware Reference 
+     Manual" (dated April 23, 2001), the location of pin 70 is incorrect on 
+     the diagram. The pin labeled 70 is actually pin 2. All the odd numbered 
+     pins (1 to 69) are on one side of the connector, while all the even 
+     numbered pins (2 to 70) are on the other.
+
+
+5. Important display notice: 
+ 
+    Typically, if you want to display one or many color images in a window on the 
+    Windows desktop screen (e.g. using the M_WINDOWED display type), the display 
+    update of these image buffers can be much faster if they are allocated in 
+    M_RGB24+M_PLANAR format. Note that this depends on your VGA(s) configuration, 
+    operating system, and the display options that you are using 
+    (e.g. such as non-destructive overlay).
+
+6. Simultaneously displaying both a windowed display and an auxiliary display
+   (M_NTSC or M_PAL encoded video format ONLY).
+ 
+    The standard way to simultaneously display a buffer in both a windowed and 
+    auxiliary display is to allocate two displays: one using M_WINDOWED as the 
+    InitFlag, and one using M_AUXILIARY as the InitFlag. Then, select this buffer 
+    to both displays by calling MdispSelect() twice.
+
+    However, in a basic auxiliary display set-up (i.e. one Windows desktop screen 
+    and one auxiliary screen), it might be possible to reduce the CPU usage by 
+    allocating only one display, using M_AUXILIARY+M_WINDOWED as the InitFlag. 
+    Then, when you select the buffer to the display (i.e. by calling MdispSelect()
+    once), MIL automatically displays the image in both a windowed and an auxiliary 
+    display. Note that this is only for auxiliary displays with encoded video 
+    formats (e.g. M_NTSC or M_PAL).
+

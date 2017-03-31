@@ -1,0 +1,625 @@
+; mga64.inf
+;
+; Installation inf for the Matrox Graphics mga64 graphics adapter.
+;
+
+[Version]
+Signature="$CHICAGO$"
+Provider=%Matrox%
+ClassGUID={4D36E968-E325-11CE-BFC1-08002BE10318}
+Class=Display
+
+[SourceDisksNames]
+1=%DiskId1%,,,""
+2=%DiskId2%,,,""
+3=%DiskId3%,,,""
+4=%DiskId4%,,,""
+5=%DiskId5%,,,""
+6=%DiskId6%,,,""
+
+
+[SourceDisksFiles]
+
+mga64.sys=2
+mga64.dll=2
+mgabg.exe=1
+mgabg.sys=1
+g400icd.dll=3
+g200icd.dll=3
+pduninst.exe=2
+mga.bin=1
+mga.mon=1
+mgabkgnd.bmp=1
+mgactrl.dll=1
+mgactrl.exe=1
+mgadnav.exe=2
+mgamon.dll=2
+mgapanel.cpl=2
+mgaprev.bmp=2
+mgaqdesk.exe=2
+mgasc.exe=2
+mgasheet.dll=2
+pdmmd.dll=1
+pdmmd.exe=1
+pdmmdres.dll=1
+
+;English
+PCtrlEng.dll=3
+PDnavEng.dll=3
+PMonEng.dll=3
+PPanEng.dll=3
+PQdEng.dll=3
+PResEng.dll=3
+PShEng.dll=3
+HMonEng.hlp=3
+HShEng.hlp=3
+HDocEng.doc=3
+HsmgaEng.rtf=3
+pdmmdeng.hlp=3
+pdmmdeng.cnt=3
+ReadEng.txt=1
+
+;French
+PCtrlFre.dll=4
+PDnavFre.dll=4
+PMonFre.dll=4
+PPanFre.dll=4
+PQdFre.dll=4
+PResFre.dll=4
+PShFre.dll=4
+HMonFre.hlp=4
+HShFre.hlp=4
+HDocFre.doc=4
+HsmgaFre.rtf=4
+pdmmdfre.hlp=4
+pdmmdfre.cnt=4
+ReadFre.txt=1
+
+;German
+PCtrlGer.dll=4
+PDnavGer.dll=4
+PMonGer.dll=4
+PPanGer.dll=4
+PQdGer.dll=4
+PResGer.dll=4
+PShGer.dll=4
+HMonGer.hlp=4
+HShGer.hlp=4
+HDocGer.doc=4
+HsmgaGer.rtf=4
+pdmmdger.hlp=4
+pdmmdger.cnt=4
+ReadGer.txt=1
+
+;Italian
+PCtrlIta.dll=4
+PDnavIta.dll=4
+PMonIta.dll=4
+PPanIta.dll=4
+PQdIta.dll=4
+PResIta.dll=4
+PShIta.dll=4
+HMonIta.hlp=4
+HShIta.hlp=4
+HDocIta.doc=4
+HsmgaIta.rtf=4
+pdmmdita.hlp=4
+pdmmdita.cnt=4
+ReadIta.txt=1
+
+;Spanish
+PCtrlSpa.dll=4
+PDnavSpa.dll=4
+PMonSpa.dll=4
+PPanSpa.dll=4
+PQdSpa.dll=4
+PResSpa.dll=4
+PShSpa.dll=4
+HMonSpa.hlp=4
+HShSpa.hlp=4
+HDocSpa.doc=4
+HsmgaSpa.rtf=4
+pdmmdspa.hlp=4
+pdmmdspa.cnt=4
+ReadSpa.txt=1
+
+
+[DestinationDirs]
+DefaultDestDir=11
+CFM=12
+
+
+[Manufacturer]
+%Matrox%   = Matrox.Mfg
+
+[Matrox.Mfg]                                                                                                               
+%Matrox% Millennium G550%ENG%=IN1
+%Matrox% Millennium G450%ENG%=IN1
+%Matrox% Millennium G400%ENG%=IN1
+%Matrox% Millennium G200%ENG%=IN1
+%Matrox% Millennium G550%FRE%=IN2
+%Matrox% Millennium G450%FRE%=IN2
+%Matrox% Millennium G400%FRE%=IN2
+%Matrox% Millennium G200%FRE%=IN2
+%Matrox% Millennium G550%GER%=IN3
+%Matrox% Millennium G450%GER%=IN3
+%Matrox% Millennium G400%GER%=IN3
+%Matrox% Millennium G200%GER%=IN3
+%Matrox% Millennium G550%ITA%=IN4
+%Matrox% Millennium G450%ITA%=IN4
+%Matrox% Millennium G400%ITA%=IN4
+%Matrox% Millennium G200%ITA%=IN4
+%Matrox% Millennium G550%SPA%=IN5
+%Matrox% Millennium G450%SPA%=IN5
+%Matrox% Millennium G400%SPA%=IN5
+%Matrox% Millennium G200%SPA%=IN5
+
+
+[IN1]
+CopyFiles=CFM, CF0, CF1
+
+[IN2]
+CopyFiles=CFM, CF0, CF2
+
+[IN3]
+CopyFiles=CFM, CF0, CF3
+
+[IN4]
+CopyFiles=CFM, CF0, CF4
+
+[IN5]
+CopyFiles=CFM, CF0, CF5
+
+
+[CFM]
+mga64.sys
+mgabg.sys
+
+[CF0]
+mga64.dll
+mgabg.exe
+g400icd.dll
+g200icd.dll
+pduninst.exe
+mga.bin
+mga.mon
+mgabkgnd.bmp
+mgactrl.dll
+mgactrl.exe
+mgadnav.exe
+mgamon.dll
+mgapanel.cpl
+mgaprev.bmp
+mgaqdesk.exe
+mgasc.exe
+mgasheet.dll
+pdmmd.dll
+pdmmd.exe
+pdmmdres.dll
+
+
+[CF1]
+m_ctrl.dll,PCtrlEng.dll
+m_dnav.dll,PDnavEng.dll
+m_mon.dll,PMonEng.dll
+m_panel.dll,PPanEng.dll
+m_qdesk.dll,PQdEng.dll
+m_res.dll,PResEng.dll
+m_sheet.dll,PShEng.dll
+mgamon.hlp,HMonEng.hlp
+mgasheet.hlp,HShEng.hlp
+Pdonline.doc,HDocEng.doc
+Pdreadme.txt,ReadEng.txt
+Pdsupmga.rtf,HsmgaEng.rtf
+pdmmdeng.hlp
+pdmmdeng.cnt
+
+[CF2]
+m_ctrl.dll,PCtrlFre.dll
+m_dnav.dll,PDnavFre.dll
+m_mon.dll,PMonFre.dll
+m_panel.dll,PPanFre.dll
+m_qdesk.dll,PQdFre.dll
+m_res.dll,PResFre.dll
+m_sheet.dll,PShFre.dll
+mgamon.hlp,HMonFre.hlp
+mgasheet.hlp,HShFre.hlp
+Pdonline.doc,HDocFre.doc
+Pdreadme.txt,ReadFre.txt
+Pdsupmga.rtf,HsmgaFre.rtf
+pdmmdfre.hlp
+pdmmdfre.cnt
+
+[CF3]
+m_ctrl.dll,PCtrlGer.dll
+m_dnav.dll,PDnavGer.dll
+m_mon.dll,PMonGer.dll
+m_panel.dll,PPanGer.dll
+m_qdesk.dll,PQdGer.dll
+m_res.dll,PResGer.dll
+m_sheet.dll,PShGer.dll
+mgamon.hlp,HMonGer.hlp
+mgasheet.hlp,HShGer.hlp
+Pdonline.doc,HDocGer.doc
+Pdreadme.txt,ReadGer.txt
+Pdsupmga.rtf,HsmgaGer.rtf
+pdmmdger.hlp
+pdmmdger.cnt
+
+[CF4]
+m_ctrl.dll,PCtrlIta.dll
+m_dnav.dll,PDnavIta.dll
+m_mon.dll,PMonIta.dll
+m_panel.dll,PPanIta.dll
+m_qdesk.dll,PQdIta.dll
+m_res.dll,PResIta.dll
+m_sheet.dll,PShIta.dll
+mgamon.hlp,HMonIta.hlp
+mgasheet.hlp,HShIta.hlp
+Pdonline.doc,HDocIta.doc
+Pdreadme.txt,ReadIta.txt
+Pdsupmga.rtf,HsmgaIta.rtf
+pdmmdita.hlp
+pdmmdita.cnt
+
+[CF5]
+m_ctrl.dll,PCtrlSpa.dll
+m_dnav.dll,PDnavSpa.dll
+m_mon.dll,PMonSpa.dll
+m_panel.dll,PPanSpa.dll
+m_qdesk.dll,PQdSpa.dll
+m_res.dll,PResSpa.dll
+m_sheet.dll,PShSpa.dll
+mgamon.hlp,HMonSpa.hlp
+mgasheet.hlp,HShSpa.hlp
+Pdonline.doc,HDocSpa.doc
+Pdreadme.txt,ReadSpa.txt
+Pdsupmga.rtf,HsmgaSpa.rtf
+pdmmdspa.hlp
+pdmmdspa.cnt
+
+;
+; Service Installation
+;
+
+[IN1.Services]
+AddService = mga64, 0x00000002, IN1_Service_Inst, IN1_EventLog_Inst
+AddService = MGACtrl,,MGACtrl_Service_Inst
+AddService = MGABGEXE,,MGABG_Service_Inst
+
+[IN2.Services]
+AddService = mga64, 0x00000002, IN1_Service_Inst, IN1_EventLog_Inst
+AddService = MGACtrl,,MGACtrl_Service_Inst
+AddService = MGABGEXE,,MGABG_Service_Inst
+
+[IN3.Services]
+AddService = mga64, 0x00000002, IN1_Service_Inst, IN1_EventLog_Inst
+AddService = MGACtrl,,MGACtrl_Service_Inst
+AddService = MGABGEXE,,MGABG_Service_Inst
+
+[IN4.Services]
+AddService = mga64, 0x00000002, IN1_Service_Inst, IN1_EventLog_Inst
+AddService = MGACtrl,,MGACtrl_Service_Inst
+AddService = MGABGEXE,,MGABG_Service_Inst
+
+[IN5.Services]
+AddService = mga64, 0x00000002, IN1_Service_Inst, IN1_EventLog_Inst
+AddService = MGACtrl,,MGACtrl_Service_Inst
+AddService = MGABGEXE,,MGABG_Service_Inst
+
+
+[IN1_Service_Inst]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 1                  ; SERVICE_SYSTEM_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\mga64.sys
+
+[IN1_EventLog_Inst]
+AddReg = IN1_EventLog_AddReg
+
+[IN1_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,"%SystemRoot%\System32\IoLogMsg.dll;%SystemRoot%\System32\drivers\mga64.sys"
+HKR,,TypesSupported,0x00010001,7
+
+[MGACtrl_Service_Inst]
+DisplayName    = MGACtrl
+ServiceType    = 0x110              ; SERVICE_WIN32_OWN_PROCESS | SERVICE_INTERACTIVE_PROCESS
+StartType      = 2                  ; SERVICE_AUTO_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+ServiceBinary  = %11%\mgasc.exe
+
+[MGABG_Service_Inst]
+DisplayName = MGABGEXE
+ServiceType = 0x00000010
+StartType = 2
+ErrorControl = 0
+ServiceBinary = %11%\mgabg.exe
+
+;
+; Software Installation
+;
+
+[IN1.SoftwareSettings]
+AddReg = AR_DeviceSettingsSub, AR_PDeskSub, AR_PDeskOpSub, AR_DrvSettingsSub, AR_DrvSettingsOpSub, AR_ENGSub
+
+[IN2.SoftwareSettings]
+AddReg = AR_DeviceSettingsSub, AR_PDeskSub, AR_PDeskOpSub, AR_DrvSettingsSub, AR_DrvSettingsOpSub, AR_FRESub
+
+[IN3.SoftwareSettings]
+AddReg = AR_DeviceSettingsSub, AR_PDeskSub, AR_PDeskOpSub, AR_DrvSettingsSub, AR_DrvSettingsOpSub, AR_GERSub
+
+[IN4.SoftwareSettings]
+AddReg = AR_DeviceSettingsSub, AR_PDeskSub, AR_PDeskOpSub, AR_DrvSettingsSub, AR_DrvSettingsOpSub, AR_ITASub
+
+[IN5.SoftwareSettings]
+AddReg = AR_DeviceSettingsSub, AR_PDeskSub, AR_PDeskOpSub, AR_DrvSettingsSub, AR_DrvSettingsOpSub, AR_SPASub
+
+
+[AR_DeviceSettings]
+AddReg = AR_DeviceSettingsSub
+
+[AR_DeviceSettingsSub]
+HKR,, InstalledDisplayDrivers,     %REG_MULTI_SZ%, mga64
+HKR,, VgaCompatible,               %REG_DWORD%,    0
+
+
+[AR_PDesk]
+AddReg = AR_PDeskSub
+
+[AR_PDeskSub]
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Run,"MGA QuickDesk",,"%11%\MGAQDESK.EXE"
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk,"PowerDesk Path",,"%11%"
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk,"RegistrationDone",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk,"EnableRegistration",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk,"RegWebPath",,"http://www.matrox.com/mga/tech_supp/registration/home.htm"
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk,"WebPath",,"http://www.matrox.com/mga/home.htm"
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Current Settings,EnableCustomSupport,%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Current Settings,MRUMaxCount,%REG_DWORD%,0x14
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Current Settings,EnableMultiDesk,%REG_DWORD%,1
+
+
+[AR_PDeskOp]
+AddReg = AR_PDeskOpSub
+
+[AR_PDeskOpSub]
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Current Settings,EnableCenterPopup,%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Current Settings,EnableMaxView,%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Current Settings,WarnWhenPDCanNotRun,%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Current Settings,WarnWhenSwitching,%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Current Settings,BootTimer,%REG_DWORD%,0xFA0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Current Settings,User.EnableDualZoomPanning,%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Current Settings,User.EnableDualZoomFiltering,%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Current Settings,Multi ModeChange Hotkey,%REG_DWORD%,0x74A
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Current Settings,ShowDHWizard,%REG_DWORD%,1
+
+;Schemes
+
+;Elevator
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Elevator,"Bits per Pixel",%REG_DWORD%,0x8
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Elevator,"Desktop Type",%REG_DWORD%,0x3
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Elevator,"Font Size",%REG_DWORD%,0x78
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Elevator,"Mga.DesktopX",%REG_DWORD%,0x400
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Elevator,"Mga.DesktopY",%REG_DWORD%,0x600
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Elevator,"Mga.DisplayX",%REG_DWORD%,0x400
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Elevator,"Mga.DisplayY",%REG_DWORD%,0x300
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Elevator,"OffScreen Usage",%REG_DWORD%,0
+
+;High Color
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\High Color,"Bits per Pixel",%REG_DWORD%,0x10
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\High Color,"Desktop Type",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\High Color,"Font Size",%REG_DWORD%,0x78
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\High Color,"Mga.DesktopX",%REG_DWORD%,0x400
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\High Color,"Mga.DesktopY",%REG_DWORD%,0x300
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\High Color,"Mga.DisplayX",%REG_DWORD%,0x400
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\High Color,"Mga.DisplayY",%REG_DWORD%,0x300
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\High Color,"OffScreen Usage",%REG_DWORD%,0
+
+;Low Res
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Low Res,"Bits per Pixel",%REG_DWORD%,0x8
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Low Res,"Desktop Type",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Low Res,"Font Size",%REG_DWORD%,0x60
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Low Res,"Mga.DesktopX",%REG_DWORD%,0x280
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Low Res,"Mga.DesktopY",%REG_DWORD%,0x1E0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Low Res,"Mga.DisplayX",%REG_DWORD%,0x280
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Low Res,"Mga.DisplayY",%REG_DWORD%,0x1E0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Low Res,"OffScreen Usage",%REG_DWORD%,0
+
+;Panoramic
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Panoramic,"Bits per Pixel",%REG_DWORD%,0x8
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Panoramic,"Desktop Type",%REG_DWORD%,0x2
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Panoramic,"Font Size",%REG_DWORD%,0x78
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Panoramic,"Mga.DesktopX",%REG_DWORD%,0x800
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Panoramic,"Mga.DesktopY",%REG_DWORD%,0x300
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Panoramic,"Mga.DisplayX",%REG_DWORD%,0x400
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Panoramic,"Mga.DisplayY",%REG_DWORD%,0x300
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Panoramic,"OffScreen Usage",%REG_DWORD%,0
+
+;Rainbow in 800
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Rainbow in 800,"Bits per Pixel",%REG_DWORD%,0x18
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Rainbow in 800,"Desktop Type",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Rainbow in 800,"Font Size",%REG_DWORD%,0x78
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Rainbow in 800,"Mga.DesktopX",%REG_DWORD%,0x320
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Rainbow in 800,"Mga.DesktopY",%REG_DWORD%,0x258
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Rainbow in 800,"Mga.DisplayX",%REG_DWORD%,0x320
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Rainbow in 800,"Mga.DisplayY",%REG_DWORD%,0x258
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Rainbow in 800,"OffScreen Usage",%REG_DWORD%,0
+
+;Trusty 8bits
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Trusty 8bits,"Bits per Pixel",%REG_DWORD%,0x8
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Trusty 8bits,"Desktop Type",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Trusty 8bits,"Font Size",%REG_DWORD%,0x78
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Trusty 8bits,"Mga.DesktopX",%REG_DWORD%,0x400
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Trusty 8bits,"Mga.DesktopY",%REG_DWORD%,0x300
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Trusty 8bits,"Mga.DisplayX",%REG_DWORD%,0x400
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Trusty 8bits,"Mga.DisplayY",%REG_DWORD%,0x300
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Trusty 8bits,"OffScreen Usage",%REG_DWORD%,0
+
+;Virtuality
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Virtuality,"Bits per Pixel",%REG_DWORD%,0x8
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Virtuality,"Desktop Type",%REG_DWORD%,0x1
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Virtuality,"Font Size",%REG_DWORD%,0x78
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Virtuality,"Mga.DesktopX",%REG_DWORD%,0x640
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Virtuality,"Mga.DesktopY",%REG_DWORD%,0x4B0
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Virtuality,"Mga.DisplayX",%REG_DWORD%,0x400
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Virtuality,"Mga.DisplayY",%REG_DWORD%,0x300
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk\Schemes\Virtuality,"OffScreen Usage",%REG_DWORD%,0
+
+
+; Driver settings
+[AR_DrvSettings]
+AddReg = AR_DrvSettingsSub
+
+[AR_DrvSettingsSub]
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"Mga.NbPixelWidths",%REG_DWORD%,0x04
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"Mga.PixelWidths",%REG_BINARY%,08,10,18,20
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"Mga.NbSingleResolutions",%REG_DWORD%,0x2C
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"Mga.SingleResolutions",%REG_BINARY%,80,02,E0,01,D0,02,E\
+0,01,D0,02,40,02,00,03,40,02,20,03,58,02,50,03,E0,01,58,03,E0,01,60,03,E0,01,00,04,00,02,00,04,00,03,00,04\
+,00,04,00,04,00,05,00,04,00,06,30,04,58,02,80,04,60,03,B0,04,40,06,00,05,D0,02,00,05,00,03,00,05,20,03,00,\
+05,C0,03,00,05,00,04,00,05,40,06,50,05,FE,02,50,05,00,03,60,05,00,03,40,06,00,04,40,06,B0,04,40,06,00,05,0\
+0,07,40,05,08,07,A0,05,40,07,70,05,80,07,0A,04,80,07,38,04,80,07,B0,04,80,07,A0,05,00,08,00,05,00,08,00,06\
+,00,08,00,08,00,09,A0,05,40,01,8,0C,40,01,0,0F,00,02,80,01,80,02,90,01,C0,03,60,09
+
+
+;SubsysID
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"Mga.SubsysIDs",%REG_BINARY%,2B,10,25,05,05,17,01,00,2B,\
+10,25,05,2B,10,38,03,2B,10,25,05,2B,10,78,03,2B,10,25,05,2B,10,41,05,2B,10,25,05,2B,10,42,05,2B,10,25,05,2\
+B,10,41,06,2B,10,25,05,2B,10,42,06,2B,10,25,05,2B,10,C0,07,2B,10,25,05,2B,10,C1,07,2B,10,25,05,2B,10,41,0D\
+,2B,10,25,05,2B,10,80,0F,2B,10,27,25,2B,10,83,0F,2B,10,27,25,2B,10,84,0F,2B,10,25,05,2B,10,D8,19,2B,10,25,\
+05,2B,10,F8,19,2B,10,25,05,2B,10,59,21,2B,10,25,05,2B,10,79,21,2B,10,25,05,2B,10,7D,21,2B,10,25,05,2B,10,D\
+0,5D,2B,10,25,05,2B,10,50,5F,2B,10,25,05,2B,10,51,5F,2B,10,25,05,2B,10,52,5F,2B,10,25,05,2B,10,10,90,2B,10\
+,19,05,00,00,00,00,2B,10,1A,05,00,00,00,00,2B,10,01,10,2B,10,01,FF,2B,10,25,05,2B,10,E0,41,2B,10,25,05,2B,\
+10,80,5A,2B,10,25,05,2B,10,B0,5E,2B,10,27,25,2B,10,40,0F,2B,10,27,25,2B,10,41,0F,2B,10,27,25,2B,10,82,0F,2\
+B,10,1B,05,00,00,00,00,2B,10,1F,05,00,00,00,00,2B,10,20,05,2B,10,03,FF,2B,10,21,05,2B,10,00,FF,2B,10,21,05\
+,14,10,03,FF,2B,10,00,10,2B,10,01,FF,2B,10,27,25,2B,10,52,5F,2B,10,27,25,2B,10,51,5F,2B,10,27,25,2B,10,50,\
+5F,2B,10,27,25,2B,10,D0,5D
+
+
+HKLM,SOFTWARE\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers,"G200ICD",%REG_SZ%,"G200ICD.DLL"
+HKLM,SOFTWARE\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers,"G400ICD",%REG_SZ%,"G400ICD.DLL"
+
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"Device Description",,"Matrox MGA Millennium/Mystique"
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.AlternateLines",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.SynchronizeDac",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.Enable3dClock",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.EnableUSWC",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.EnableSecondCrtc",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.Enable3dClock",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.EnableAGP",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"Mga.UseDefaultIrq",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.EnablePciPrimary",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.EnableOverlayShrink",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"Mga.EnableICD",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"Mga.EnableMix",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"Mga.FlatOutputOnCrt",%REG_DWORD%,0x1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"Mga.ShowCloneMonitorPage",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"PDEnable",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"Mga.DetectBoardLastRes",%REG_DWORD%,1
+
+
+[AR_DrvSettingsOp]
+AddReg = AR_DrvSettingsOpSub
+
+[AR_DrvSettingsOpSub]
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.DeviceBitmaps",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.MgaInfoFile",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.UseBusMastering",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.BrightnessNTSC",%REG_DWORD%,0x64
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.BrightnessPAL",%REG_DWORD%,0x57
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.ContrastNTSC",%REG_DWORD%,0x64
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.ContrastPAL",%REG_DWORD%,0x79
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.HueNTSC",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.HuePAL",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.SaturationNTSC",%REG_DWORD%,0x5A
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.SaturationPAL",%REG_DWORD%,0x67
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.AntiFlicker",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.EnhanceText",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.ReduceEdgeFlicker",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.Mono",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.QuadHWDirectDraw",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.CRTCConfiguration",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.SingleOutput",%REG_DWORD%,0
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.Filtering",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User.EnableClone",%REG_DWORD%,1
+
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User3d.TextureMapping",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User3d.AntiAliasLines",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User3d.SwapVsyncEnable",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User3d.3DEnable",%REG_DWORD%,1
+HKLM,SYSTEM\CurrentControlSet\Services\mga64\Device0,"User3d.UseZ32",%REG_DWORD%,0
+
+[AR_ENG]
+AddReg = AR_ENGSub
+
+[AR_ENGSub]
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MGA NT PowerDesk,"DisplayName",%REG_SZ%,"Matrox Graphics Software (remove only)"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MGA NT PowerDesk,"UninstallString",%REG_SZ%,"%11%\pduninst.exe"
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk,"SelectedLanguage",%REG_SZ%,"ENG"
+
+[AR_FRE]
+AddReg = AR_FRESub
+
+[AR_FRESub]
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MGA NT PowerDesk,"DisplayName",%REG_SZ%,"Matrox - Logiciel graphique (désinstaller uniquement)"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MGA NT PowerDesk,"UninstallString",%REG_SZ%,"%11%\pduninst.exe"
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk,"SelectedLanguage",%REG_SZ%,"FRE"
+
+[AR_GER]
+AddReg = AR_GERSub
+
+[AR_GERSub]
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MGA NT PowerDesk,"DisplayName",%REG_SZ%,"Matrox Grafik Software (nur entfernen)"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MGA NT PowerDesk,"UninstallString",%REG_SZ%,"%11%\pduninst.exe"
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk,"SelectedLanguage",%REG_SZ%,"GER"
+
+[AR_ITA]
+AddReg = AR_ITASub
+
+[AR_ITASub]
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MGA NT PowerDesk,"DisplayName",%REG_SZ%,"Matrox - Software scheda grafica (solo rimozione)"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MGA NT PowerDesk,"UninstallString",%REG_SZ%,"%11%\pduninst.exe"
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk,"SelectedLanguage",%REG_SZ%,"ITA"
+
+[AR_SPA]
+AddReg = AR_SPASub
+
+[AR_SPASub]
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MGA NT PowerDesk,"DisplayName",%REG_SZ%,"Matrox - Software de visualización (sólo eliminar)"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MGA NT PowerDesk,"UninstallString",%REG_SZ%,"%11%\pduninst.exe"
+HKLM,SYSTEM\CurrentControlSet\Services\MGACtrl\PowerDesk,"SelectedLanguage",%REG_SZ%,"SPA"
+
+;
+; Source file information
+;
+
+[Strings]
+;
+; Non-Localizable Strings
+;
+
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_EXPAND_SZ  = 0x00020000
+REG_BINARY     = 0x00000001
+REG_DWORD      = 0x00010001
+SERVICEROOT    = SYSTEM\CurrentControlSet\Services
+
+;
+; Localizable Strings
+;
+
+ENG=" - English"
+FRE=" - Français"
+GER=" - Deutsch"
+ITA=" - Italiano"
+SPA=" - Español"
+
+DiskId1     = "Matrox MGA Windows NT 4.0 Driver Disk #1"
+DiskId2     = "Matrox MGA Windows NT 4.0 Driver Disk #2"
+DiskId3     = "Matrox MGA Windows NT 4.0 Driver Disk #3"
+DiskId4     = "Matrox MGA Windows NT 4.0 Driver Disk #4"
+DiskId5     = "Matrox MGA Windows NT 4.0 Driver Disk #5"
+DiskId6     = "Matrox MGA Windows NT 4.0 Driver Disk #6"
+GraphAdap   = "Graphics Adapter"
+Matrox      = "Matrox Graphics"

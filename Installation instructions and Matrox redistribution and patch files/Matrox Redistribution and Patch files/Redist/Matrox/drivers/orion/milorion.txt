@@ -1,0 +1,287 @@
+--------------------------------------------------------------------------------
+              Matrox Imaging Library (7.5) milorion.txt Readme File
+                                February 19th, 2003
+     Copyright (c) 2003 by Matrox Electronic Systems Ltd. All rights reserved.
+--------------------------------------------------------------------------------
+
+
+This document explains the current limitations and particularities when using
+MIL with Matrox Orion and Matrox Orion grab modules on Matrox 4Sight-II.
+
+It also presents last minute information that did not make it into the manual
+or on-line help. Note that this text file serves to complement your manual. The 
+information found in this file overrides your formally documented material.
+
+Matrox Orion with MIL 7.5 - there are no changes from MIL 7.1.
+
+Contents
+
+1. Matrox Orion with MIL.
+   1.0 What's new on Matrox Orion grab modules for 4Sight-II in
+       MIL 7.1.
+   1.1 What's new on Matrox Orion, and Matrox Orion grab modules for 4Sight-II in
+       MIL 7.0.
+   1.2 Limitations, particularities, and last minute information for Matrox
+       Orion and Matrox Orion for 4Sight-II.
+   1.3 Bug fixes.
+   1.4 Known bugs.
+2. Matrox Orion with ActiveMIL.
+3. Simultaneously displaying both a windowed display and an auxiliary display
+   (M_NTSC or M_PAL encoded video format ONLY).
+
+1. Matrox Orion with MIL.
+
+1.0 What's new on Matrox Orion grab modules for 4Sight-II in MIL 7.1.
+
+- Added support of Matrox Orion /Dual for Matrox 4Sight-II. Now all three
+  Matrox Orion grab modules for 4Sight-II are fully supported (/Standard, /RGB and /Dual).
+
+- Fast channel switching is now supported on Matrox Orion /Standard and /Dual for 4Sight-II;
+  however, it is not supported on the /RGB version.
+
+  Channel switching is always performed with MdigChannel(). If you intend to switch 
+  channels after grabbing a single field or frame, enable the fast-channel switching mode
+  to minimize loss of data between grabs; set the M_CAMERA_LOCK control type to
+  M_ENABLE+M_FAST. 
+
+- MdigAlloc():
+   - Matrox Orion /Dual for 4Sight-II has 2 independent digitizer paths. This means that
+     two completly independant digitizers can be allocated on one system. The
+     digitizers must use M_DEV0 and M_DEV1 as device numbers like this:
+         MsysAlloc(M_SYSTEM_ORION, M_DEF_SYSTEM_NUM, M_SETUP, &MilSystem);
+         MdigAlloc(MilSystem, M_DEV0, M_DEF_DIGITIZER_FORMAT, M_DEFAULT, &MilDigitizerDev0);
+         MdigAlloc(MilSystem, M_DEV1, M_DEF_DIGITIZER_FORMAT, M_DEFAULT, &MilDigitizerDev1);
+     Please refer to MIL example "mfocusdual.c" in \mil\examples\orion for futher details.
+
+- MdigChannel():
+   - On the Matrox Orion /Dual for 4Sight-II, you can attach and switch between 24 monochrome
+     cameras(RS-170/CCIR format), 24 composite color cameras (NTSC/PAL format), or 12 Y/C
+     cameras (NTSC/PAL format).
+
+- MdigControl(M_CAMERA_LOCK):
+   - To enable fast channel switching on Matrox Orion /Standard and /Dual for 4sight-II, set
+     M_CAMERA_LOCK control type to M_ENABLE+M_FAST. Note that M_CAMERA_LOCK_SENSITIVITY
+     and M_CAMERA_UNLOCK_SENSITIVITY have no effect when in this mode.
+
+- MdispControl(M_SYNC_TYPE):
+   - This control type can also be set to M_ALL. This setting outputs the sync signal on 
+     both the green (M_GREEN) and separate (M_SEPARATE) channels. M_ALL is now the default
+     (M_DEFAULT) value for this control type.
+
+- MsysInquire(M_BOARD_TYPE):
+   - M_ORION_4SIGHT_II_/Dual is added to the existing board types.
+
+1.1 What's new on Matrox Orion, and Matrox Orion grab modules for 4Sight-II in
+    MIL 7.0.
+
+- MbufAllocColor():
+   - M_RGB24+M_PLANAR buffers are now supported.
+
+- MdigAlloc():
+   - Grabbing from the RGB path of Matrox Orion is now fully supported.
+   - Matrox Orion supports a grab feature that allows you to simultaneously
+     grab live into the display and a Host buffer for processing. For details, 
+     see the MdigAlloc() section in the MIL/MIL-Lite Board-Specific manual.
+   - Matrox Orion supports a fast DCF switching technique for switching
+     channels between multiple cameras that require different DCFs. Refer to
+     "Grabbing from multiple cameras with different DCFs" in the MIL/MIL-Lite 
+     Board-Specific manual.
+
+- MdigControl()/MdigInquire():
+   - One-field grabs are now supported using M_GRAB_FIELD_NUM with a
+     control value of 1.
+   - Hardware/software triggers are now supported. Refer to M_TRIGGER_SOURCE.
+   - Asynchronous queued grabs are now supported. Refer to M_GRAB_MODE with 
+     M_ASYNCHRONOUS_QUEUED as the control value.
+   - The scaling quality can be controlled. Refer to M_GRAB_SCALE_QUALITY.
+   - It is now possible to control the interpolation type while grabbing an
+     image. Refer to M_INTERPOLATION_MODE.
+   - It is now possible to abort a grab that is in progress. Refer to
+     M_GRAB_ABORT.
+   - It is now possible to scale a YUV buffer. Refer to M_GRAB_SCALE.
+   - The input filter on the RGB path of Matrox Orion can be bypassed. Refer
+     to M_INPUT_FILTER in the MdigControl() section of the MIL/MIL-Lite 
+     Board-Specific manual.
+   - It is now possible to determine if Matrox Orion is locked
+     (synchronized) with the video source. Refer to M_CAMERA_LOCKED in the
+     MdigInquire() section.
+   - All the following MdigInquire() inquire types are now obsolete:
+       M_GRAB_FIELD_END_ODD_THREAD_HANDLE /_ID   
+       M_GRAB_FIELD_END_EVEN_THREAD_HANDLE /_ID
+       M_GRAB_THREAD_HANDLE /_ID
+       M_GRAB_START_THREAD_HANDLE /_ID
+       M_GRAB_END_THREAD_HANDLE /_ID
+       M_GRAB_FIELD_START_THREAD_HANDLE /_ID
+       M_GRAB_FIELD_END_THREAD_HANDLE /_ID    
+       M_GRAB_FRAME_END_THREAD_HANDLE /_ID   
+       M_GRAB_FRAME_START_THREAD_HANDLE /_ID
+     If you need to inquire about the thread's handle or identifier, use
+     the following Win32 functions: GetCurrentThread() or GetCurrentThreadId().
+     Please refer to Microsoft documentation for further details.
+   - The MdigControl()/MdigInquire() M_THREAD_PRIORITY control type is now
+     obsolete. Use the Win32 function SetThreadPriority(). Please refer to
+     Microsoft documentation for further details.
+
+- MdispAlloc():
+   - Matrox Orion's display section can only drive an auxiliary display with
+     encoded video formats. You should therefore use another VGA card to drive
+     an auxiliary display with non-encoded video formats, and set this VGA card
+     for auxiliary display.
+   - The encoder (TV-out) is now independant of the display. The main display
+     can be set to any supported resolution while the encoder outputs a
+     live-grab with overlay. Note that during a live grab, the encoder output
+     does not have tearing artifacts. Refer to MdispAlloc() in the MIL Command
+     Reference and in the MIL/MIL-Lite Board-Specific manuals.
+
+- MsysAlloc():
+   - Multiple Matrox Orion boards are now supported under Windows 98, Windows
+     Me, and Windows 2000, but not under Windows NT.
+
+1.2 Limitations, particularities, and last minute information for Matrox
+    Orion and Matrox Orion for 4Sight-II.
+
+- MdigControl()/MdigInquire() M_CAMERA_LOCK control type:
+   - Controls the camera lock mechanism. This is useful during channel-switching
+     when the digitizer might not be synchronized with the source.
+     Valid control values are:
+     M_ENABLE+M_FAST:  MdigGrab() will wait for the digitizer to be line-locked 
+                       with the video source before starting the grab. Use this 
+                       value if you want fast channel switching. Support on 
+                       Matrox Orion /Standard and /Dual for 4sight-II only.
+     M_ENABLE:         MdigGrab() will wait for the digitizer to be line-locked 
+                       with the video source before starting the grab. 
+     M_DISABLE:        MdigGrab() will not check that the digitizer is locked 
+                       with the video source. If the digitizer is not locked,
+                       a synchronization-lost error can occur.
+     M_DEFAULT: Same as M_ENABLE.
+
+- MdigControl() M_CAMERA_COLOR_LOCK control type: 
+   - Controls if a color-lock check is done when M_CAMERA_LOCK is enabled or
+     when using MdigInquire(M_CAMERA_LOCKED). This only applies when using a
+     composite color DCF.
+     Valid control values are:
+     M_ENABLE:  A color-lock check will be done before starting the grab.
+     M_DISABLE: A color-lock check will not be done.
+     M_DEFAULT: M_ENABLE when using a composite color DCF. M_DISABLE otherwise.
+
+- MdigControl()/MdigInquire() M_CAMERA_LOCK_SENSITIVITY control type:
+   - Controls the line-  and color-lock sensitivity when M_CAMERA_LOCK is 
+     enabled. This can be used to balance the lock-speed with the 
+     lock-reliability. 
+     Valid control values are:
+       Any value from 0 to 255: 0  -> fastest lock speed, lowest lock 
+                                      reliability.
+                                255-> slowest lock speed, highest lock 
+                                      reliability.
+       or M_DEFAULT.
+
+- MdigControl()/MdigInquire() M_CAMERA_UNLOCK_SENSITIVITY control type:
+   - Controls the unlock sensitivity. When performing a channel-switch, the
+     hardware needs to be unlocked from the video source before locking to the new
+     video source. If the hardware is not unlocked properly, it can affect the
+     speed and reliability of the next lock.
+     Valid control values are:
+       Any value from 0 to 255: 0  -> fastest unlock speed, lowest unlock
+                                      reliability.
+                                255-> slowest unlock speed, highest unlock
+                                      reliability.
+       or M_DEFAULT.
+     This control is only supported on Matrox Orion /Standard and /Dual for 4Sight-II.
+
+- MdigControl() M_INTERPOLATION_MODE control type:
+   - Note that only the M_DEFAULT and M_NEAREST_NEIGHBOR control values are
+     supported when grabbing into a YUV buffer. 
+
+- MdigInquire() obsolete inquire types:
+   - The M_INPUT_SIGNAL_PRESENT and M_INPUT_SIGNAL_COLOR_LOCK inquires types
+     are now obsolete. They been replaced with M_CAMERA_PRESENT and
+     M_CAMERA_LOCKED, respectively.
+
+- MdigInquire() M_CAMERA_PRESENT inquire type:
+   - Video input signal present: M_YES or M_NO.
+     Returns M_YES when a line-lock is achieved. It will also wait for a 
+     color-lock if using a composite color DCF. If you use a monochrome camera
+     with a composite color DCF, a color-lock will never be achieved, and this 
+     function will always return M_NO. This inquire was previously known as 
+     M_INPUT_SIGNAL_PRESENT.
+
+- MdigInquire() M_CAMERA_LOCKED inquire type: 
+   - Returns M_YES when a line-lock is achieved, otherwise it returns M_NO.
+     If you are using a composite color DCF, a color-lock must also be achieved.
+     This color-lock can be disabled, refer to M_CAMERA_COLOR_LOCK. The lock
+     speed/reliability can be controlled using M_CAMERA_LOCK_SENSITIVITY.
+
+- MdigGrab():
+   - When in an 8-bit display resolution, it is not possible to grab from a 
+     color camera; an error will be generated if you try to do so.
+
+1.3 Bug fixes.
+
+   - A2678: Fixed a "Sync lost" error that could appear when switching to 
+     channel M_CH3, M_CH4, or M_CH5.
+   - A2884: MdigInquire() with M_GRAB_IN_PROGRESS was always returning M_FALSE.
+     This is now fixed.
+   - A2823: On some multi-processor computers under Windows 2000, Matrox Orion 
+     driver might not have been able to start. This is now fixed.
+   - A2851: When pressing CTRL-C while any example was running on Matrox Orion,
+     an error message or a Windows "blue screen" might have occurred on the
+     next system allocation. This is now fixed.
+   - Matrox Orion for 4Sight-II could produce a sync-lost error when
+     performing a grab after a channel switch. This is now fixed.
+   - On all Matrox Orions running under Windows 98 or Windows ME, a reliability
+     bug that could cause invalid pixels when using MdigLut was fixed. This bug
+     was introduced in MIL 7.0 and fixed in MIL 7.1.
+     
+1.4 Known bugs.
+
+   - On Matrox Orion /Dual for 4Sight-II, 2 continuous grabs on 2 different 
+     displays is not yet supported. However, 2 continuous grabs on 1 display using 
+     child buffers is fully supported. Please refer to MIL example "mfocusdual.c"
+     in \mil\examples\orion for futher details.
+   - A2938: Matrox Orion does not support fast-channel switching between
+     cameras of the same type. Channel switching is reliable but the speed is
+     not as great as Matrox Meteor-II.
+   - The maximum display resolution and refresh rate is 1280x1024x32bpp@75Hz.
+     Corrupt images and unreliable grabs can occur if this is not respected.
+   - Changing the display resolution or color depth when a Matrox Orion system
+     is allocated will result in error messages and the application will not
+     be able to proceed. Pressing <CTRL-ALT-DEL> can cause a change in the 
+     display resolution and will also result in an error.
+   - For Windows 2000, when installing the display driver for Matrox Orion, do
+     not check the "add extra DualHead Multi-Display support" checkbox in the
+     Matrox PowerDesk Setup dialog box. Otherwise, your Matrox Orion might not
+     work. Also, if your Matrox Orion driver does not start, uninstall the
+     display driver and reinstall it with respect to the above mentioned
+     condition. DO NOT REINSTALL THE DISPLAY DRIVER ON TOP OF THE EXISTING ONE.
+     If you wish to add extra DualHead multi-display support, you can do so 
+     from the Advanced page in the Display Properties dialog box after the
+     display driver has been installed.
+   - On Matrox Orion /Standard and /Dual for 4Sight-II:
+      - Under Windows NT 4.0, it is not possible to allocate a digitizer with a PAL DCF 
+        if the display resolution is 640x480.  
+      - In 8-bit display mode, the grab scale digitizer control types do not work properly.
+      - You can allocate a 3-band planar grab buffer on Matrox Orion even if it does not 
+        support grabbing to such buffer.
+
+2. Matrox Orion with ActiveMIL.
+
+   - All bug fixes and known bugs discussed in this file apply to Matrox
+     Orion with ActiveMIL as well.
+
+3. Simultaneously displaying both a windowed display and an auxiliary display
+   (M_NTSC or M_PAL encoded video format ONLY).
+ 
+    The standard way to simultaneously display a buffer in both a windowed and 
+    auxiliary display is to allocate two displays: one using M_WINDOWED as the 
+    InitFlag, and one using M_AUXILIARY as the InitFlag. Then, select this 
+    buffer to both displays by calling MdispSelect() twice.
+
+    However, in a basic auxiliary display set-up (i.e. one Windows desktop
+    screen and one auxiliary screen), it might be possible to reduce the CPU
+    usage by allocating only one display, using M_AUXILIARY+M_WINDOWED as the 
+    InitFlag. Then, when you select the buffer to the display (i.e. by calling
+    MdispSelect() once), MIL automatically displays the image in both a
+    windowed and an auxiliary display. Note that this is only for auxiliary
+    displays with encoded video formats (e.g. M_NTSC or M_PAL).
+
+

@@ -1,0 +1,91 @@
+[Korean]
+PDREADME.TXT                MATROX GRAPHICS INC.              2001.08.03
+
+                  Matrox PowerDesk -- Windows 98/Me
+
+
+주: 이 파일들은 한국어로 번역되지 않은 최근의 정보를 포함할 수 
+있습니다. 불편을 끼쳐드려서 죄송합니다.
+
+
+목차
+====
+
+- 이 제품에 대한 설명
+- 설치
+- [English...]New features[...English]
+- 자세한 정보
+- 주석, 문제점 및 제한 사항
+
+
+이 제품에 대한 설명
+===================
+
+Matrox PowerDesk 소프트웨어는 디스플레이 드라이버와 디스플레이 
+유틸리티로 되어 있습니다. 이 소프트웨어를 이용하여 Matrox 그래픽 
+하드웨어의 장점을 충분히 활용하고 Matrox 디스플레이 관련 기능을 
+액세스할 수 있습니다.
+
+
+설치
+====
+
+Matrox PowerDesk를 설치하려면 함께 제공된 "설치" 프로그램을 
+시작하고 화면의 지시대로 하십시오.
+
+설치 프로그램에서 지원하는 Matrox 그래픽 카드 모델이 컴퓨터에 
+설치되었을 때만 소프트웨어가 설치됩니다.
+
+
+[English...]
+
+New features
+============
+
+This software includes new features, especially for Matrox 
+hardware with DualHead support. These include:
+
+- The use of different DualHead features (Multi-Display, DVDMax, 
+  Zoom, and Clone) *without* restarting Windows
+
+- Easier-to-use interface for DualHead controls
+
+- Controls for dividing graphics resources (memory and bandwidth) 
+  between your main and secondary displays
+
+- More features accessible through user-defined hot keys 
+  (keyboard shortcuts)
+
+[...English]
+
+
+자세한 정보
+===========
+
+Matrox PowerDesk에 대한 자세한 내용은 도움말 파일을 참고하십시오. 
+Matrox 그래픽 카드에 대한 내용은 Matrox 설명서나 시스템 설명서를 
+참고하십시오.
+
+
+주석, 문제점 및 제한 사항
+=========================
+
+- Windows의 다른 언어 버전의 설치
+
+  만일 당신이 당신의 운영 체제 언어와는 다른 언어로 소프트웨어를 
+  설치하려고 하면 (예를 들면, 일본어 운영 체제에서 영어 
+  소프트웨어), 당신은 문자열 및 대화 상자 제어가 짤리는 문제점을 
+  만날 수 있습니다. 이것은 시스템 글꼴이 다르기 때문입니다.
+
+- OpenGL (3D) 지원
+
+  컴퓨터 제조업체가 제공하는 최신 Matrox 제품이나 
+  Matrox 소프트웨어가 있을 경우, Matrox 디스플레이 
+  드라이버를 사용하여 전체 OpenGL 지원을 비활성화할 수 
+  있습니다. Matrox 디스플레이 드라이버가 OpenGL을 완벽하게 
+  지원하도록 하려면 Matrox 웹 사이트 (www.matrox.com/mga)를 
+  참조하십시오. (컴퓨터 제조업체가 Matrox 제품을 제공한 경우 
+  디스플레이 드라이버는 해당 제조업체의 웹 사이트를 
+  확인하십시오. 컴퓨터 제조업체가 제공하는 디스플레이 
+  드라이버는 컴퓨터 모델에 맞게 테스트되어 있을 수 
+  있습니다.)

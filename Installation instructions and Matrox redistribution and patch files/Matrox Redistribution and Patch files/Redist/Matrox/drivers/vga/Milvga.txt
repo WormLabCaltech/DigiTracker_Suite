@@ -1,0 +1,37 @@
+--------------------------------------------------------------------------------
+               Matrox Imaging Library (7.0) Milvga.txt Readme File
+                                  December 11, 2001
+     Copyright © 2001 by Matrox Electronic Systems Ltd. All rights reserved.
+--------------------------------------------------------------------------------
+
+
+This document explains the current limitations and particularities when using
+MIL with VGA (subject to change in future releases). 
+
+Contents
+
+ 1. VGA limitations.
+ 2. Obsolete functions.
+ 3. Important display notice.
+
+
+1. VGA limitations.
+
+   - When using a G450 revision D or a G550 stand-alone MGA board, the PAL,
+     PAL-YC, and CCIR formats are not supported. However the NTSC format is
+     supported on all G450 and G550 revisions.
+
+2. Obsolete functions.
+
+   - The functions MvgaDispAllocDIBInfo() and MvgaDispFreeDIBInfo(),
+     documented in the VGA chapter of the Board-Specific notes manual, are
+     now obsolete.
+
+3. Important display notice: 
+ 
+    Typically, if you want to display one or many color images in a window on the 
+    Windows desktop screen (e.g. using the M_WINDOWED display type), the display 
+    update of these image buffers can be much faster if they are allocated in 
+    M_RGB24+M_PLANAR format. Note that this depends on your VGA(s) configuration, 
+    operating system, and the display options that you are using 
+    (e.g. such as non-destructive overlay).

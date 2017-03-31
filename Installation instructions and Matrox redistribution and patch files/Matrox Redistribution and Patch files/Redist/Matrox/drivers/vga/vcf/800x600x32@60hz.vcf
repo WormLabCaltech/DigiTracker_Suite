@@ -1,0 +1,26 @@
+/---------------------------------------------------------------------------
+/
+/   Copyright (c) 2001  Matrox Electronic System
+/
+/   filename:   800x600x32@60hz.vcf
+/
+/   Synopsis:   VCF for (800 X 600)  32 bits at 60 Hz
+/               
+/
+/   Revision history: 1.0 
+/---------------------------------------------------------------------------
+
+Pixel_clk           40000       ; kilo pixels/sec
+H_Disp              800         ; pixels
+H_Front_Porch       40          ; pixels
+H_Sync              128         ; pixels
+H_Back_Porch        88          ; pixels
+H_Sync_Pol          0           ; negative
+V_Disp              600         ; lines
+V_Front_Porch       1           ; lines
+V_Sync              4           ; lines
+V_Back_Porch        23          ; lines
+V_Sync_Pol          0           ; negative
+Interlace_Enable    0           ; non-interlaced
+BPP                 32          ; Bits per Plane
+

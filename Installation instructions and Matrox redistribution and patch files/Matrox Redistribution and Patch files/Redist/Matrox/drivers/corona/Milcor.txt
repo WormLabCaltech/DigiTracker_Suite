@@ -1,0 +1,83 @@
+--------------------------------------------------------------------------------
+               Matrox Imaging Library (7.0) Milcor.txt Readme File
+                                   December 11, 2001
+     Copyright © 2001 by Matrox Electronic Systems Ltd. All rights reserved.
+--------------------------------------------------------------------------------
+
+
+This document explains the current limitations and particularities when using
+MIL with Matrox Corona (subject to change in future releases). 
+
+
+Contents
+
+1. Matrox Corona with MIL/ActiveMIL.
+2. Matrox Corona with MIL.
+ 2.1 Mdig...() additions/modifications.
+ 2.2 Mdisp...() additions/modifications.
+3. Matrox Corona with ActiveMIL.
+ 3.1 Digitizer control additions/modifications.
+ 3.2 Display control additions/modifications.
+
+
+1. Matrox Corona with MIL/ActiveMIL.
+
+   - When enabling the encoder in PAL resolution under Windows 98 in single- 
+     screen mode, if the Matrox display properties program asks you to reboot, 
+     you must do it immediately. Afterwards, you should continue at the point 
+     from which you left.
+   
+2. Matrox Corona with MIL.
+
+2.1 Mdig...() additions/modifications.
+
+   - MdigControl():
+     - M_GRAB_EXPOSURE_BYPASS is only supported in the manual exposure model 
+       (M_ENABLE).  
+
+   - MdigGrab():
+     - Only supports grabbing from a 2 tap camera, if the camera is in an odd-
+       even line configuration. That is, one tap is transmitting the odd lines 
+       while the other tap is transmitting the even lines.
+                            
+   - MdispHookFunction():
+     - Not supported.
+
+  2.2 Mdisp...() additions/modifications.
+
+   - MdispPan():
+     - Not supported in non-windowed mode.
+
+   - MdispZoom():
+     - Not supported in non-windowed mode.
+
+
+   -Important display notice: 
+ 
+    Typically, if you want to display one or many color images in a window on the 
+    Windows desktop screen (e.g. using the M_WINDOWED display type), the display 
+    update of these image buffers can be much faster if they are allocated in 
+    M_RGB24+M_PLANAR format. Note that this depends on your VGA(s) configuration, 
+    operating system, and the display options that you are using 
+    (e.g. such as non-destructive overlay).
+
+
+3. Matrox Corona with ActiveMIL.
+
+3.1 Digitizer control additions/modifications.
+
+     - The GrabExposureBypass method is only supported when the manual exposure
+       model = True.
+     - The Grab method only supports grabbing from a 2 tap camera, if the camera 
+       is in an odd-even line configuration. That is, one tap is transmitting 
+       the odd lines while the other tap is transmitting the even lines. 
+
+3.2 Display control additions/modifications.
+
+     - The FrameStart event is not supported.
+     - The Pan and Zoom methods are not supported.
+
+
+
+
+

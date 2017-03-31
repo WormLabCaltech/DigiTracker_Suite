@@ -1,0 +1,97 @@
+[Japanese]
+PDREADME.TXT                MATROX GRAPHICS INC.              2001.08.03
+
+                  Matrox PowerDesk -- Windows 98/Me
+
+
+注意: このファイルには、まだ日本語に翻訳されていない最新情報が含ま
+れている場合もありますのでご了承ください。
+
+
+目次
+====
+
+- このリリースについて
+- インストール
+- [English...]New features[...English]
+- 詳細情報
+- 注意、問題および制限事項
+
+
+このリリースについて
+====================
+
+Matrox PowerDesk ソフトウェアには、ディスプレイドライバとディスプレ
+イユーティリティが提供されています。このソフトウェアを使用すると、
+使用している Matrox グラフィックスハードウェアの機能性を高めること
+ができます。また、Matrox のディスプレイ関連の新しい機能を使用できる
+ようになります。
+
+
+インストール
+============
+
+Matrox PowerDesk をインストールするには、セットアッププログラムを起
+動し、その後は画面の指示に従います。
+
+セットアッププログラムで Matrox PowerDesk をインストールする場合、
+インストール先のコンピュータで使用されている Matrox グラフィックス
+カードモデルがセットアッププログラムでサポートされていることが必要
+です。サポートされていない場合、ソフトウェアはインストールされませ
+ん。
+
+
+[English...]
+
+New features
+============
+
+This software includes new features, especially for Matrox 
+hardware with DualHead support. These include:
+
+- The use of different DualHead features (Multi-Display, DVDMax, 
+  Zoom, and Clone) *without* restarting Windows
+
+- Easier-to-use interface for DualHead controls
+
+- Controls for dividing graphics resources (memory and bandwidth) 
+  between your main and secondary displays
+
+- More features accessible through user-defined hot keys 
+  (keyboard shortcuts)
+
+[...English]
+
+
+詳細情報
+========
+
+Matrox PowerDesk の詳細については、ヘルプファイルを参照してくださ
+い。使用している Matrox グラフィックスカードについては、Matrox また
+はシステムのマニュアルを参照してください。
+
+
+注意、問題および制限事項
+========================
+
+- 英語版以外の Windows でのインストール
+
+  お使いのオペレーティングシステムの言語と異なる言語のソフトウェア
+  をインストールする場合 (例えば、日本語のシステムに英語のソフトウ
+  ェア) 、テキストおよびダイアログボックスコントロールが途中から切
+  れてしまうことがあります。これは、システムフォントの違いが原因で
+  す。
+
+- OpenGL (3D) サポート
+
+  新しい Matrox 製品を持っている場合、またはご使用の Matrox 
+  ソフトウェアがコンピュータの製造業者によって提供されたものであ
+  る場合は、インストールされている Matrox ディスプレイ ドライバ
+  で OpenGL フルサポートが無効になっている場合があります。
+  OpenGL フルサポートが有効になっている Matrox ディスプレイ 
+  ドライバについては、Matrox Web サイト (www.matrox.com/mga) を
+  ご覧ください。(ご使用の Matrox 製品がコンピュータの製造業者か
+  ら提供されたものである場合は、製造業者の Web サイトでディスプ
+  レイドライバの情報を確認してください。コンピュータの製造業者か
+  ら提供されたディスプレイ ドライバは、ご使用のコンピュータモデ
+  ルでの動作が確認されている場合があります)。

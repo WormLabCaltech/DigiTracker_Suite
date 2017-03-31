@@ -1,0 +1,99 @@
+[Nederlands]
+PDREADME.TXT                MATROX GRAPHICS INC.              2001.08.03
+
+                  Matrox PowerDesk voor Windows 98/Me
+
+
+Opmerking:: Dit bestand kan recente informatie bevatten die nog 
+niet eerder in uw taal werd vertaald. Wij bieden u onze 
+verontschuldigingen aan voor enig ongerief.
+
+
+Inhoudsopgave
+=============
+
+- Beschrijving van deze versie
+- Installatie
+- [English...]New features[...English]
+- Verdere informatie
+- Opmerkingen, problemen en beperkingen
+
+
+Beschrijving van deze versie
+============================
+
+De software van Matrox PowerDesk bestaat uit een 
+beeldschermstuurprogramma en beeldschermvoorzieningen. Met deze 
+software kunt u alle voordelen van uw Matrox grafische hardware 
+volledig benutten en gebruik maken van extra Matrox-functies voor 
+beeldschermen.
+
+
+Installatie
+===========
+
+Als u Matrox PowerDesk wilt installeren, start u het bijgeleverde 
+installatieprogramma en volgt u de instructies op het beeldscherm 
+op.
+
+Het installatieprogramma installeert de software alleen als u een 
+Matrox grafische kaart-model op uw computer hebt geïnstalleerd die 
+wordt ondersteund door het installatieprogramma.
+
+
+[English...]
+
+New features
+============
+
+This software includes new features, especially for Matrox 
+hardware with DualHead support. These include:
+
+- The use of different DualHead features (Multi-Display, DVDMax, 
+  Zoom, and Clone) *without* restarting Windows
+
+- Easier-to-use interface for DualHead controls
+
+- Controls for dividing graphics resources (memory and bandwidth) 
+  between your main and secondary displays
+
+- More features accessible through user-defined hot keys 
+  (keyboard shortcuts)
+
+[...English]
+
+
+Verdere informatie
+==================
+
+Raadpleeg het bijgeleverde Help-bestand voor meer informatie over 
+Matrox PowerDesk. Raadpleeg uw Matrox-handboek of 
+systeemhandleiding voor specifieke informatie over uw Matrox 
+grafische kaart.
+
+
+Opmerkingen, problemen en beperkingen
+=====================================
+
+- Installatie in anderstalige versies van Windows
+
+  Indien u software in een andere taal installeert dan de taal van 
+  uw besturingssysteem (bijv. Engelstalige software in een 
+  Nederlands systeem) zult u mogeljk problemen ondervinden met 
+  tekstkaders en dialoogvensters waarvan delen kunnen ontbreken. 
+  Dit is een gevolg van de verschillen in de systeemlettertypen.
+
+- OpenGL (3D) -ondersteuning
+
+  Als u een nieuwer Matrox-product hebt of als uw Matrox-
+  software werd geleverd door de fabrikant van uw computer, 
+  is volledige OpenGL-ondersteuning misschien niet mogelijk 
+  voor uw Matrox-beeldschermstuurprogramma. Zie de Matrox-Web 
+  site (www.matrox.com/mga) voor een Matrox-
+  beeldschermstuurprogramma waarvoor volledige ondersteuning 
+  mogelijk is. (Als uw Matrox-product werd geleverd door de 
+  fabrikant van uw computer, raadpleeg dan de Web site van die 
+  fabrikant voor een beeldschermstuurprogramma. Het is 
+  waarschijnlijker dat een door de fabrikant van uw computer 
+  geleverd beeldschermstuurprogramma is getest in uw 
+  computermodel.)

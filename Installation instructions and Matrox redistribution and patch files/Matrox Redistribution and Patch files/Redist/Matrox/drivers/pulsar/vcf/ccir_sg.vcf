@@ -1,0 +1,124 @@
+/---------------------------------------------------------------------------
+/                                                                           
+/   Copyright (c) 1995  Matrox Electronic System                            
+/                                                                           
+/   filename:   CCIR_SG.VCF                                                
+/                                                                           
+/   Synopsis:   CCIR 50 Hz 
+/               Composite sync outputted on green channel
+/
+/   Revision history: 0.0 Alpha release                                     
+/---------------------------------------------------------------------------
+[CONFIG_FILE]
+PULSAR
+Mon Oct 16 16:05:00 1995
+Alpha release
+[INFO_FILE_REV]
+0000.0000.0000
+PULSAR
+/
+[REG_DIGIT]
+INFO_XSIZE                   0x0300
+INFO_YSIZE                   0x0240
+INFO_MODE                    0x0001
+INFO_DEPTH                   0x0008
+INFO_BAND                    0x0001
+/
+COLUMN                       0x00
+ROW                          0x00
+POINTS                       0x00
+VIDSIZE                      0x00
+/
+SEQUENCER_(00)               0x03
+SEQUENCER_(01)               0x01
+SEQUENCER_(02)               0x03
+SEQUENCER_(03)               0x00
+SEQUENCER_(04)               0x02
+/
+MISC                         0xef
+/
+CRTC_(00)                    0x74
+CRTC_(01)                    0x5F
+CRTC_(02)                    0x5F
+CRTC_(03)                    0x18
+CRTC_(04)                    0x62
+CRTC_(05)                    0x8b
+CRTC_(06)                    0x34
+CRTC_(07)                    0x1f
+CRTC_(08)                    0x00
+CRTC_(09)                    0x40
+CRTC_(0A)                    0x20
+CRTC_(0B)                    0x00
+CRTC_(0C)                    0x00
+CRTC_(0D)                    0x00
+CRTC_(0E)                    0x00
+CRTC_(0F)                    0x00
+CRTC_(10)                    0x20
+CRTC_(11)                    0x21
+CRTC_(12)                    0x1f
+CRTC_(13)                    0xc0
+CRTC_(14)                    0x00
+CRTC_(15)                    0x1f
+CRTC_(16)                    0x35
+CRTC_(17)                    0xc3
+CRTC_(18)                    0xff
+/
+CRTC_(22)                    0x07
+CRTC_(23)                    0x00
+CRTC_(24)                    0x80
+CRTC_(25)                    0x00
+CRTC_(26)                    0x34
+/
+ATTRIBUTE_(00)               0x00
+ATTRIBUTE_(01)               0x01
+ATTRIBUTE_(02)               0x02
+ATTRIBUTE_(03)               0x03
+ATTRIBUTE_(04)               0x04
+ATTRIBUTE_(05)               0x05
+ATTRIBUTE_(06)               0x14
+ATTRIBUTE_(07)               0x07
+ATTRIBUTE_(08)               0x38
+ATTRIBUTE_(09)               0x39
+ATTRIBUTE_(0A)               0x3a
+ATTRIBUTE_(0B)               0x3b
+ATTRIBUTE_(0C)               0x3c
+ATTRIBUTE_(0D)               0x3d
+ATTRIBUTE_(0E)               0x3e
+ATTRIBUTE_(0F)               0x3f
+ATTRIBUTE_(10)               0x0c
+ATTRIBUTE_(11)               0x00
+ATTRIBUTE_(12)               0x0f
+ATTRIBUTE_(13)               0x08
+ATTRIBUTE_(14)               0x00
+/
+GAPHCTL_(00)                 0x00
+GAPHCTL_(01)                 0x00
+GAPHCTL_(02)                 0x00
+GAPHCTL_(03)                 0x00
+GAPHCTL_(04)                 0x00
+GAPHCTL_(05)                 0x10
+GAPHCTL_(06)                 0x0e
+GAPHCTL_(07)                 0x00
+GAPHCTL_(08)                 0xff
+/
+CRTC_EXT_(00)                0x80
+CRTC_EXT_(01)                0x40
+CRTC_EXT_(02)                0x80
+CRTC_EXT_(03)                0x89
+CRTC_EXT_(04)                0x00
+CRTC_EXT_(05)                0x2d
+/
+PCLK_(00)                    0x27
+PCLK_(01)                    0xe8
+PCLK_(02)                    0xf3
+/
+MCLK_(00)                    0x2d
+MCLK_(01)                    0xf6
+MCLK_(02)                    0xb2
+/
+LCLK_(00)                    0x3d
+LCLK_(01)                    0xf1
+LCLK_(02)                    0xf3
+/
+TVP_(1D)                     0x20
+[EOF]

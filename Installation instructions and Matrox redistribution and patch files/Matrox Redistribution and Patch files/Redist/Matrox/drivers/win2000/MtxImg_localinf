@@ -1,0 +1,352 @@
+;
+;    Filename:  MtxImg.INF
+;    Owner   :  Jlavergn
+;    Rev     :  $Revision:   2.5  $
+;    Content :  This file contains descriptions of Matrox Imaging
+;               grabber supported in Windows 2000 and XP
+;    Date    :  2002/09/26
+;
+;
+;    COPYRIGHT (c) 2001  Matrox Electronic Systems Ltd.
+;    All Rights Reserved
+;
+
+; =================== Version Sections ===========================
+
+[Version]
+Signature="$CHICAGO$"
+;Signature="$WINDOWS NT$"       
+Class=FrameGrabber
+ClassGuid={D99FF996-933D-4a94-8401-DAFFC26193A4}
+Provider=%String0%
+DriverVer=10/04/2002,7.50.00
+
+; =================== Class Sections ===========================
+
+[ClassInstall32.NT]
+Addreg=ImageClass.Reg
+Copyfiles=ImageClass.CopyFiles
+
+[ImageClass.Reg]
+HKR,,,0,%ImageClassReg%
+HKR,,Icon,0,-5
+HKR,,Installer32,0,"MtxWinCi.dll,MtxClassInstall"
+
+
+[ImageClass.CopyFiles]
+MtxWinCi.dll,,,0x00000020 ;%COPYFLG_NO_VERSION_DIALOG%
+
+
+; =================== Table of content =========================
+[Manufacturer]
+%MESIMAGEMfg%=MESIMG
+
+[DestinationDirs]
+ImageClass.CopyFiles = 11
+DefaultDestDir=12 
+
+; =================== Imaging Grabber Description ========================
+
+[MESIMG]
+%Corona.DeviceDesc%=PCICorona.Install,PCI\VEN_102B&DEV_4536&SUBSYS_00000000
+%Corona_II.DeviceDesc%=PCICorona_II.Install,PCI\VEN_102B&DEV_4536&SUBSYS_00000000
+%Meteor_II.DeviceDesc%=PCIMeteor_II.Install,PCI\VEN_102B&DEV_4536&SUBSYS_00000000
+%Pulsar.DeviceDesc%=PCIPulsar.Install,PCI\VEN_8086&DEV_1223&SUBSYS_00000000
+%Cronos.DeviceDesc%=PCICronos.Install,PCI\VEN_14F1&DEV_8800&SUBSYS_4620102B
+%CronosPlus.DeviceDesc%=PCICronosPlus.Install,PCI\VEN_1131&DEV_7130&SUBSYS_48D0102B
+%Iris.DeviceDesc%=PCIIris.Install,PCI\VEN_102B&DEV_45EE&SUBSYS_0000102B
+%HeliosCLF.DeviceDesc%=PCIHelios.Install,PCI\VEN_102B&DEV_46C1&SUBSYS_460E102B
+%HeliosCLD.DeviceDesc%=PCIHelios.Install,PCI\VEN_102B&DEV_46C1&SUBSYS_461E102B
+%HeliosA.DeviceDesc%=PCIHelios.Install,PCI\VEN_102B&DEV_46A1&SUBSYS_460E102B
+%Helios.DeviceDesc%=PCIHelios.Install,PCI\VEN_102B&DEV_4C58&SUBSYS_4200102B
+%OasisCL.DeviceDesc%=PCIHelios.Install,PCI\VEN_102B&DEV_40A6&SUBSYS_4200102B
+%OasisA.DeviceDesc%=PCIHelios.Install,PCI\VEN_102B&DEV_40A6&SUBSYS_4208102B
+
+[ControlFlags]
+ExcludeFromSelect=*
+
+
+
+; *****************************************************************
+; CORONA specific sections
+; *****************************************************************
+
+[PCICorona.Install.NT]
+CopyFiles=PCICorona.CopyFiles
+AddReg=PCICorona.Registry
+
+[PCICorona.Install.NT.Services]
+AddService=Corona, 2, PCICorona.Services
+			  
+[PCICorona.CopyFiles]
+;Corona PCI frame grabber driver							
+corona.sys,,,2	
+											
+[PCICorona.Services]
+DisplayName     = %Corona.DeviceDesc%
+ServiceType     = 1		  ; %SERVICE_KERNEL_DRIVER%  
+StartType       = 2		  ; %SERVICE_SYSTEM_START%
+ErrorControl    = 1		  ; %SERVICE_ERROR_NORMAL%  
+ServiceBinary   = %12%\corona.sys
+Dependencies=MtxDma0
+																		                  
+[PCICorona.Registry]
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona",Description,0,"Matrox Corona board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona",Library,0,"milcor.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona",BoardName,0,"M_SYSTEM_CORONA"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona",InitFlag, 0x00010001 , 269025281
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona",RealDevice, 0x00010001, 1
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona",SystemType, 0x00010001, 18
+
+; *****************************************************************
+; CORONA_II specific sections
+; *****************************************************************
+
+[PCICorona_II.Install.NT]
+CopyFiles=PCICorona_II.CopyFiles
+AddReg=PCICorona_II.Registry
+
+[PCICorona_II.Install.NT.Services]
+AddService=Corona, 2, PCICorona_II.Services
+			  
+[PCICorona_II.CopyFiles]
+;Corona_II PCI frame grabber driver							
+corona.sys,,,2	
+											
+[PCICorona_II.Services]
+DisplayName     = %Corona_II.DeviceDesc%
+ServiceType     = 1		  ; %SERVICE_KERNEL_DRIVER%  
+StartType       = 2		  ; %SERVICE_SYSTEM_START%
+ErrorControl    = 1		  ; %SERVICE_ERROR_NORMAL%  
+ServiceBinary   = %12%\corona.sys
+Dependencies=MtxDma0
+																		                  
+[PCICorona_II.Registry]
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona_II",Description,0,"Matrox Corona_II board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona_II",Library,0,"milcor2.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona_II",BoardName,0,"M_SYSTEM_CORONA_II"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona_II",InitFlag, 0x00010001 , 269025281
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona_II",RealDevice, 0x00010001, 1
+HKLM,"SOFTWARE\Matrox\Imaging Board\Corona_II",SystemType, 0x00010001, 30
+
+; *****************************************************************
+; Meteor_II specific sections
+; *****************************************************************
+
+[PCIMeteor_II.Install.NT]
+CopyFiles=PCIMeteor_II.CopyFiles
+AddReg=PCIMeteor_II.Registry
+
+[PCIMeteor_II.Install.NT.Services]
+AddService=Corona, 2, PCIMeteor_II.Services
+			  
+[PCIMeteor_II.CopyFiles]
+;Meteor_II PCI frame grabber driver							
+corona.sys,,,2 	
+											
+[PCIMeteor_II.Services]
+DisplayName     = %Meteor_II.DeviceDesc%
+ServiceType     = 1		  ; %SERVICE_KERNEL_DRIVER%  
+StartType       = 2		  ; %SERVICE_SYSTEM_START%
+ErrorControl    = 1		  ; %SERVICE_ERROR_NORMAL%  
+ServiceBinary   = %12%\corona.sys
+Dependencies=MtxDma0
+																		                  
+[PCIMeteor_II.Registry]
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II",Description,0,"Matrox Meteor_II board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II",Library,0,"milmet2.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II",BoardName,0,"M_SYSTEM_METEOR_II"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II",InitFlag, 0x00010001 , 269025281
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II",RealDevice, 0x00010001, 1
+HKLM,"SOFTWARE\Matrox\Imaging Board\Meteor_II",SystemType, 0x00010001, 20
+
+; *****************************************************************
+; Pulsar specific sections
+; *****************************************************************
+
+[PCIPulsar.Install.NT]
+CopyFiles=PCIPulsar.CopyFiles
+AddReg=PCIPulsar.Registry
+
+[PCIPulsar.Install.NT.Services]
+AddService=Pulsar, 2, PCIPulsar.Services
+			  
+[PCIPulsar.CopyFiles]
+;Pulsar PCI frame grabber driver							
+Pulsar.sys,,,2	
+											
+[PCIPulsar.Services]
+DisplayName     = %Pulsar.DeviceDesc%
+ServiceType     = 1		  ; %SERVICE_KERNEL_DRIVER%  
+StartType       = 2		  ; %SERVICE_SYSTEM_START%
+ErrorControl    = 1		  ; %SERVICE_ERROR_NORMAL%  
+ServiceBinary   = %12%\Pulsar.sys
+Dependencies=MtxDma0
+																		                  
+[PCIPulsar.Registry]
+HKLM,"SOFTWARE\Matrox\Imaging Board\Pulsar",Description,0,"Matrox Pulsar board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Pulsar",Library,0,"milpul.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Pulsar",BoardName,0,"M_SYSTEM_PULSAR"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Pulsar",InitFlag, 0x00010001 , 269025281
+HKLM,"SOFTWARE\Matrox\Imaging Board\Pulsar",RealDevice, 0x00010001, 1
+HKLM,"SOFTWARE\Matrox\Imaging Board\Pulsar",SystemType, 0x00010001, 16
+
+; *****************************************************************
+; Cronos specific sections
+; *****************************************************************
+
+[PCICronos.Install.NT]
+CopyFiles=PCICronos.CopyFiles
+AddReg=PCICronos.Registry
+
+[PCICronos.Install.NT.Services]
+AddService=Cronos, 2, PCICronos.Services
+			  
+[PCICronos.CopyFiles]
+;Cronos PCI frame grabber driver							
+Cronos.sys,,,2	
+											
+[PCICronos.Services]
+DisplayName     = %Cronos.DeviceDesc%
+ServiceType     = 1		  ; %SERVICE_KERNEL_DRIVER%  
+StartType       = 2		  ; %SERVICE_SYSTEM_START%
+ErrorControl    = 1		  ; %SERVICE_ERROR_NORMAL%  
+ServiceBinary   = %12%\Cronos.sys
+Dependencies=MtxDma0
+																		                  
+[PCICronos.Registry]
+HKLM,"SOFTWARE\Matrox\Imaging Board\Cronos",Description,0,"Matrox Cronos board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Cronos",Library,0,"milCronos.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Cronos",BoardName,0,"M_SYSTEM_CRONOS"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Cronos",InitFlag, 0x00010001 , 269025281
+HKLM,"SOFTWARE\Matrox\Imaging Board\Cronos",RealDevice, 0x00010001, 1
+HKLM,"SOFTWARE\Matrox\Imaging Board\Cronos",SystemType, 0x00010001, 34
+
+; *****************************************************************
+; CronosPlus specific sections
+; *****************************************************************
+
+[PCICronosPlus.Install.NT]
+CopyFiles=PCICronosPlus.CopyFiles
+AddReg=PCICronosPlus.Registry
+
+[PCICronosPlus.Install.NT.Services]
+AddService=CronosPlus, 2, PCICronosPlus.Services
+			  
+[PCICronosPlus.CopyFiles]
+;CronosPlus PCI frame grabber driver							
+CronosPlus.sys,,,2	
+											
+[PCICronosPlus.Services]
+DisplayName     = %CronosPlus.DeviceDesc%
+ServiceType     = 1		  ; %SERVICE_KERNEL_DRIVER%  
+StartType       = 2		  ; %SERVICE_SYSTEM_START%
+ErrorControl    = 1		  ; %SERVICE_ERROR_NORMAL%  
+ServiceBinary   = %12%\CronosPlus.sys
+Dependencies=MtxDma0
+																		                  
+[PCICronosPlus.Registry]
+HKLM,"SOFTWARE\Matrox\Imaging Board\CronosPlus",Description,0,"Matrox CronosPlus board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\CronosPlus",Library,0,"milCronosPlus.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\CronosPlus",BoardName,0,"M_SYSTEM_CRONOSPLUS"
+HKLM,"SOFTWARE\Matrox\Imaging Board\CronosPlus",InitFlag, 0x00010001 , 269025281
+HKLM,"SOFTWARE\Matrox\Imaging Board\CronosPlus",RealDevice, 0x00010001, 1
+HKLM,"SOFTWARE\Matrox\Imaging Board\CronosPlus",SystemType, 0x00010001, 38
+
+; *****************************************************************
+; Iris specific sections
+; *****************************************************************
+
+[PCIIris.Install.NT]
+CopyFiles=PCIIris.CopyFiles
+AddReg=PCIIris.Registry
+
+[PCIIris.Install.NT.Services]
+AddService=Iris, 2, PCIIris.Services
+			  
+[PCIIris.CopyFiles]
+;Iris PCI frame grabber driver							
+Iris.sys,,,2	
+											
+[PCIIris.Services]
+DisplayName     = %Iris.DeviceDesc%
+ServiceType     = 1		  ; %SERVICE_KERNEL_DRIVER%  
+StartType       = 2		  ; %SERVICE_SYSTEM_START%
+ErrorControl    = 1		  ; %SERVICE_ERROR_NORMAL%  
+ServiceBinary   = %12%\Iris.sys
+Dependencies=MtxDma0
+																		                  
+[PCIIris.Registry]
+HKLM,"SOFTWARE\Matrox\Imaging Board\Iris",Description,0,"Matrox Iris board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Iris",Library,0,"milIris.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Iris",BoardName,0,"M_SYSTEM_IRIS"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Iris",InitFlag, 0x00010001 , 269025281
+HKLM,"SOFTWARE\Matrox\Imaging Board\Iris",RealDevice, 0x00010001, 1
+HKLM,"SOFTWARE\Matrox\Imaging Board\Iris",SystemType, 0x00010001, 37
+
+; *****************************************************************
+; Helios specific sections
+; *****************************************************************
+
+[PCIHelios.Install.NT]
+CopyFiles=PCIHelios.CopyFiles
+AddReg=PCIHelios.Registry
+
+[PCIHelios.Install.NT.Services]
+AddService=Helios, 2, PCIHelios.Services
+			  
+[PCIHelios.CopyFiles]
+;Helios PCI frame grabber driver							
+Helios.sys,,,2	
+											
+[PCIHelios.Services]
+DisplayName     = %Helios.DeviceDesc%
+ServiceType     = 1		  ; %SERVICE_KERNEL_DRIVER%  
+StartType       = 3		  ; %SERVICE_ON_DEMAND%
+;StartType       = 2		  ; %SERVICE_SYSTEM_START%
+ErrorControl    = 1		  ; %SERVICE_ERROR_NORMAL%  
+ServiceBinary   = %12%\Helios.sys
+Dependencies=MtxDma0
+																		                  
+[PCIHelios.Registry]
+HKLM,"SOFTWARE\Matrox\Imaging Board\Helios",Description,0,"Matrox Helios board"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Helios",Library,0,"milHelios.dll"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Helios",BoardName,0,"M_SYSTEM_HELIOS"
+HKLM,"SOFTWARE\Matrox\Imaging Board\Helios",InitFlag, 0x00010001 , 269025281
+HKLM,"SOFTWARE\Matrox\Imaging Board\Helios",RealDevice, 0x00010001, 1
+HKLM,"SOFTWARE\Matrox\Imaging Board\Helios",SystemType, 0x00010001, 36
+
+; =================== Source section ==================================
+
+[SourceDisksNames]
+1=%String1%,,,
+
+[SourceDisksFiles]
+Corona.sys=1,..\system32\drivers
+Pulsar.sys=1,..\system32\drivers
+Cronos.sys=1,..\system32\drivers
+CronosPlus.sys=1,..\system32\drivers
+Iris.sys=1,..\system32\drivers
+Helios.sys=1,..\system32\drivers
+MtxWinCi.dll=1,..\system32
+
+; =================== String ==================================
+
+[Strings]
+String0="Matrox Electronic Systems Ltd."
+String1="MIL CD-ROM"
+Pulsar.DeviceDesc = "Pulsar PCI Frame Grabber"
+Cronos.DeviceDesc = "Cronos PCI Frame Grabber"
+CronosPlus.DeviceDesc = "CronosPlus PCI Frame Grabber"
+Iris.DeviceDesc = "Iris Vision System"
+HeliosCLF.DeviceDesc = "Helios Camera Link Module Full Base"
+HeliosCLD.DeviceDesc = "Helios Camera Link Module Dual Base"
+HeliosA.DeviceDesc = "Helios Analog Module"
+Helios.DeviceDesc = "Helios phase 2 Frame Grabber"
+OasisCL.DeviceDesc = "Helios XCL Frame Grabber"
+OasisA.DeviceDesc = "Helios XA Frame Grabber"
+Corona.DeviceDesc = "Corona PCI Frame Grabber"
+Meteor_II.DeviceDesc = "Meteor_II PCI Frame Grabber"
+Corona_II.DeviceDesc = "Corona_II PCI Frame Grabber"
+ImageClassReg="Matrox Imaging Adapter"
+MESIMAGEMfg="Matrox Electronic Systems Ltd.- Imaging"
