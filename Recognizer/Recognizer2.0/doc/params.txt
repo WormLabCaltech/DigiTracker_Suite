@@ -1,0 +1,14 @@
+foams = 3
+foaws = 51
+foass = 4
+foathreshold = 0.80
+bndryms = 15
+bndryws = 281
+bndrythreshold = 0.80
+bndrysize = 50
+spnsize = 13
+saveimages = 100
+outdir = D:\\Jane-AVA\\DeleteMe_3-06-03
+savepoints = 1
+pointsname = points
+ 

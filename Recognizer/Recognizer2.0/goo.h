@@ -1,0 +1,1 @@
+void goo(int g);
