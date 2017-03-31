@@ -1,0 +1,47 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "MDoubleBufferingLite"=".\MDoubleBufferingLite.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "OldRecognizerForReference"="..\OldRecognizerForReference\OldRecognizerForReference.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+    {03985968-6B33-11D0-AB4A-00608CC9CA57}
+    {B9475B93-8F25-11D0-914B-00A024D24992}
+    {E9502373-9624-11D0-BDB4-00608CC9F9FB}
+    {F2E7BDE6-B006-11D0-9162-00A024D24992}
+    {6D9F7F74-9658-11D0-BDB5-00608CC9F9FB}
+    {E1208DE6-A783-11D0-9161-00A024D24992}
+}}}
+
+###############################################################################
+
