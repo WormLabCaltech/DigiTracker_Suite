@@ -1,0 +1,126 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by MDoubleBufferingLite.rc
+//
+#define IDD_EXAMPLE_DIALOG              102
+#define IDR_MAINFRAME                   128
+#define IDD_FILESOURCE                  135
+#define IDD_DEVICENOTREADY              136
+#define IDD_DIRECTORYNOT                137
+#define IDD_FILENOT                     138
+#define IDD_NOCREATEDIR                 139
+#define IDD_CALIBRATION                 140
+#define IDD_LOCATIONSELECTOR            141
+#define IDD_SETTINGS                    144
+#define IDD_STAGESTYLEDLG               146
+#define IDC_SYSTEM                      1001
+#define IDC_GRAPHICCONTEXT              1002
+#define IDC_DIGITIZER                   1003
+#define IDC_BUFFER                      1004
+#define IDC_GRAB_BUFFER                 1004
+#define IDC_EMPTY_BUFFER                1004
+#define IDC_DISPLAY                     1005
+#define IDC_QUITBUTTON                  1006
+#define IDC_COMMENTTEXT                 1007
+#define IDC_STEP_NUMBER                 1008
+#define IDC_REWIND                      1009
+#define IDC_RESTARTBUTTON               1009
+#define IDC_STOP                        1010
+#define IDC_IMAGEBUTTON                 1010
+#define IDC_PLAY                        1011
+#define IDC_MAG_TITLE                   1011
+#define IDC_BACKGROUND_BUFFER           1012
+#define IDC_FORWARD                     1012
+#define IDC_UPBUTTON                    1012
+#define IDC_ADVB                        1013
+#define IDC_DOWNBUTTON                  1013
+#define IDC_IMAGE_BUFFER                1014
+#define IDC_DISPLAY_BUFFER              1014
+#define IDC_PAUSE                       1015
+#define IDC_LEFTBUTTON                  1015
+#define IDC_ADVF                        1016
+#define IDC_RIGHTBUTTON                 1016
+#define IDC_AUTOBUTTON                  1017
+#define IDC_POWER                       1018
+#define IDC_POWERBUTTON                 1018
+#define IDC_HOMEBUTTON                  1018
+#define IDC_POWERON2                    1019
+#define IDC_STARTBUTTON                 1019
+#define IDC_HOMERESETBUTTON             1019
+#define IDC_POWEROFF2                   1020
+#define IDC_PREVBUTTON                  1020
+#define IDC_POWEROFF3                   1021
+#define IDC_RECBUTTON                   1021
+#define IDC_POWEROFF4                   1022
+#define IDC_NEXTBUTTON                  1022
+#define IDC_APPLICATION                 1034
+#define IDC_GRAB_BUFFER_1               1035
+#define IDC_CURRENT_BUFFER              1035
+#define IDC_GRAB_BUFFER_2               1036
+#define IDC_PREVIOUS_BUFFER             1036
+#define IDC_AUXILIARY_BUFFER            1040
+#define IDC_SLIDER                      1071
+#define IDC_EDIT1                       1072
+#define IDC_SPIN1                       1073
+#define IDC_CHECK1                      1074
+#define IDC_EDIT5                       1074
+#define IDQUIT                          1075
+#define IDC_SPIN3                       1075
+#define IDCREATEDIR                     1076
+#define IDFILENOTOK                     1077
+#define IDC_NODEVICE                    1080
+#define IDC_NODIRECTORY                 1081
+#define IDC_FILENOGO                    1082
+#define IDC_DIRNOGO                     1083
+#define IDC_IMAGE4                      1092
+#define IDC_SLIDER1                     1094
+#define IDC_SLIDER2                     1095
+#define IDC_SLIDER3                     1096
+#define IDC_DELAY                       1100
+#define IDC_SPIN2                       1101
+#define IDC_STATIC1                     1102
+#define IDC_AUTO_EXPOSURE_SLIDER        1102
+#define IDC_AUTO_EXPOSURE_EDIT          1103
+#define IDC_AUTOSHUT                    1104
+#define IDC_GAMMA                       1104
+#define IDC_STATIC_ASO                  1105
+#define IDC_GAMMA_EDIT                  1105
+#define IDC_MAGNIFICATION               1106
+#define IDC_DIFF_THRESHOLD_SLIDER       1106
+#define IDC_DIFF_THRESHOLD_EDIT         1107
+#define IDC_SHARPNESS                   1108
+#define IDC_STATIC_HOMERESET            1109
+#define IDC_SHARPNESS_EDIT              1109
+#define IDC_SLIDER4                     1111
+#define IDC_LOCATIONCOMBO               1114
+#define IDC_REVERSE_Y                   1115
+#define IDC_REVERSE_X                   1116
+#define IDC_STAGESTYLE                  1118
+#define IDC_SHUTTER_EDIT                1119
+#define IDC_GAIN_EDIT                   1120
+#define IDC_BRIGHTNESS_EDIT             1121
+#define IDC_BRIGHTNESS_SLIDER           1122
+#define IDC_GAIN_SLIDER                 1123
+#define IDC_SHUTTER_SLIDER              1124
+#define IDC_DELAY_SPIN                  1125
+#define IDC_CHANGE_STAGE                1127
+#define IDC_SETTINGS_DIALOG             1128
+#define IDC_BRIGHTNESS_CHECK            1130
+#define IDC_GAIN_CHECK                  1131
+#define IDC_SHUTTER_CHECK               1132
+#define IDC_AUTO_EXPOSURE_CHECK         1133
+#define IDC_GAMMA_CHECK                 1134
+#define IDC_SHARPNESS_CHECK             1135
+#define IDC_STAGESTYLE_DISPLAY          1136
+#define IDC_STAGE_COMBO                 1137
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        148
+#define _APS_NEXT_COMMAND_VALUE         32771
+#define _APS_NEXT_CONTROL_VALUE         1138
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif

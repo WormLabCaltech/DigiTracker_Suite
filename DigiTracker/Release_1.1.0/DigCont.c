@@ -1,0 +1,2 @@
+/* Intellicam generated digitizer settings */
+
