@@ -1,0 +1,296 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MWRecognizer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MWRecognizer.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About MWRecognizer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "MWRecognizer Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_MWRECOGNIZER_DIALOG DIALOGEX 0, 0, 426, 214
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MWRecognizer"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Quit",IDOK,7,193,50,14
+    CONTROL         "",IDC_OPENGLWIN,"Static",SS_BITMAP | SS_CENTERIMAGE | 
+                    SS_REALSIZEIMAGE | WS_BORDER,203,7,216,150,
+                    WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Add",IDC_ADD,7,159,50,14
+    PUSHBUTTON      "Recognize",IDC_RECOGNIZE,281,193,50,14
+    PUSHBUTTON      "Remove",IDC_REMOVE,59,159,50,14
+    PUSHBUTTON      "Clear",IDC_CLEAR,111,159,50,14
+    PUSHBUTTON      "Stop",IDC_STOP,339,193,50,14,WS_DISABLED
+    LISTBOX         IDC_LIST2,7,7,178,147,LBS_NOINTEGRALHEIGHT | 
+                    LBS_WANTKEYBOARDINPUT | LBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,
+                    205,175,214,10
+    LTEXT           "Recognizer Progress:",IDC_STATIC,205,165,87,8
+    CONTROL         "Display Segmentation",IDC_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,334,161,85,10
+    PUSHBUTTON      "Options",IDC_OPTIONS,205,193,50,14
+    PUSHBUTTON      "Sort",IDC_SORT,73,193,50,14
+    PUSHBUTTON      "Move Up",IDC_MOVEUP,127,179,44,14
+    PUSHBUTTON      "Move Down",IDC_MOVEDOWN,127,193,44,14
+END
+
+IDD_OPTIONSBOX DIALOG DISCARDABLE  0, 0, 496, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,151,130,50,14
+    CONTROL         "Multi-worm Tracking",IDC_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,125,82,10
+    CONTROL         "Enhanced Segmentation (w/ lighting)",IDC_SEGCHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,141,21,132,10
+    EDITTEXT        IDC_LSMS,235,45,20,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Filter Window Size:",IDC_STATIC,141,37,62,10
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | TBS_ENABLESELRANGE | WS_TABSTOP,138,49,92,
+                    13
+    LTEXT           "Segmentation Threshold:",IDC_STATIC,141,69,80,8
+    LTEXT           "Pixel Count Threshold:",IDC_STATIC,14,138,72,8
+    EDITTEXT        IDC_LSTHRES,235,82,20,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_MWPCOUNT,89,135,28,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Slider1",IDC_SLIDER2,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | TBS_ENABLESELRANGE | WS_TABSTOP,141,82,92,
+                    13
+    GROUPBOX        "Segmentation",IDC_STATIC,133,7,146,106
+    GROUPBOX        "Multi-worm",IDC_STATIC,7,113,123,40
+    GROUPBOX        "Focus of Attention Atrributes",IDC_STATIC,281,7,102,106
+    EDITTEXT        IDC_FOAMS,331,24,26,13,ES_CENTER | ES_NUMBER
+    RTEXT           "foams",IDC_STATIC,307,26,20,14
+    EDITTEXT        IDC_FOAWS,331,42,26,13,ES_CENTER | ES_NUMBER
+    RTEXT           "foaws",IDC_STATIC,307,44,20,14
+    EDITTEXT        IDC_FOASS,331,60,26,13,ES_CENTER | ES_NUMBER
+    RTEXT           "foass",IDC_STATIC,307,62,20,14
+    EDITTEXT        IDC_FOATHRESHOLD,331,78,26,13,ES_CENTER
+    RTEXT           "foathreshold",IDC_STATIC,285,79,40,14
+    GROUPBOX        "Boundary Atrributes",IDC_STATIC,383,7,106,106
+    EDITTEXT        IDC_BNDRYMS,441,24,26,13,ES_CENTER | ES_NUMBER
+    RTEXT           "bndryms",IDC_STATIC,400,25,36,14
+    EDITTEXT        IDC_BNDRYWS,441,42,26,13,ES_CENTER | ES_NUMBER
+    RTEXT           "bndryws",IDC_STATIC,400,43,36,14
+    EDITTEXT        IDC_BNDRYSIZE,441,60,26,13,ES_CENTER | ES_NUMBER
+    RTEXT           "bndrysize",IDC_STATIC,400,61,36,14
+    EDITTEXT        IDC_BNDRYTHRESHOLD,441,78,26,13,ES_CENTER
+    RTEXT           "bndrythreshold",IDC_STATIC,387,79,45,14
+    EDITTEXT        IDC_SPINESIZE,65,23,27,13,ES_RIGHT | ES_NUMBER
+    RTEXT           "Spine size",IDC_STATIC,19,24,39,14
+    LTEXT           "points",IDC_STATIC,97,26,20,8
+    EDITTEXT        IDC_SAVEIMAGES,65,50,27,13,ES_RIGHT | ES_NUMBER
+    RTEXT           "Save every",IDC_STATIC,19,52,39,14
+    LTEXT           "th  image",IDC_STATIC,95,53,30,8
+    GROUPBOX        "Data Output",IDC_STATIC,7,7,123,106
+    EDITTEXT        IDC_POINTSNAME,15,92,112,13,ES_AUTOHSCROLL
+    LTEXT           "Points-file name",IDC_STATIC,13,76,60,14
+    PUSHBUTTON      "Restore Defaults",IDC_RESTOREDEFAULTS,219,130,58,14
+    LTEXT           "pixels",IDC_STATIC,257,47,20,10
+    LTEXT           "pixels",IDC_STATIC,257,83,20,10
+    LTEXT           "pixels",IDC_STATIC,359,25,20,10
+    LTEXT           "pixels",IDC_STATIC,359,44,20,10
+    LTEXT           "pixels",IDC_STATIC,470,26,18,8
+    LTEXT           "pixels",IDC_STATIC,470,45,18,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,1,0
+ PRODUCTVERSION 1,1,1,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "by Christopher J. Cronin and Saleem Mukhtar\0"
+            VALUE "CompanyName", "California Institute of Technology, Sternberg Lab\0"
+            VALUE "FileDescription", "DigiRecognizer executable\0"
+            VALUE "FileVersion", "1.1.1\0"
+            VALUE "InternalName", "DigiRecognizer\0"
+            VALUE "LegalCopyright", "Copyright (C) 1998-2008\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "DigiRecognizer.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "DigiTracker Suite\0"
+            VALUE "ProductVersion", "1.1.1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_MWRECOGNIZER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 419
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+
+    IDD_OPTIONSBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 489
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+        HORZGUIDE, 113
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About MWRecognizer..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\MWRecognizer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
